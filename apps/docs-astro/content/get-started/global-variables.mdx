@@ -1,0 +1,24 @@
+---
+title: Global CSS Variables
+description: CSS Variable file to be used in globally
+---
+
+import { getFileContent } from "@/utils/get-file-content";
+
+# Global CSS Variables
+
+Copy and paste the following CSS styles in your main CSS file according to your project theme. These variables are being referenced across multiple core components.
+
+<CodeBlockCard
+  snippet={getFileContent("content/get-started/themes/default.css")}
+  lang="css"
+  fileName="light.css"
+  showLineNumbers
+/>
+
+<CodeBlockCard
+  snippet={getFileContent("content/get-started/themes/dark.css")}
+  lang="css"
+  fileName="dark.css"
+  showLineNumbers
+/>

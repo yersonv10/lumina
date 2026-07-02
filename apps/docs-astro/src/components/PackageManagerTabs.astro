@@ -1,0 +1,126 @@
+---
+import { highlight } from "@/lib/highlighter";
+
+interface Props {
+  command: string;
+}
+
+const { command } = Astro.props;
+
+const managers = ["npm", "pnpm", "yarn", "bun"] as const;
+type Manager = (typeof managers)[number];
+
+function commandVariants(raw: string): Record<Manager, string> {
+  const cmd = raw.trim();
+
+  let match = cmd.match(/^npx\s+(.*)$/);
+  if (match) {
+    const rest = match[1];
+    return { npm: `npx ${rest}`, pnpm: `pnpm dlx ${rest}`, yarn: `yarn dlx ${rest}`, bun: `bunx --bun ${rest}` };
+  }
+
+  match = cmd.match(/^npm create\s+(.*)$/);
+  if (match) {
+    const rest = match[1];
+    return { npm: `npm create ${rest}`, pnpm: `pnpm create ${rest}`, yarn: `yarn create ${rest}`, bun: `bun create ${rest}` };
+  }
+
+  match = cmd.match(/^npm (?:install|i)\s+(.*)$/);
+  if (match) {
+    const rest = match[1];
+    return { npm: `npm install ${rest}`, pnpm: `pnpm add ${rest}`, yarn: `yarn add ${rest}`, bun: `bun add ${rest}` };
+  }
+
+  match = cmd.match(/^npm run\s+(.*)$/);
+  if (match) {
+    const rest = match[1];
+    return { npm: `npm run ${rest}`, pnpm: `pnpm ${rest}`, yarn: `yarn ${rest}`, bun: `bun run ${rest}` };
+  }
+
+  return { npm: cmd, pnpm: cmd, yarn: cmd, bun: cmd };
+}
+
+const variants = commandVariants(command);
+const highlighted = Object.fromEntries(
+  await Promise.all(managers.map(async (manager) => [manager, await highlight(variants[manager], "bash")])),
+) as Record<Manager, string>;
+---
+
+<div class="not-prose my-6 overflow-hidden rounded-(--radius-card) border border-border" data-pm-tabs>
+  <div class="flex items-center justify-between border-b border-border bg-background-soft pr-2 pl-1">
+    <div role="tablist" class="flex">
+      {
+        managers.map((manager) => (
+          <button
+            type="button"
+            role="tab"
+            data-pm-tab={manager}
+            class="border-b-2 border-transparent px-3 py-2 font-mono text-xs text-text-secondary transition hover:text-text-primary data-active:border-primary-500 data-active:text-text-primary"
+          >
+            {manager}
+          </button>
+        ))
+      }
+    </div>
+    <button type="button" data-copy-source class="text-xs text-text-secondary hover:text-text-primary">
+      Copy
+    </button>
+  </div>
+  {
+    managers.map((manager) => (
+      <div
+        data-pm-panel={manager}
+        class="hidden overflow-x-auto text-sm [&_pre]:p-4"
+        set:html={highlighted[manager]}
+        data-raw-source={variants[manager]}
+      />
+    ))
+  }
+</div>
+
+<script>
+  function activateGroup(group: Element, manager: string) {
+    group.querySelectorAll<HTMLButtonElement>("[data-pm-tab]").forEach((tab) => {
+      if (tab.dataset.pmTab === manager) tab.setAttribute("data-active", "");
+      else tab.removeAttribute("data-active");
+    });
+    group.querySelectorAll<HTMLElement>("[data-pm-panel]").forEach((panel) => {
+      panel.classList.toggle("hidden", panel.dataset.pmPanel !== manager);
+    });
+  }
+
+  function activateAll(manager: string) {
+    document.querySelectorAll("[data-pm-tabs]").forEach((group) => activateGroup(group, manager));
+  }
+
+  function initPmTabs(root: ParentNode) {
+    const stored = localStorage.getItem("lumina-pm") || "npm";
+    root.querySelectorAll("[data-pm-tabs]").forEach((group) => activateGroup(group, stored));
+
+    root.querySelectorAll<HTMLElement>("[data-pm-tabs]").forEach((group) => {
+      if (group.dataset.wired) return;
+      group.dataset.wired = "true";
+
+      group.querySelectorAll<HTMLButtonElement>("[data-pm-tab]").forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const manager = tab.dataset.pmTab!;
+          localStorage.setItem("lumina-pm", manager);
+          activateAll(manager);
+        });
+      });
+
+      const copyBtn = group.querySelector<HTMLButtonElement>("[data-copy-source]");
+      copyBtn?.addEventListener("click", async () => {
+        const visible = group.querySelector<HTMLElement>("[data-pm-panel]:not(.hidden)");
+        const text = visible?.dataset.rawSource ?? "";
+        await navigator.clipboard.writeText(text);
+        const original = copyBtn.textContent;
+        copyBtn.textContent = "Copied";
+        setTimeout(() => (copyBtn.textContent = original), 1500);
+      });
+    });
+  }
+
+  initPmTabs(document);
+  document.addEventListener("astro:after-swap", () => initPmTabs(document));
+</script>

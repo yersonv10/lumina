@@ -1,0 +1,119 @@
+---
+title: React Checkbox Components
+description: A React checkbox component that lets users select one or more options from a set. Used to toggle choices on or off with accessible input and keyboard support.
+---
+
+import ComponentPreview from "@/components/ComponentPreview.astro";
+import CheckboxControlledPreview from "@/components/preview/checkbox/checkbox-controlled-preview";
+import CheckboxPreview from "@/components/preview/checkbox/checkbox-preview";
+import CheckboxSizesPreview from "@/components/preview/checkbox/checkbox-sizes-preview";
+import CheckboxWithLabelPreview from "@/components/preview/checkbox/checkbox-with-label-preview";
+import { Checkbox } from "@lumina/ui/core/checkbox";
+import { getFileContent } from "@/utils/get-file-content";
+
+# Checkbox
+
+React Checkbox components are used to let users select one or more options from a list. They are commonly used in forms, settings panels, and preference selections.
+
+This Checkbox component is built with React and styled using Tailwind CSS, providing consistent visuals while keeping native checkbox behavior.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/checkbox/checkbox-preview.tsx"
+  )}
+>
+  <CheckboxPreview client:visible />
+</ComponentPreview>
+
+## Installation
+
+```npm
+npx @lumina/cli add checkbox
+```
+
+## Usage
+
+Import the component and either provide an accessible name directly or pair it with the standalone `Label` component.
+
+```tsx
+import { Checkbox } from "@/components/lumina/core/checkbox";
+import { Label } from "@/components/lumina/core/label";
+import { useId } from "react";
+
+export default function CheckboxExample() {
+  const id = useId();
+
+  return (
+    <div className="flex items-center gap-3">
+      <Checkbox id={id} defaultChecked />
+      <Label htmlFor={id}>Accept terms and conditions</Label>
+    </div>
+  );
+}
+```
+
+## Examples
+
+### Sizes
+
+The Checkbox component supports two sizes: `sm` (default) and `md`.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/checkbox/checkbox-sizes-preview.tsx"
+  )}
+>
+  <CheckboxSizesPreview client:visible />
+</ComponentPreview>
+
+### With Label
+
+Use the standalone `Label` component when you want visible text next to the checkbox.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/checkbox/checkbox-with-label-preview.tsx"
+  )}
+>
+  <CheckboxWithLabelPreview client:visible />
+</ComponentPreview>
+
+### Controlled
+
+Control the checked state using React state.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/checkbox/checkbox-controlled-preview.tsx"
+  )}
+>
+  <CheckboxControlledPreview client:visible />
+</ComponentPreview>
+
+## API Reference
+
+### Checkbox
+
+Extends `input` element props.
+
+| Prop              | Type                       | Default | Description                                         |
+| ----------------- | -------------------------- | ------- | --------------------------------------------------- |
+| `id`              | `string`                   | -       | Input ID used with the standalone `Label` component |
+| `className`       | `string`                   | -       | Additional wrapper classes                          |
+| `size`            | `'sm' \| 'md'`             | `'sm'`  | Checkbox size                                       |
+| `disabled`        | `boolean`                  | `false` | Disable checkbox interaction                        |
+| `checked`         | `boolean`                  | -       | Controlled checked state                            |
+| `defaultChecked`  | `boolean`                  | -       | Uncontrolled default checked state                  |
+| `aria-label`      | `string`                   | -       | Accessible name when no visible label is used       |
+| `aria-labelledby` | `string`                   | -       | Accessible name via an external label element       |
+| `onChange`        | `(e: ChangeEvent) => void` | -       | Change event handler                                |
+
+## Accessibility
+
+- Uses a native `<input type="checkbox">` with standard keyboard support
+- Pair with the standalone `Label` component for visible text and `htmlFor`/`id` association
+- Requires an accessible name via `aria-label` or `aria-labelledby` when no visible label is used
+- Fully keyboard accessible with standard checkbox behavior
+- Visible focus ring provides clear keyboard feedback
+- Disabled state is communicated by the native input `disabled` attribute
+- Hover states are disabled when checkbox is disabled

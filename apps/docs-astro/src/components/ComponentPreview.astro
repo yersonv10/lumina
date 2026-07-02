@@ -1,0 +1,75 @@
+---
+import { highlight } from "@/lib/highlighter";
+
+interface Props {
+  codeSnippet: string;
+  codeSnippetLang?: string;
+  highlightLines?: number[];
+  highlightWords?: string[];
+}
+
+const {
+  codeSnippet,
+  codeSnippetLang = "tsx",
+  highlightLines = [],
+  highlightWords = [],
+} = Astro.props;
+
+let html = await highlight(codeSnippet, codeSnippetLang, [
+  {
+    line(node, line) {
+      if (highlightLines.includes(line)) {
+        this.addClassToHast(node, "bg-primary-500/10 border-l-2 border-primary-500 -mx-4 px-4");
+      }
+    },
+  },
+]);
+
+for (const word of highlightWords) {
+  const escaped = word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  html = html.replace(
+    new RegExp(`(>)(${escaped})(<)`, "g"),
+    `$1<mark class="rounded bg-primary-500/20 text-primary-500 px-0.5">$2</mark>$3`,
+  );
+}
+---
+
+<div class="not-prose my-6 overflow-hidden rounded-(--radius-card) border border-border" data-component-preview>
+  <div class="flex border-b border-border">
+    <button type="button" data-tab="preview" class="preview-tab-btn border-b-2 border-primary-500 px-4 py-2 text-sm font-medium text-text-primary">
+      Preview
+    </button>
+    <button type="button" data-tab="code" class="preview-tab-btn border-b-2 border-transparent px-4 py-2 text-sm font-medium text-text-secondary">
+      Code
+    </button>
+  </div>
+  <div data-panel="preview" class="flex items-center justify-center bg-background-raised p-8">
+    <slot />
+  </div>
+  <div data-panel="code" class="hidden overflow-x-auto text-sm [&_pre]:p-4" set:html={html} />
+</div>
+
+<script>
+  function initComponentPreviews(root: ParentNode) {
+    root.querySelectorAll<HTMLElement>("[data-component-preview]").forEach((el) => {
+      if (el.dataset.wired) return;
+      el.dataset.wired = "true";
+      el.querySelectorAll<HTMLButtonElement>(".preview-tab-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const tab = btn.dataset.tab;
+          el.querySelectorAll<HTMLButtonElement>(".preview-tab-btn").forEach((b) => {
+            b.classList.toggle("border-primary-500", b === btn);
+            b.classList.toggle("text-text-primary", b === btn);
+            b.classList.toggle("border-transparent", b !== btn);
+            b.classList.toggle("text-text-secondary", b !== btn);
+          });
+          el.querySelectorAll<HTMLElement>("[data-panel]").forEach((panel) => {
+            panel.classList.toggle("hidden", panel.dataset.panel !== tab);
+          });
+        });
+      });
+    });
+  }
+  initComponentPreviews(document);
+  document.addEventListener("astro:after-swap", () => initComponentPreviews(document));
+</script>

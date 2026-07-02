@@ -1,0 +1,224 @@
+---
+title: React Dropdown Components
+description: A React dropdown component that displays a menu of items when a button is clicked. Used to show actions, links, or options in a compact menu.
+---
+
+import DropdownCustomPreview from "@/components/preview/dropdown/dropdown-custom-preview";
+import DropdownPreview from "@/components/preview/dropdown/dropdown-preview";
+import DropdownWithIconsPreview from "@/components/preview/dropdown/dropdown-with-icons-preview";
+import DropdownWithSectionPreview from "@/components/preview/dropdown/dropdown-with-section-preview";
+import DropdownWithSeparatorPreview from "@/components/preview/dropdown/dropdown-with-separator-preview";
+import { getFileContent } from "@/utils/get-file-content";
+
+# Dropdown
+
+React Dropdown components are used to display a list of actions or options in a compact menu. They are commonly used for contextual actions, overflow menus, and option selectors.
+
+This Dropdown component is built with React and styled using Tailwind CSS. It uses React Aria for accessible keyboard and focus handling.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/dropdown/dropdown-preview.tsx"
+  )}
+>
+  <DropdownPreview client:visible />
+</ComponentPreview>
+
+## Installation
+
+Install the component using the Lumina CLI.
+
+```npm
+npx @lumina/cli add dropdown
+```
+
+## Anatomy
+
+Import the component parts and combine them.
+
+```tsx
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator
+} from "@/components/lumina/core/dropdown";
+
+export const DropdownExample = () => (
+  <DropdownMenu>
+    <DropdownMenuTrigger />
+    <DropdownMenuContent>
+      <DropdownMenuSection>
+        <DropdownMenuHeader />
+        <DropdownMenuItem />
+        <DropdownMenuItem />
+      </DropdownMenuSection>
+      <DropdownMenuSeparator />
+      <DropdownMenuItem />
+    </DropdownMenuContent>
+  </DropdownMenu>
+);
+```
+
+## Usage
+
+Import the dropdown components and wrap a trigger with menu items.
+
+```tsx
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSection,
+  DropdownMenuHeader,
+  DropdownMenuSeparator
+} from "@/components/lumina/core/dropdown";
+import { Button } from "@/components/lumina/core/button";
+
+export const DropdownUsageExample = () => (
+  <DropdownMenu>
+    <DropdownMenuTrigger>
+      <Button>Open Menu</Button>
+    </DropdownMenuTrigger>
+    <DropdownMenuContent>
+      <DropdownMenuSection>
+        <DropdownMenuHeader>Account</DropdownMenuHeader>
+        <DropdownMenuItem onAction={() => console.log("Edit")}>
+          Edit
+        </DropdownMenuItem>
+        <DropdownMenuItem onAction={() => console.log("Duplicate")}>
+          Duplicate
+        </DropdownMenuItem>
+      </DropdownMenuSection>
+      <DropdownMenuSeparator />
+      <DropdownMenuSection>
+        <DropdownMenuItem onAction={() => console.log("Delete")}>
+          Delete
+        </DropdownMenuItem>
+      </DropdownMenuSection>
+    </DropdownMenuContent>
+  </DropdownMenu>
+);
+```
+
+## Examples
+
+### With Separator
+
+Use separators to group related actions.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/dropdown/dropdown-with-separator-preview.tsx"
+  )}
+>
+  <DropdownWithSeparatorPreview client:visible />
+</ComponentPreview>
+
+### With Icons
+
+Add icons to menu items for better visual context.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/dropdown/dropdown-with-icons-preview.tsx"
+  )}
+>
+  <DropdownWithIconsPreview client:visible />
+</ComponentPreview>
+
+### With Section
+
+Use sections to group related actions.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/dropdown/dropdown-with-section-preview.tsx"
+  )}
+>
+  <DropdownWithSectionPreview client:visible />
+</ComponentPreview>
+
+### Custom
+
+Style the dropdown menu and items to match your design.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/dropdown/dropdown-custom-preview.tsx"
+  )}
+>
+  <DropdownCustomPreview client:visible />
+</ComponentPreview>
+
+## API Reference
+
+### DropdownMenu
+
+The root component. Extends `MenuTriggerProps` from React Aria.
+
+### DropdownMenuTrigger
+
+The button that opens the dropdown menu. Extends `ButtonProps` from React Aria.
+
+| Prop        | Type              | Description            |
+| ----------- | ----------------- | ---------------------- |
+| `className` | `string`          | Additional CSS classes |
+| `children`  | `React.ReactNode` | Trigger content        |
+
+### DropdownMenuContent
+
+The popover container for menu items. Extends `PopoverProps` from React Aria.
+
+| Prop       | Type              | Description               |
+| ---------- | ----------------- | ------------------------- |
+| `children` | `React.ReactNode` | Menu items and separators |
+
+### DropdownMenuSection
+
+A section container for grouping related menu items. Extends `MenuSectionProps` from React Aria.
+
+| Prop        | Type              | Description                    |
+| ----------- | ----------------- | ------------------------------ |
+| `className` | `string`          | Additional CSS classes         |
+| `children`  | `React.ReactNode` | Menu items within this section |
+
+### DropdownMenuHeader
+
+A header label for a menu section. Extends `Header` component props from React Aria.
+
+| Prop        | Type              | Description            |
+| ----------- | ----------------- | ---------------------- |
+| `className` | `string`          | Additional CSS classes |
+| `children`  | `React.ReactNode` | Header text content    |
+
+### DropdownMenuItem
+
+An individual menu item. Extends `MenuItemProps` from React Aria.
+
+| Prop        | Type              | Description                    |
+| ----------- | ----------------- | ------------------------------ |
+| `onAction`  | `() => void`      | Callback when item is selected |
+| `className` | `string`          | Additional CSS classes         |
+| `children`  | `React.ReactNode` | Item content                   |
+
+### DropdownMenuSeparator
+
+A horizontal divider between menu items. Extends `hr` element props.
+
+| Prop        | Type     | Description            |
+| ----------- | -------- | ---------------------- |
+| `className` | `string` | Additional CSS classes |
+
+See [React Aria](https://react-spectrum.adobe.com/react-aria/Menu.html) for more details.
+
+## Accessibility
+
+- Built on React Aria Components for robust accessibility
+- Full keyboard navigation (Arrow keys, Enter, Escape)
+- Automatic focus management
+- Screen reader-friendly ARIA attributes
+- Click outside and Escape key close the menu
+- Focus returns to the trigger when the menu closes

@@ -1,0 +1,92 @@
+---
+title: Quick Start
+description: Get started with Lumina in your React project.
+---
+
+<HeaderBanner />
+
+# Quick Start
+
+Lumina isn't a package you install and import from `node_modules` — components are copied straight into your project as source code, so you own them and can edit anything. This guide covers setup for a project that already has React and Tailwind CSS.
+
+**Starting from scratch, or using Astro, Next.js, Vite, TanStack Start, or React Router?** Head to [Installation](/installation) and pick your framework — it walks through scaffolding a project before you get here.
+
+<Steps>
+
+<Step>
+### Initialize Lumina
+
+Run the `init` command in your project root.
+
+```npm
+npx @lumina/cli@latest init
+```
+
+This prompts you to:
+
+- Select a theme for your components.
+- Configure an import alias for your project.
+
+It creates:
+
+- `lumina.config.json` — configuration file for the CLI.
+- `lumina.css` — base styles for Lumina components.
+- A `cn` utility file for merging Tailwind CSS classes.
+
+It also installs the required dependencies (`clsx`, `@tailwindcss/forms`, and `tailwind-merge`).
+
+</Step>
+
+<Step>
+### Add Base Styles
+
+If you chose not to let `init` replace your main CSS file, copy the contents of the generated `lumina.css` into it (e.g. `globals.css` or `app.css`). See [Global CSS Variables](/get-started/global-variables) for the full list of tokens and what each one controls.
+
+</Step>
+
+<Step>
+### Add Components
+
+Add components one at a time with the `add` command:
+
+```npm
+npx @lumina/cli@latest add <component-name>
+```
+
+For example, to add the button component:
+
+```npm
+npx @lumina/cli@latest add button
+```
+
+This drops the component's source into your project — browse [Components](/components) for the full list and copy-paste examples of each.
+
+</Step>
+
+<Step>
+### Import and Use Components
+
+Import a component from wherever the CLI placed it and use it like any other React component.
+
+```tsx filename="src/app/page.tsx"
+import { Button } from "@/components/core/button"; // Adjust the import path based on your alias and component location
+
+export default function Home() {
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <Button variant="primary">Hello Lumina!</Button>
+    </main>
+  );
+}
+```
+
+</Step>
+
+</Steps>
+
+## Next Steps
+
+- **[Components](/components)** — browse every component with live previews, variants, and copy-paste code.
+- **[Global CSS Variables](/get-started/global-variables)** — the design tokens that drive color, radius, and shadow across the library.
+- **[Installation](/installation)** — framework-specific setup (Astro, Next.js, Vite, TanStack Start, React Router).
+- **[GitHub](https://github.com/yersonv10/lumina)** — source, issues, and discussions.

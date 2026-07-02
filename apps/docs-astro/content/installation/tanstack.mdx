@@ -1,0 +1,72 @@
+---
+title: Tanstack Start
+description: Install and configure Lumina for Tanstack Start.
+---
+
+# Tanstack Start Installation
+
+Follow these steps to set up Lumina in your Tanstack Start project.
+
+<Steps>
+
+<Step>
+### Create project
+
+Create a new Tanstack Start project:
+
+```npm
+npm create @tanstack/start@latest
+```
+
+Follow the prompts to configure your project with TypeScript and Tailwind CSS.
+
+</Step>
+
+<Step>
+### Initialize Lumina
+
+Run the command in the CLI to initialize Lumina in your project:
+
+```npm
+npx @lumina/cli@latest init
+```
+
+Follow the prompts to configure Lumina
+
+**Note:** If you have chosen not to replace the content of your main CSS file, you will need to copy and paste the styles of [lumina.css](/get-started/global-variables) into your main CSS file (e.g., `src/app/globals.css` or `src/index.css`).
+
+</Step>
+
+<Step>
+### Add Components
+
+Use the CLI to add components to your project:
+
+```npm
+npx @lumina/cli@latest add button
+```
+
+</Step>
+
+<Step>
+### Use the Component
+
+Import and use the component in your application:
+
+```tsx title="src/routes/index.tsx"
+import { Button } from "@/components/lumina/core/button";
+
+export default function Home() {
+  return (
+    <div className="flex min-h-svh items-center justify-center">
+      <Button>Click me</Button>
+    </div>
+  );
+}
+```
+
+**Note:** You may need to update the import path based on your project structure.
+
+</Step>
+
+</Steps>

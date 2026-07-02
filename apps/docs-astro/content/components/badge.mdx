@@ -1,0 +1,106 @@
+---
+title: React Badge Components
+description: A React badge component for showing status, labels, or counts. Used to display small indicators like notifications, categories, or metadata with color options and icons.
+---
+
+import BadgeColors from "@/components/preview/badge/badge-colors";
+import BadgeCustom from "@/components/preview/badge/badge-custom";
+import BadgeIcons from "@/components/preview/badge/badge-icons";
+import BadgePreview from "@/components/preview/badge/badge-preview";
+import BadgeSizes from "@/components/preview/badge/badge-sizes";
+import { getFileContent } from "@/utils/get-file-content";
+
+# Badge
+
+React Badge components are used to display small labels, counts, status indicators, or metadata with semantic colors and optional icons. They are commonly used for notifications, categories, tags, and metadata across interfaces.
+
+This Badge component is built with React and styled using Tailwind CSS, giving developers control over size, color, and icon placement.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/badge/badge-preview.tsx"
+  )}
+>
+  <BadgePreview />
+</ComponentPreview>
+
+## Installation
+
+Install the component using the Lumina CLI.
+
+```npm
+npx @lumina/cli add badge
+```
+
+## Usage
+
+Import the component and pass the required props.
+
+```tsx
+import { Badge } from "@/components/badge";
+
+export const BadgeExample = () => <Badge color="primary">New</Badge>;
+```
+
+## Examples
+
+### Sizes
+
+Badge component supports three predefined sizes: `sm`, `md`, and `lg`.
+
+<ComponentPreview
+  codeSnippet={getFileContent("/src/components/preview/badge/badge-sizes.tsx")}
+>
+  <BadgeSizes />
+</ComponentPreview>
+
+### Colors
+
+The Badge component supports a wide range of semantic and vibrant color options like `primary`, `error`, and `success` etc.
+
+<ComponentPreview
+  codeSnippet={getFileContent("/src/components/preview/badge/badge-colors.tsx")}
+>
+  <BadgeColors />
+</ComponentPreview>
+
+### With Icons
+
+Add icons before or after your text using the `prefixIcon` and `suffixIcon` props.
+
+<ComponentPreview
+  codeSnippet={getFileContent("/src/components/preview/badge/badge-icons.tsx")}
+>
+  <BadgeIcons />
+</ComponentPreview>
+
+### Custom
+
+Use custom styles or positioning to create unique badges for specific use cases.
+
+<ComponentPreview
+  codeSnippet={getFileContent("/src/components/preview/badge/badge-custom.tsx")}
+>
+  <BadgeCustom />
+</ComponentPreview>
+
+## API Reference
+
+### Badge
+
+Extends `span` element props.
+
+| Prop         | Type                                                                                                                                            | Default     | Description            |
+| ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | ---------------------- |
+| `size`       | `'sm' \| 'md' \| 'lg'`                                                                                                                          | `'sm'`      | Sets the badge size    |
+| `color`      | `'gray' \| 'primary' \| 'error' \| 'warning' \| 'success' \| 'cyan' \| 'sky' \| 'blue' \| 'violet' \| 'purple' \| 'pink' \| 'rose' \| 'orange'` | `'primary'` | Sets the color scheme  |
+| `prefixIcon` | `React.ReactNode`                                                                                                                               | -           | Icon before the text   |
+| `suffixIcon` | `React.ReactNode`                                                                                                                               | -           | Icon after the text    |
+| `className`  | `string`                                                                                                                                        | -           | Additional CSS classes |
+| `children`   | `React.ReactNode`                                                                                                                               | -           | Badge content          |
+
+## Notes
+
+- Icons are automatically sized to `12px` (0.75rem) via the `[&>svg]:size-3` class
+- Padding adjusts automatically based on the presence of prefix/suffix icons
+- All standard `span` HTML attributes are supported

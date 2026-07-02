@@ -1,0 +1,206 @@
+---
+title: React Time Field Components
+description: A React time field component that allows users to select a time value. Used in forms to choose hours and minutes through an accessible time input.
+---
+
+import TimeFieldBasicPreview from "@/components/preview/time-field/time-field-basic-preview";
+import TimeFieldControlled from "@/components/preview/time-field/time-field-controlled";
+import TimeFieldPreview from "@/components/preview/time-field/time-field-preview";
+import TimeFieldUncontrolled from "@/components/preview/time-field/time-field-uncontrolled";
+import TimeFieldWithSeconds from "@/components/preview/time-field/time-field-with-seconds";
+import TimeFieldWithTimezone from "@/components/preview/time-field/time-field-with-timezone";
+import TimeFieldWithLeadingZeroPreview from "@/components/preview/time-field/time-field-with-leading-zero-preview";
+import TimeFieldWithValidation from "@/components/preview/time-field/time-field-with-validation";
+import { getFileContent } from "@/utils/get-file-content";
+
+# Time Field
+
+React Time Field components allow users to select a specific time value using a segment-based input. They are commonly used in booking forms, scheduling flows, reminders, and time-based filters where precise keyboard entry is preferred.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/time-field/time-field-preview.tsx"
+  )}
+>
+  <TimeFieldPreview client:visible />
+</ComponentPreview>
+
+## Installation
+
+The Time Field relies on the `react-aria-components` library.
+
+Install the component using the Lumina CLI.
+```npm
+npx @lumina/cli add time-field
+```
+
+## Anatomy
+
+```tsx
+import { Label } from "@/components/lumina/core/label";
+import { Description } from "@/components/lumina/core/description";
+import { TimeField } from "@/components/lumina/core/time-field";
+import { DateInput, DateSegment } from "@/components/lumina/core/date-field";
+
+export const TimeFieldExample = () => (
+  <TimeField>
+    <Label>Meeting time</Label>
+    <DateInput>{segment => <DateSegment segment={segment} />}</DateInput>
+    <Description>Choose a start time for the meeting.</Description>
+  </TimeField>
+);
+```
+
+## Examples
+
+### Basic Usage
+
+A standard time field implementation using segments for precise time entry.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/time-field/time-field-basic-preview.tsx"
+  )}
+>
+  <TimeFieldBasicPreview client:visible />
+</ComponentPreview>
+
+### Controlled
+
+Manage the time value externally using the `value` and `onChange` props.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/time-field/time-field-controlled.tsx"
+  )}
+>
+  <TimeFieldControlled client:visible />
+</ComponentPreview>
+
+### Uncontrolled
+
+An uncontrolled time field with a `defaultValue` prop.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/time-field/time-field-uncontrolled.tsx"
+  )}
+>
+  <TimeFieldUncontrolled client:visible />
+</ComponentPreview>
+
+### With Seconds
+
+Enable second selection by setting the `granularity` prop to `second`.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/time-field/time-field-with-seconds.tsx"
+  )}
+>
+  <TimeFieldWithSeconds client:visible />
+</ComponentPreview>
+
+### With Timezone
+
+Display and manage time zones within the time field.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/time-field/time-field-with-timezone.tsx"
+  )}
+>
+  <TimeFieldWithTimezone client:visible />
+</ComponentPreview>
+
+### With Leading Zeros
+
+Use the `shouldForceLeadingZeros` prop to display leading zeros in time segments.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/time-field/time-field-with-leading-zero-preview.tsx"
+  )}
+  highlightWords={["shouldForceLeadingZeros"]}
+>
+  <TimeFieldWithLeadingZeroPreview client:visible />
+</ComponentPreview>
+
+### Validation
+
+Display error messages and validation states when the time value is invalid.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/time-field/time-field-with-validation.tsx"
+  )}
+>
+  <TimeFieldWithValidation client:visible />
+</ComponentPreview>
+
+## API Reference
+
+### TimeField
+
+The segment-based time input component. Wraps React Aria's `TimeField` and maps boolean props (`disabled`, `readOnly`, `required`, `invalid`) to their `is-*` equivalents.
+
+| Prop                      | Type                                                                  | Default      | Description                                                  |
+| :------------------------ | :-------------------------------------------------------------------- | :----------- | :----------------------------------------------------------- |
+| `value`                   | `TimeValue \| null`                                                   | -            | The current time value (controlled).                         |
+| `defaultValue`            | `TimeValue \| null`                                                   | -            | The default time value (uncontrolled).                       |
+| `onChange`                | `(value: TimeValue \| null) => void`                                  | -            | Handler called when the value changes.                       |
+| `name`                    | `string`                                                              | -            | The name of the input, used when submitting an HTML form.    |
+| `form`                    | `string`                                                              | -            | The `<form>` element to associate the input with.            |
+| `id`                      | `string`                                                              | -            | The element's unique identifier.                             |
+| `autoFocus`               | `boolean`                                                             | `false`      | Whether the input should receive focus on mount.             |
+| `hourCycle`               | `12 \| 24`                                                            | -            | Whether to use 12-hour or 24-hour format.                    |
+| `granularity`             | `'hour' \| 'minute' \| 'second'`                                      | `'minute'`   | The smallest unit of time to display.                        |
+| `hideTimeZone`            | `boolean`                                                             | `false`      | Whether to hide the time zone abbreviation.                  |
+| `shouldForceLeadingZeros` | `boolean`                                                             | `false`      | Whether to always show leading zeros in the hour field.      |
+| `minValue`                | `TimeValue`                                                           | -            | The minimum allowed time.                                    |
+| `maxValue`                | `TimeValue`                                                           | -            | The maximum allowed time.                                    |
+| `placeholderValue`        | `TimeValue`                                                           | -            | A placeholder time value when no value is set.               |
+| `orientation`             | `'vertical' \| 'horizontal' \| 'responsive'`                          | `'vertical'` | Layout direction of the field container.                     |
+| `disabled`                | `boolean`                                                             | `false`      | Whether the input is disabled.                               |
+| `readOnly`                | `boolean`                                                             | `false`      | Whether the input is read only.                              |
+| `required`                | `boolean`                                                             | `false`      | Whether the input is required.                               |
+| `invalid`                 | `boolean`                                                             | `false`      | Whether the input is shown in an invalid state.              |
+| `validate`                | `(value: TimeValue) => ValidationResult \| true \| null \| undefined` | -            | Custom validation function for the time value.               |
+| `validationBehavior`      | `'aria' \| 'native'`                                                  | `'native'`   | Whether to use native HTML or ARIA form validation.          |
+| `aria-label`              | `string`                                                              | -            | Defines a string that labels the current element.            |
+| `aria-labelledby`         | `string`                                                              | -            | Identifies the element (or elements) that label the element. |
+| `aria-describedby`        | `string`                                                              | -            | Identifies the element that describes the object.            |
+| `aria-details`            | `string`                                                              | -            | Identifies the element providing extended description.       |
+| `onBlur`                  | `(e: FocusEvent) => void`                                             | -            | Handler called when the element loses focus.                 |
+| `onFocus`                 | `(e: FocusEvent) => void`                                             | -            | Handler called when the element receives focus.              |
+| `onFocusChange`           | `(isFocused: boolean) => void`                                        | -            | Handler called when the element's focus status changes.      |
+| `onKeyDown`               | `(e: KeyboardEvent) => void`                                          | -            | Handler called when a key is pressed.                        |
+| `onKeyUp`                 | `(e: KeyboardEvent) => void`                                          | -            | Handler called when a key is released.                       |
+| `className`               | `string`                                                              | -            | Additional CSS classes to apply to the container.            |
+
+See the [React Aria TimeField documentation](https://react-aria.adobe.com/TimeField#timefield) for more details.
+
+## Composition
+
+The Time Field is composed of the root `TimeField` component plus `DateInput` and `DateSegment` from the Date Field package. It can be combined with shared field components (`Label`, `Description`, `FieldError`) for a complete form control.
+
+```
+TimeField                                  — Root container. Manages time state, validation, and ARIA context.
+├── Label                                  — Visible label.
+├── DateInput (from Date Field)            — Groups editable segments into a styled input area.
+│   └── DateSegment (from Date Field)      — Individual editable segment (hour, minute, second, AM/PM).
+└── Description                            — Helper text.
+```
+
+- Use `TimeField` as the root. It provides the time value, validation state, and keyboard context to all children.
+- Use `Label` to label the field. It is automatically linked to the input.
+- Use `DateInput` to render the segment group. It accepts a render function that receives each `segment` and returns a `DateSegment`.
+- Use `DateSegment` inside `DateInput` to render each editable part of the time. It handles focus, typing, and arrow-key incrementing.
+- Use `Description` for helper text. It is automatically announced by screen readers.
+- Use `FieldError` for validation messages. It is linked via `aria-errormessage` when `invalid` is set.
+
+## Accessibility
+
+- **Keyboard Support**: Users can navigate between time segments (hours, minutes, seconds, AM/PM) using `Arrow` keys and edit values using the number keys.
+- **Screen Readers**: Each segment is properly labeled and provides live updates to screen readers as values change.
+- **Focus Management**: Focus is managed automatically between segments for a seamless typing experience.

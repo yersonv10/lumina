@@ -1,0 +1,180 @@
+---
+title: React Popover Components
+description: A React popover component that displays a floating panel anchored to an element. Opens on click to show additional content with accessible focus handling.
+---
+
+import ComponentPreview from "@/components/ComponentPreview.astro";
+import PopoverActionsPreview from "@/components/preview/popover/popover-actions-preview";
+import PopoverDefaultPreview from "@/components/preview/popover/popover-default-preview";
+import PopoverPreview from "@/components/preview/popover/popover-preview";
+import PopoverPlacementPreview from "@/components/preview/popover/popover-placement-preview";
+import PopoverSimplePreview from "@/components/preview/popover/popover-simple-preview";
+import PopoverCustomAnchorPreview from "@/components/preview/popover/popover-custom-anchor-preview";
+import { getFileContent } from "@/utils/get-file-content";
+
+# Popover
+
+React Popover components display floating content anchored to a trigger element. They are commonly used for contextual information, settings panels, and inline actions that don’t require full navigation.
+
+This Popover component is built with React and styled using Tailwind CSS. It uses React Aria Components for positioning and provides accessible focus and keyboard handling.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/popover/popover-preview.tsx"
+  )}
+>
+  <PopoverPreview client:visible />
+</ComponentPreview>
+
+## Installation
+
+Install the component using the Lumina CLI.
+
+```npm
+npx @lumina/cli add popover
+```
+
+## Anatomy
+
+Import the component parts and combine them according to your requirements.
+
+```tsx
+import { Button } from "@/components/lumina/core/button";
+import { OverlayWrapper } from "@/components/lumina/core/overlay";
+import { Popover, PopoverArrow } from "@/components/lumina/core/popover";
+
+export default function PopoverAnatomy() {
+  return (
+    <OverlayWrapper>
+      <Button />
+      <Popover>
+        // Content goes here
+        <PopoverArrow />
+      </Popover>
+    </OverlayWrapper>
+  );
+}
+```
+
+## Examples
+
+### Default
+
+Wrap the `Popover` component within the `OverlayWrapper` and use `Button` as the trigger for an uncontrolled popover.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/popover/popover-default-preview.tsx"
+  )}
+>
+  <PopoverDefaultPreview client:visible />
+</ComponentPreview>
+
+### Custom Anchor
+
+Pass a custom trigger element using the `triggerRef` prop.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/popover/popover-custom-anchor-preview.tsx"
+  )}
+  highlightLines={[17, 22]}
+>
+  <PopoverCustomAnchorPreview client:visible />
+</ComponentPreview>
+
+### Custom Placement
+
+Change the popover position using the `placement` prop.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/popover/popover-placement-preview.tsx"
+  )}
+  noPaddingOnPreviewForLaptop
+>
+  <PopoverPlacementPreview client:visible />
+</ComponentPreview>
+
+### With Action
+
+Popover content with action buttons.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/popover/popover-actions-preview.tsx"
+  )}
+>
+  <PopoverActionsPreview client:visible />
+</ComponentPreview>
+
+## API Reference
+
+### Popover
+
+| Prop                           | Type                                                | Default         | Description                                                                               |
+| :----------------------------- | :-------------------------------------------------- | :-------------- | :---------------------------------------------------------------------------------------- |
+| `placement`                    | `Placement`                                         | `"bottom"`      | The placement of the popover relative to its anchor element.                              |
+| `offset`                       | `number`                                            | `8`             | Additional offset along the main axis between the popover and anchor.                     |
+| `crossOffset`                  | `number`                                            | `0`             | Additional offset along the cross axis between the popover and anchor.                    |
+| `containerPadding`             | `number`                                            | `12`            | Padding between the popover and its surrounding container.                                |
+| `arrowBoundaryOffset`          | `number`                                            | `0`             | Minimum distance the arrow's edge from the edge of the overlay.                           |
+| `maxHeight`                    | `number`                                            | —               | Maximum height of the popover. Defaults to available viewport height.                     |
+| `shouldFlip`                   | `boolean`                                           | `true`          | Whether to flip orientation when there is insufficient room.                              |
+| `shouldUpdatePosition`         | `boolean`                                           | `true`          | Whether to update position automatically.                                                 |
+| `isKeyboardDismissDisabled`    | `boolean`                                           | `false`         | Whether pressing Escape to close is disabled.                                             |
+| `isNonModal`                   | `boolean`                                           | —               | Whether elements outside the popover may be interacted with by assistive tech.            |
+| `shouldCloseOnInteractOutside` | `(element: Element) => boolean`                     | —               | Filter interactions outside the popover that should not dismiss it.                       |
+| `isOpen`                       | `boolean`                                           | —               | Whether the overlay is open (controlled).                                                 |
+| `defaultOpen`                  | `boolean`                                           | —               | Whether the overlay is open by default (uncontrolled).                                    |
+| `onOpenChange`                 | `(isOpen: boolean) => void`                         | —               | Handler called when the overlay's open state changes.                                     |
+| `isEntering`                   | `boolean`                                           | —               | Whether the popover is performing an entry animation.                                     |
+| `isExiting`                    | `boolean`                                           | —               | Whether the popover is performing an exit animation.                                      |
+| `triggerRef`                   | `RefObject<Element \| null>`                        | —               | Ref for the element the popover positions relative to.                                    |
+| `scrollRef`                    | `RefObject<Element \| null>`                        | —               | Ref for the scrollable region within the overlay.                                         |
+| `arrowRef`                     | `RefObject<Element \| null>`                        | —               | Ref for the popover arrow element.                                                        |
+| `boundaryElement`              | `Element`                                           | `document.body` | Element that serves as the positioning boundary.                                          |
+| `trigger`                      | `string`                                            | —               | Name of the component that triggered the popover (reflected as `data-trigger` attribute). |
+| `aria-label`                   | `string`                                            | —               | Defines a string value that labels the current element.                                   |
+| `aria-labelledby`              | `string`                                            | —               | Identifies the element (or elements) that labels the current element.                     |
+| `aria-describedby`             | `string`                                            | —               | Identifies the element (or elements) that describes the object.                           |
+| `aria-details`                 | `string`                                            | —               | Identifies the element (or elements) that provide a detailed, extended description.       |
+| `slot`                         | `string \| null`                                    | —               | Slot name to receive props from a parent component.                                       |
+| `id`                           | `string`                                            | —               | The element's unique identifier.                                                          |
+| `className`                    | `string \| ((props: PopoverRenderProps) => string)` | —               | Custom class for the popover element.                                                     |
+| `style`                        | `CSSProperties \| ((props) => CSSProperties)`       | —               | Inline style for the element.                                                             |
+| `render`                       | `DOMRenderFunction`                                 | —               | Override the default DOM element with a custom render function.                           |
+| `children`                     | `ReactNode \| ((props) => ReactNode)`               | —               | The children of the component.                                                            |
+
+### PopoverArrow
+
+| Prop           | Type                                                     | Default                     | Description                                                                                |
+| :------------- | :------------------------------------------------------- | :-------------------------- | :----------------------------------------------------------------------------------------- |
+| `className`    | `string \| ((props: OverlayArrowRenderProps) => string)` | `"react-aria-OverlayArrow"` | Custom class for the arrow element.                                                        |
+| `style`        | `CSSProperties \| ((props) => CSSProperties)`            | —                           | Inline style for the element.                                                              |
+| `children`     | `ReactNode \| ((props) => ReactNode)`                    | —                           | The children of the component. Override the default SVG triangle to render a custom arrow. |
+| `id`           | `string`                                                 | —                           | The element's unique identifier.                                                           |
+| `slot`         | `string`                                                 | —                           | Slot name to receive props from a parent component.                                        |
+| `render`       | `DOMRenderFunction`                                      | —                           | Override the default DOM element with a custom render function.                            |
+| `dir`          | `string`                                                 | —                           | The text direction (e.g. `"ltr"` or `"rtl"`) for the element.                              |
+| `hidden`       | `boolean`                                                | —                           | Whether the element is hidden from the accessibility tree.                                 |
+| `inert`        | `boolean`                                                | —                           | Whether the element is inert (non-interactive and hidden from assistive tech).             |
+| `lang`         | `string`                                                 | —                           | The BCP47 language tag for the element.                                                    |
+| `translate`    | `"yes" \| "no"`                                          | —                           | Whether the page content should be translated by the browser.                              |
+| `role`         | `React.AriaRole`                                         | —                           | The ARIA role for the element.                                                             |
+| `tabIndex`     | `number`                                                 | —                           | The tab index of the element.                                                              |
+| `title`        | `string`                                                 | —                           | The title attribute, providing advisory information for the element.                       |
+| `onClick`      | `React.MouseEventHandler<HTMLDivElement>`                | —                           | Handler called when the element is clicked.                                                |
+| `onMouseEnter` | `React.MouseEventHandler<HTMLDivElement>`                | —                           | Handler called when the pointer enters the element.                                        |
+| `onMouseLeave` | `React.MouseEventHandler<HTMLDivElement>`                | —                           | Handler called when the pointer leaves the element.                                        |
+| `onFocus`      | `React.FocusEventHandler<HTMLDivElement>`                | —                           | Handler called when the element receives focus.                                            |
+| `onBlur`       | `React.FocusEventHandler<HTMLDivElement>`                | —                           | Handler called when the element loses focus.                                               |
+
+## Accessibility
+
+- Uses `aria-labelledby` and `aria-describedby`
+- Keyboard accessible with Tab, Arrow, Shift+Tab, and Escape
+- Focus is managed automatically when the popover opens and closes
+- Triggers expose `data-state="open" | "closed"`
+- Works with screen readers and assistive technologies
+- Supports modal focus trapping when enabled

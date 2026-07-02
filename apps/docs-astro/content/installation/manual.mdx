@@ -1,0 +1,62 @@
+---
+title: Manual
+description: Install and configure Lumina manually.
+---
+
+# Manual Installation
+
+Follow these steps to set up Lumina in your existing project.
+
+<Steps>
+
+<Step>
+### Install Tailwind CSS
+
+Ensure your project has [Tailwind CSS](https://tailwindcss.com/docs/installation) installed and configured.
+
+</Step>
+
+<Step>
+### Initialize Lumina
+
+Run the command in the CLI to initialize Lumina in your project:
+
+```npm
+npx @lumina/cli@latest init
+```
+
+Follow the prompts to configure your project structure and path aliases.
+
+**Note:** If you have chosen not to replace the content of your main CSS file, you will need to copy and paste the styles of [lumina.css](/get-started/global-variables) into your main CSS file (e.g., `src/app/globals.css` or `src/index.css`).
+
+</Step>
+
+<Step>
+### Add Components
+
+Use the CLI to add components to your project:
+
+```npm
+npx @lumina/cli@latest add button
+```
+
+</Step>
+
+<Step>
+### Use the Component
+
+Import and use the component in your application:
+
+```tsx
+import { Button } from "@/components/lumina/core/button";
+
+export default function Example() {
+  return <Button>Click me</Button>;
+}
+```
+
+**Note:** You may need to update the import path based on your project structure.
+
+</Step>
+
+</Steps>

@@ -1,0 +1,121 @@
+---
+title: React Link Components
+description: A React link component for navigation between pages. Renders a semantic anchor element to create internal or external links with accessible behavior.
+---
+
+import ComponentPreview from "@/components/ComponentPreview.astro";
+import LinkCustomPreview from "@/components/preview/link/link-custom-preview";
+import LinkExternalPreview from "@/components/preview/link/link-external-preview";
+import LinkPreview from "@/components/preview/link/link-preview";
+import LinkSizesPreview from "@/components/preview/link/link-sizes-preview";
+import LinkVariantsPreview from "@/components/preview/link/link-variants-preview";
+import { getFileContent } from "@/utils/get-file-content";
+
+# Link
+
+React Link components are used for navigation between pages or sections. They render semantic anchor elements and are commonly used for internal routing, external links, and inline navigation.
+
+This Link component is built with React and styled using Tailwind CSS. It supports different sizes, visual variants, and optional icons.
+
+<ComponentPreview
+  codeSnippet={getFileContent("/src/components/preview/link/link-preview.tsx")}
+>
+  <LinkPreview />
+</ComponentPreview>
+
+## Installation
+
+Install the component using the Lumina CLI.
+```npm
+npx @lumina/cli add link
+```
+
+## Usage
+
+Import the component and pass the required props.
+
+```tsx
+import { Link } from "@/components/lumina/core/link";
+
+export default function Example() {
+  return <Link href="/about">Learn more</Link>;
+}
+```
+
+## Examples
+
+### Variants
+
+Use variants to change the visual style of the link.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/link/link-variants-preview.tsx"
+  )}
+>
+  <LinkVariantsPreview />
+</ComponentPreview>
+
+### Sizes
+
+Choose a size that fits the surrounding text.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/link/link-sizes-preview.tsx"
+  )}
+>
+  <LinkSizesPreview />
+</ComponentPreview>
+
+### External Link
+
+Use standard anchor attributes for external navigation.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/link/link-external-preview.tsx"
+  )}
+>
+  <LinkExternalPreview />
+</ComponentPreview>
+
+Note: Icons are automatically sized to 20px (1.25rem) via the `[&>svg]:size-5` class. The component uses `inline-flex` for proper icon alignment with text.
+
+### Custom
+
+Combine different variants, sizes, and icons to create custom link styles for various use cases.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/link/link-custom-preview.tsx"
+  )}
+>
+  <LinkCustomPreview />
+</ComponentPreview>
+
+Note: Works with any routing library by passing custom `href` props. Supports all standard anchor attributes.
+
+## API Reference
+
+### Link
+
+Extends `a` element props.
+
+| Prop        | Type                  | Default  | Description                  |
+| ----------- | --------------------- | -------- | ---------------------------- |
+| `href`      | `string`              | -        | Link destination (required)  |
+| `variant`   | `'primary' \| 'dark'` | `'dark'` | Visual style variant         |
+| `size`      | `'sm' \| 'md'`        | `'sm'`   | Link size                    |
+| `className` | `string`              | -        | Additional CSS classes       |
+| `children`  | `React.ReactNode`     | -        | Link content                 |
+| `target`    | `string`              | -        | Link target (e.g., `_blank`) |
+| `rel`       | `string`              | -        | Link relationship            |
+
+## Accessibility
+
+- Uses semantic `<a>` elements for proper navigation
+- Supports all standard anchor attributes including `target` and `rel`
+- Keyboard accessible with standard link behavior
+- Hover states provide clear visual feedback with smooth color transitions
+- Icons inherit text color for consistent styling

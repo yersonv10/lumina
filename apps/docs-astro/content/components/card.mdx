@@ -1,0 +1,232 @@
+---
+title: React Card Components
+description: A React card component built with Tailwind CSS. Create UI cards for products, blogs, dashboards, and profiles with header, content, and footer sections.
+---
+
+import CardArticlePreview from "@/components/preview/card/card-article-preview";
+import CardHorizontalPreview from "@/components/preview/card/card-horizontal-preview";
+import CardListStylePreview from "@/components/preview/card/card-list-style-preview";
+import CardPreview from "@/components/preview/card/card-preview";
+import CardResponsivenessPreview from "@/components/preview/card/card-responsiveness-preview";
+import CardWithAvatarPreview from "@/components/preview/card/card-with-avatar-preview";
+import CardWithBadgePreview from "@/components/preview/card/card-with-badge-preview";
+import CardWithImagePreview from "@/components/preview/card/card-with-image-preview";
+import { getFileContent } from "@/utils/get-file-content";
+
+# Card
+
+The React Card component is a container for grouping related content and actions. It helps you organize information in a clear and structured way.
+
+You can use it to display content such as articles, user profiles, product details, or dashboard summaries. For example, a card can show a title, description, and buttons in one place.
+
+Built with React and styled with Tailwind CSS, it includes sections like header, content, and footer to help you easily structure your layout.
+
+<ComponentPreview
+  codeSnippet={getFileContent("/src/components/preview/card/card-preview.tsx")}
+  noPaddingOnPreviewForMobile
+>
+  <CardPreview />
+</ComponentPreview>
+
+## Installation
+
+Install the component using the Lumina CLI.
+
+```npm
+npx @lumina/cli add card
+```
+
+## Anatomy
+
+Import the components and arrange them to build a card.
+
+```tsx
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle
+} from "@/components/lumina/core/card";
+
+export function CardDemo() {
+  return (
+    <Card className="w-87.5">
+      <CardHeader>
+        <CardTitle>Create project</CardTitle>
+        <CardDescription>Deploy your new project in one-click.</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <form>{/* Your form or content here */}</form>
+      </CardContent>
+      <CardFooter className="flex justify-between">
+        <button>Cancel</button>
+        <button>Deploy</button>
+      </CardFooter>
+    </Card>
+  );
+}
+```
+
+## Examples
+
+### Mobile Responsiveness
+
+The card component is designed to be responsive in any devices.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/card/card-responsiveness-preview.tsx"
+  )}
+  noPaddingOnPreviewForMobile
+>
+  <CardResponsivenessPreview />
+</ComponentPreview>
+
+### Horizontal Card
+
+Display card content in a horizontal layout, useful for list items or featured content.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/card/card-horizontal-preview.tsx"
+  )}
+  noPaddingOnPreviewForMobile
+>
+  <CardHorizontalPreview />
+</ComponentPreview>
+
+### Article Card
+
+A card layout optimized for blog posts or news articles, featuring an image, title, excerpt, and metadata.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/card/card-article-preview.tsx"
+  )}
+  noPaddingOnPreviewForMobile
+>
+  <CardArticlePreview />
+</ComponentPreview>
+
+### List Style
+
+Use cards to create list-style interfaces, perfect for settings pages or item listings.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/card/card-list-style-preview.tsx"
+  )}
+  noPaddingOnPreviewForMobile
+>
+  <CardListStylePreview />
+</ComponentPreview>
+
+### With Avatar
+
+Combine cards with avatars to display user profiles or team members.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/card/card-with-avatar-preview.tsx"
+  )}
+  noPaddingOnPreviewForMobile
+>
+  <CardWithAvatarPreview />
+</ComponentPreview>
+
+### With Image
+
+Use images as the primary visual element in your cards.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/card/card-with-image-preview.tsx"
+  )}
+  noPaddingOnPreviewForMobile
+>
+  <CardWithImagePreview />
+</ComponentPreview>
+
+### With Badge
+
+Add badges to cards to highlight status, tags, or categories.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/card/card-with-badge-preview.tsx"
+  )}
+  noPaddingOnPreviewForMobile
+>
+  <CardWithBadgePreview />
+</ComponentPreview>
+
+## API Reference
+
+The Card component and its subcomponents are built on top of the standard HTML `div` element and accept all standard props.
+
+### Card
+
+Displays a card with header, content, and footer.
+
+| Prop        | Type     | Default | Description                                           |
+| :---------- | :------- | :------ | :---------------------------------------------------- |
+| `className` | `string` | -       | Additional CSS classes to apply to the card container |
+
+### CardHeader
+
+The header of the card.
+
+| Prop        | Type     | Default | Description                                   |
+| :---------- | :------- | :------ | :-------------------------------------------- |
+| `className` | `string` | -       | Additional CSS classes to apply to the header |
+
+### CardTitle
+
+The title of the card.
+
+| Prop        | Type     | Default | Description                                  |
+| :---------- | :------- | :------ | :------------------------------------------- |
+| `className` | `string` | -       | Additional CSS classes to apply to the title |
+
+### CardDescription
+
+The description of the card.
+
+| Prop        | Type     | Default | Description                                        |
+| :---------- | :------- | :------ | :------------------------------------------------- |
+| `className` | `string` | -       | Additional CSS classes to apply to the description |
+
+### CardAction
+
+The action area of the card, usually for buttons or links in the header.
+
+| Prop        | Type     | Default | Description                                        |
+| :---------- | :------- | :------ | :------------------------------------------------- |
+| `className` | `string` | -       | Additional CSS classes to apply to the action area |
+
+### CardContent
+
+The main content of the card.
+
+| Prop        | Type     | Default | Description                                         |
+| :---------- | :------- | :------ | :-------------------------------------------------- |
+| `className` | `string` | -       | Additional CSS classes to apply to the content area |
+
+### CardFooter
+
+The footer of the card.
+
+| Prop        | Type     | Default | Description                                   |
+| :---------- | :------- | :------ | :-------------------------------------------- |
+| `className` | `string` | -       | Additional CSS classes to apply to the footer |
+
+**NOTE:** The `CardTitle`, `CardDescription`, and `CardAction` components are designed to be used within the `CardHeader` component.
+
+## Accessibility
+
+- **Semantic structure:** Use `CardTitle` for headings and structure content clearly so users can understand what the card represents.
+- **Content grouping:** The card groups related content and actions together, making it easier to scan and understand.
+- **Keyboard support:** Ensure any interactive elements inside the card (such as buttons or links in `CardFooter` or `CardContent`) are accessible using the keyboard.
+- **Screen reader support:** Provide clear text for titles, descriptions, and actions so screen readers can describe the card content properly.

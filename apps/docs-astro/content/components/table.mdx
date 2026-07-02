@@ -1,0 +1,203 @@
+---
+title: React Table Components
+description: A React table component for displaying structured data in rows and columns. Used to present tabular data in a clear, easy-to-scan layout.
+---
+
+import TableFullBleedPreview from "@/components/preview/table/table-full-bleed-preview";
+import TableOrderHistoryPreview from "@/components/preview/table/table-order-history-preview";
+import TablePreview from "@/components/preview/table/table-preview";
+import TableRecentOrdersPreview from "@/components/preview/table/table-recent-orders-preview";
+import TableTransactionsPreview from "@/components/preview/table/table-transactions-preview";
+import { getFileContent } from "@/utils/get-file-content";
+
+# Table
+
+React Table components are used to display structured data in rows and columns. They are commonly used for lists, reports, dashboards, admin panels, and data-heavy interfaces where content needs to be easy to scan and compare.
+
+This Table component is built with React and styled using Tailwind CSS. It provides composable table parts, responsive horizontal scrolling, and flexible styling while keeping native table semantics.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/table/table-preview.tsx"
+  )}
+>
+  <TablePreview />
+</ComponentPreview>
+
+## Installation
+
+Install the component using the Lumina CLI.
+```npm
+npx @lumina/cli add table
+```
+
+## Anatomy
+
+Import the table parts and compose them to build the layout.
+
+```tsx
+import {
+  TableRoot,
+  TableHeader,
+  TableBody,
+  TableHead,
+  TableRow,
+  TableCell
+} from "@/components/lumina/core/table";
+
+const TablePreview = () => (
+  <TableRoot>
+    <TableHeader>
+      <TableRow>
+        <TableHead />
+      </TableRow>
+    </TableHeader>
+    <TableBody>
+      <TableRow>
+        <TableCell />
+      </TableRow>
+    </TableBody>
+  </TableRoot>
+);
+
+export default TablePreview;
+```
+
+## Usage
+
+```tsx
+import {
+  TableRoot,
+  TableHeader,
+  TableBody,
+  TableHead,
+  TableRow,
+  TableCell
+} from "@/components/lumina/core/table";
+
+export default function TableExample() {
+  return (
+    <TableRoot>
+      <TableHeader>
+        <TableRow>
+          <TableHead>Header</TableHead>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        <TableRow>
+          <TableCell>Cell</TableCell>
+        </TableRow>
+      </TableBody>
+    </TableRoot>
+  );
+}
+```
+
+## Examples
+
+### Full Bleed
+
+The `fullBleed` prop removes rounded corners and side borders, making the table span the full width of its container. This is useful for edge-to-edge layouts.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/table/table-full-bleed-preview.tsx"
+  )}
+>
+  <TableFullBleedPreview />
+</ComponentPreview>
+
+### Recent Orders
+
+A dashboard widget style table for displaying recent orders with product thumbnails and "See All" navigation.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/table/table-recent-orders-preview.tsx"
+  )}
+>
+  <TableRecentOrdersPreview />
+</ComponentPreview>
+
+### Order History
+
+An order history table that displays order status with color-coded badges and includes a sorting interface.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/table/table-order-history-preview.tsx"
+  )}
+>
+  <TableOrderHistoryPreview />
+</ComponentPreview>
+
+### Transactions
+
+A financial transactions table including category icons, price formatting, and status indicators.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/table/table-transactions-preview.tsx"
+  )}
+>
+  <TableTransactionsPreview />
+</ComponentPreview>
+
+## API Reference
+
+### TableRoot
+
+Wraps the entire table and manages layout and overflow behavior. Extends `native` table element props.
+
+| Prop        | Type      | Default | Description                                    |
+| ----------- | --------- | ------- | ---------------------------------------------- |
+| `fullBleed` | `boolean` | `false` | Remove rounded corners for edge-to-edge layout |
+| `className` | `string`  | -       | Additional CSS classes                         |
+
+### TableHeader
+
+The table header container. Extends `thead` element props.
+
+| Prop        | Type     | Description            |
+| ----------- | -------- | ---------------------- |
+| `className` | `string` | Additional CSS classes |
+
+### TableBody
+
+The table body container. Extends `tbody` element props.
+
+| Prop        | Type     | Description            |
+| ----------- | -------- | ---------------------- |
+| `className` | `string` | Additional CSS classes |
+
+### TableHead
+
+A table header cell. Extends `th` element props.
+
+| Prop        | Type     | Description            |
+| ----------- | -------- | ---------------------- |
+| `className` | `string` | Additional CSS classes |
+
+### TableRow
+
+A table row. Extends `tr` element props.
+
+| Prop        | Type     | Description            |
+| ----------- | -------- | ---------------------- |
+| `className` | `string` | Additional CSS classes |
+
+### TableCell
+
+A table data cell. Extends `td` element props.
+
+| Prop        | Type     | Description            |
+| ----------- | -------- | ---------------------- |
+| `className` | `string` | Additional CSS classes |
+
+## Accessibility
+
+- Uses native table elements (`table`, `thead`, `tbody`, `tr`, `th`, `td`)
+- Header cells use `<th>` for proper screen reader context
+- Left-aligned text for better readability
+- Horizontal scroll container for responsive behavior
+- Supports all standard table HTML attributes

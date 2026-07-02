@@ -1,0 +1,21 @@
+"use client";
+
+import { DateField, DateInput, DateSegment } from "@lumina/ui/core/date-field";
+import { Description } from "@lumina/ui/core/description";
+import { Label } from "@lumina/ui/core/label";
+import { CalendarDate } from "@internationalized/date";
+
+export default function DateFieldWithMinMax() {
+  return (
+    <div className="mx-auto flex w-full max-w-2xs flex-col gap-2">
+      <DateField
+        minValue={new CalendarDate(2026, 6, 1)}
+        maxValue={new CalendarDate(2026, 6, 30)}
+      >
+        <Label>Appointment date</Label>
+        <DateInput>{segment => <DateSegment segment={segment} />}</DateInput>
+        <Description>Available dates in June 2026.</Description>
+      </DateField>
+    </div>
+  );
+}

@@ -1,0 +1,112 @@
+---
+title: React Time Picker Components
+description: A React time picker component that allows users to select a time value. Used in forms to choose hours and minutes through an accessible time input.
+---
+
+import TimePickerCustomTriggerPreview from "@/components/preview/time-picker/time-picker-custom-trigger-preview";
+import TimePickerLabelPreview from "@/components/preview/time-picker/time-picker-label-preview";
+import TimePickerPreview from "@/components/preview/time-picker/time-picker-preview";
+import { getFileContent } from "@/utils/get-file-content";
+
+# Time Picker
+
+React Time Picker components allow users to select a specific time value using a clear, scrollable interface. They are commonly used in booking forms, scheduling flows, reminders, and time-based filters.
+
+For a segment-based keyboard input, see the [Time Field](/components/time-field) component.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/time-picker/time-picker-preview.tsx"
+  )}
+>
+  <TimePickerPreview client:visible />
+</ComponentPreview>
+
+## Installation
+
+The Time Picker relies on the `react-aria-components` and `react-stately` libraries.
+
+Install the component using the Lumina CLI.
+```npm
+npx @lumina/cli add time-picker
+```
+
+## Anatomy
+
+Import the component and pass the required props.
+
+```tsx
+import {
+  TimePicker,
+  TimePickerTrigger
+} from "@/components/lumina/core/time-picker";
+
+export const TimePickerExample = () => (
+  <TimePicker onSelect={date => console.log(date)}>
+    <TimePickerTrigger>Select Time</TimePickerTrigger>
+  </TimePicker>
+);
+```
+
+## Examples
+
+### Basic Usage
+
+A standard time picker implementation using `react-aria` for accessibility. It provides a trigger button that opens a popover with scrollable columns for hours, minutes, and AM/PM selection.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/time-picker/time-picker-preview.tsx"
+  )}
+>
+  <TimePickerPreview client:visible />
+</ComponentPreview>
+
+### With Label
+
+You can combine the Time Picker with a label and other elements to create a complete form control.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/time-picker/time-picker-label-preview.tsx"
+  )}
+>
+  <TimePickerLabelPreview client:visible />
+</ComponentPreview>
+
+### Custom Trigger
+
+The `TimePickerTrigger` can be customized or replaced with any element that accepts refs and props.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/time-picker/time-picker-custom-trigger-preview.tsx"
+  )}
+>
+  <TimePickerCustomTriggerPreview client:visible />
+</ComponentPreview>
+
+## API Reference
+
+### TimePicker
+
+The popover-based time picker component.
+
+| Prop       | Type                   | Default | Description                                        |
+| :--------- | :--------------------- | :------ | :------------------------------------------------- |
+| `children` | `React.ReactNode`      | -       | Trigger element (usually `TimePickerTrigger`)      |
+| `onSelect` | `(date: Date) => void` | -       | Callback when hour/minute/period selection updates |
+
+### TimePickerTrigger
+
+Extends `Button` props from `react-aria-components`.
+
+| Prop        | Type     | Description                          |
+| :---------- | :------- | :----------------------------------- |
+| `className` | `string` | Custom styles for the trigger button |
+
+## Accessibility
+
+- **Keyboard Support**: Users can navigate the popover columns using `Arrow` keys and select values with `Enter`.
+- **Screen Readers**: Uses `MenuTrigger` and `Popover` roles to ensure screen readers announce the interactive elements correctly.
+- **Focus Management**: Focus is moved into the popover when opened and returned to the trigger upon selection or dismissal.

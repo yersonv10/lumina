@@ -1,0 +1,107 @@
+---
+title: React Toggle Switch Components
+description: A React toggle switch component for enabling or disabling features. An accessible on/off control built on a checkbox, commonly used in settings and preferences.
+---
+
+import ToggleBasicPreview from "@/components/preview/toggle/toggle-basic-preview";
+import ToggleControlledPreview from "@/components/preview/toggle/toggle-controlled-preview";
+import ToggleNoLabelPreview from "@/components/preview/toggle/toggle-no-label-preview";
+import ToggleSizesPreview from "@/components/preview/toggle/toggle-sizes-preview";
+import { getFileContent } from "@/utils/get-file-content";
+
+# Toggle
+
+The Toggle component, commonly referred to as a **switch**, allows users to turn a setting **on or off**. It represents a binary choice and is typically used for preferences, feature flags, and configuration options.
+
+This component is built on a native checkbox input and styled using Tailwind CSS. It supports labels, multiple sizes, controlled and uncontrolled usage, and full keyboard and screen reader accessibility.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/toggle/toggle-basic-preview.tsx"
+  )}
+>
+  <ToggleBasicPreview client:visible />
+</ComponentPreview>
+
+## Installation
+
+Install the component using the Lumina CLI.
+
+```npm
+npx @lumina/cli add toggle
+```
+
+## Usage
+
+```tsx
+import { Toggle } from "@/components/lumina/core/toggle";
+
+export default function ToggleBasic() {
+  return <Toggle label="Enable Feature X" defaultChecked />;
+}
+```
+
+## Examples
+
+### Sizes
+
+The toggle switch comes in `sm` and `md` sizes. The default size is `sm`.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/toggle/toggle-sizes-preview.tsx"
+  )}
+>
+  <ToggleSizesPreview client:visible />
+</ComponentPreview>
+
+Note: The `size` prop adjusts the dimensions of the track and the thumb for both `sm` and `md` sizes.
+
+### Label
+
+The label is optional. When omitted, provide an accessible name using `aria-label`.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/toggle/toggle-no-label-preview.tsx"
+  )}
+>
+  <ToggleNoLabelPreview client:visible />
+</ComponentPreview>
+
+### Controlled State
+
+Use the `checked` and `onChange` props to fully control the toggle state.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/toggle/toggle-controlled-preview.tsx"
+  )}
+>
+  <ToggleControlledPreview client:visible />
+</ComponentPreview>
+
+**Note:**
+Visual state is handled using CSS `peer` and `peer-checked` utilities. The primary color is applied to the background of the track when the switch is checked (`peer-checked:bg-primary-500`). The thumb position animates based on the checked state.
+
+## API Reference
+
+### Toggle
+
+Extends `input` element props.
+
+| Prop        | Type           | Default | Description                                                                                                |
+| :---------- | :------------- | :------ | :--------------------------------------------------------------------------------------------------------- |
+| `label`     | `string`       | -       | Optional text label displayed next to the switch.                                                          |
+| `size`      | `'sm' \| 'md'` | `'sm'`  | The size of the toggle switch.                                                                             |
+| `className` | `string`       | -       | Additional CSS classes for the **hidden input element** (use standard HTML props for the overall control). |
+
+## Accessibility
+
+- Built on a standard HTML `<input type="checkbox">` which provides native keyboard and accessibility support.
+- Toggle the switch using the **Space** key when the component is focused.
+- Visible label is properly associated via `htmlFor` and `id`
+- Input is visually hidden using `sr-only` but remains available to screen readers
+- Works correctly with assistive technologies and form semantics
+
+Note: This component is designed for use inside forms, settings pages, and preference panels.

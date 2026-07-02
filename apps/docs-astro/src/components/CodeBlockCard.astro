@@ -1,0 +1,52 @@
+---
+import { highlight } from "@/lib/highlighter";
+
+interface Props {
+  snippet: string;
+  lang?: string;
+  fileName?: string;
+  showLineNumbers?: boolean;
+}
+
+const { snippet, lang = "tsx", fileName, showLineNumbers = false } = Astro.props;
+
+const html = await highlight(snippet, lang);
+---
+
+<div
+  class:list={[
+    "not-prose my-6 overflow-hidden rounded-(--radius-card) border border-border",
+    showLineNumbers && "[&_.line]:before:mr-4 [&_.line]:before:inline-block [&_.line]:before:w-6 [&_.line]:before:text-right [&_.line]:before:text-text-muted [&_.line]:before:content-[counter(line)] [&_.line]:before:[counter-increment:line] [&_code]:[counter-reset:line]",
+  ]}
+>
+  {
+    fileName && (
+      <div class="flex items-center justify-between border-b border-border bg-background-soft px-4 py-2">
+        <span class="font-mono text-xs text-text-secondary">{fileName}</span>
+        <button type="button" data-copy-source class="text-xs text-text-secondary hover:text-text-primary">
+          Copy
+        </button>
+      </div>
+    )
+  }
+  <div class="overflow-x-auto text-sm [&_pre]:p-4" set:html={html} data-raw-source={snippet} />
+</div>
+
+<script>
+  function initCopyButtons(root: ParentNode) {
+    root.querySelectorAll<HTMLButtonElement>("[data-copy-source]").forEach((btn) => {
+      if (btn.dataset.wired) return;
+      btn.dataset.wired = "true";
+      btn.addEventListener("click", async () => {
+        const source = btn.closest("div")?.parentElement?.querySelector<HTMLElement>("[data-raw-source]");
+        const text = source?.dataset.rawSource ?? "";
+        await navigator.clipboard.writeText(text);
+        const original = btn.textContent;
+        btn.textContent = "Copied";
+        setTimeout(() => (btn.textContent = original), 1500);
+      });
+    });
+  }
+  initCopyButtons(document);
+  document.addEventListener("astro:after-swap", () => initCopyButtons(document));
+</script>

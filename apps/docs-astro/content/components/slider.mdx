@@ -1,0 +1,132 @@
+---
+title: React Slider Components
+description: A React slider component built with Tailwind CSS. Create range and input sliders with drag handles, step values, and support for single- or dual-handle selection.
+---
+
+import SliderDefaultPreview from "@/components/preview/slider/slider-default-preview";
+import SliderDisabledPreview from "@/components/preview/slider/slider-disabled-preview";
+import SliderRangePreview from "@/components/preview/slider/slider-range-preview";
+import SliderStepPreview from "@/components/preview/slider/slider-step-preview";
+import SliderValuePreview from "@/components/preview/slider/slider-value-preview";
+import { getFileContent } from "@/utils/get-file-content";
+
+# Slider
+
+The React Slider component lets users select a value from a range by dragging a handle. It is commonly used for inputs like volume, price range, or brightness.
+
+It allows users to move the slider to set a value or select a range using two handles. For example, users can choose a price range from 0 to 100.
+
+Built with React and styled using Tailwind CSS. It supports single and range sliders, step values, keyboard navigation, and accessible interactions.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/slider/slider-default-preview.tsx"
+  )}
+>
+  <SliderDefaultPreview client:visible />
+</ComponentPreview>
+
+## Installation
+
+Install the component using the Lumina CLI.
+```npm
+npx @lumina/cli add slider
+```
+
+## Anatomy
+
+Import the component and pass the required props.
+
+```tsx
+import { Slider } from "@/components/lumina/core/slider";
+
+export const SliderExample = () => (
+  <Slider defaultValue={[50]} maxValue={100} minValue={0} />
+);
+```
+
+## Examples
+
+### Default
+
+Basic single-thumb slider.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/slider/slider-default-preview.tsx"
+  )}
+>
+  <SliderDefaultPreview client:visible />
+</ComponentPreview>
+
+### Range
+
+Slider with two thumbs for selecting a range of values.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/slider/slider-range-preview.tsx"
+  )}
+>
+  <SliderRangePreview client:visible />
+</ComponentPreview>
+
+### Step
+
+Slider with a custom step value.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/slider/slider-step-preview.tsx"
+  )}
+>
+  <SliderStepPreview client:visible />
+</ComponentPreview>
+
+### Value Display
+
+Sliders with text and tooltip value displays using the `thumbValueType` prop.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/slider/slider-value-preview.tsx"
+  )}
+>
+  <SliderValuePreview client:visible />
+</ComponentPreview>
+
+### Disabled
+
+The disabled state of the slider.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/slider/slider-disabled-preview.tsx"
+  )}
+>
+  <SliderDisabledPreview client:visible />
+</ComponentPreview>
+
+## API Reference
+
+### Slider
+
+| Prop             | Type                                  | Default    | Description                                              |
+| :--------------- | :------------------------------------ | :--------- | :------------------------------------------------------- |
+| `defaultValue`   | `number \| number[]`                  | -          | The initial value of the slider.                         |
+| `minValue`       | `number`                              | `0`        | The smallest value allowed.                              |
+| `maxValue`       | `number`                              | `100`      | The largest value allowed.                               |
+| `step`           | `number`                              | `1`        | The increment between allowed values.                    |
+| `isDisabled`     | `boolean`                             | `false`    | Whether the slider is disabled.                          |
+| `thumbValueType` | `'hidden' \| 'text' \| 'tooltip'`     | `'hidden'` | How to display the current value next to the thumb.      |
+| `onChange`       | `(value: number \| number[]) => void` | -          | Handler that is called when the value changes.           |
+| `className`      | `string`                              | -          | Additional CSS classes to apply to the slider container. |
+
+## Accessibility
+
+- **Keyboard support:** Users can adjust the slider value using keyboard keys when the `thumb` is focused.
+- **Focus management:** Each thumb can receive focus, and focus styles appear when navigating with the keyboard.
+- **Value control:** Users can move the thumb to increase or decrease the value within the defined `range` and `step`.
+- **Range support:** When using two thumbs, users can control both `minimum` and `maximum` values independently.
+- **Disabled state:** When `disabled`, the slider cannot be focused or changed.
+- **Screen reader support:** Provide clear labels for the slider so screen readers can describe its purpose and current value.

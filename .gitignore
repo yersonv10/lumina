@@ -1,0 +1,51 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Testing
+coverage
+
+# Turbo
+.turbo
+
+# Vercel
+.vercel
+
+# Astro
+.astro/
+
+# Wrangler
+.wrangler/
+
+# Build Outputs
+.next/
+out/
+build
+dist
+
+
+# Debug
+
+
+# Misc
+.DS_Store
+*.pem
+
+.agents
+.continue
+.mcpjam
+skills-lock.json
+.commandcode
+
+# Claude Code local session state
+.claude/

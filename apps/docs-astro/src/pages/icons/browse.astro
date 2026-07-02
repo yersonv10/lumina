@@ -1,0 +1,512 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import SiteHeader from "@/components/SiteHeader.astro";
+import * as LuminaIcons from "@lumina/icons";
+
+export const prerender = true;
+
+const icons = (Object.entries(LuminaIcons) as [string, any][])
+  .filter(([, C]) => typeof C === "function")
+  .sort((a, b) => a[0].localeCompare(b[0]));
+
+// Split "SackDollar" / "ArrowLeftSquare2" into ["sack","dollar"] / ["arrow","left","square","2"]
+// so any word in a multi-word icon name is searchable.
+function tokenize(name: string): string[] {
+  return name
+    .replace(/([a-z])([A-Z])/g, "$1 $2")
+    .replace(/([A-Za-z])([0-9])/g, "$1 $2")
+    .toLowerCase()
+    .split(/\s+/)
+    .filter(Boolean);
+}
+
+// Synonyms: if an icon's tokens contain a key, its aliases become searchable.
+// This is what makes "money" find SackDollar/Wallet/CreditCard, "delete" find
+// Trash, "home" find House-y icons, etc.
+const SYNONYMS: Record<string, string[]> = {
+  home: ["house", "main", "start"],
+  house: ["home"],
+  dollar: ["money", "cash", "currency", "finance", "payment", "price", "usd"],
+  doller: ["money", "dollar", "cash", "currency"],
+  euro: ["money", "currency", "finance", "eur"],
+  pound: ["money", "currency", "gbp"],
+  bitcoin: ["money", "crypto", "currency", "btc"],
+  sack: ["money", "bag"],
+  coin: ["money", "cash", "currency"],
+  coins: ["money", "cash", "currency"],
+  banknote: ["money", "cash", "bill", "currency"],
+  wallet: ["money", "cash", "finance", "payment"],
+  card: ["payment", "money", "credit"],
+  credit: ["money", "payment", "finance", "card"],
+  bank: ["money", "finance"],
+  piggy: ["money", "savings", "finance"],
+  receipt: ["money", "invoice", "bill", "payment"],
+  calculator: ["math", "finance"],
+  percent: ["discount", "sale", "off"],
+  safe: ["vault", "money", "secure"],
+  cart: ["shopping", "buy", "ecommerce", "store"],
+  bag: ["shopping", "buy", "store"],
+  store: ["shop", "market", "ecommerce"],
+  shop: ["store", "market"],
+  trash: ["delete", "remove", "bin", "garbage", "can"],
+  xmark: ["close", "cancel", "delete", "x", "remove"],
+  close: ["cancel", "x", "remove"],
+  check: ["done", "confirm", "ok", "success", "tick"],
+  gear: ["settings", "config", "preferences", "cog", "options"],
+  settings: ["gear", "config", "cog", "options", "preferences"],
+  sliders: ["settings", "filter", "adjust", "controls"],
+  envelope: ["mail", "email", "message", "inbox", "letter"],
+  mail: ["email", "envelope", "message", "inbox"],
+  message: ["chat", "comment", "sms", "bubble"],
+  comment: ["chat", "message", "bubble"],
+  bell: ["notification", "alert", "reminder"],
+  search: ["find", "magnifier", "zoom", "lookup"],
+  user: ["person", "account", "profile", "avatar", "member"],
+  users: ["people", "team", "group", "members"],
+  image: ["picture", "photo", "gallery"],
+  gallery: ["image", "picture", "photos"],
+  camera: ["photo", "picture"],
+  video: ["movie", "film", "media"],
+  music: ["audio", "song", "media"],
+  pencil: ["edit", "write", "modify"],
+  pen: ["edit", "write"],
+  edit: ["pencil", "write", "modify"],
+  heart: ["like", "love", "favorite"],
+  star: ["favorite", "rating", "bookmark"],
+  bookmark: ["save", "favorite"],
+  download: ["save", "import"],
+  upload: ["send", "export"],
+  trend: ["chart", "graph", "analytics"],
+  chart: ["graph", "analytics", "stats"],
+  bar: ["chart", "graph"],
+  pie: ["chart", "graph"],
+  gauge: ["speed", "meter", "dashboard"],
+  activity: ["pulse", "health", "graph"],
+  power: ["on", "off", "shutdown"],
+  lock: ["secure", "private", "password"],
+  locked: ["lock", "secure", "private"],
+  unlock: ["open", "access"],
+  key: ["password", "access", "login"],
+  shield: ["security", "protect", "safe"],
+  eye: ["view", "show", "visible", "preview"],
+  calendar: ["date", "schedule", "event"],
+  clock: ["time", "watch"],
+  timer: ["time", "stopwatch", "countdown"],
+  alarm: ["clock", "time", "reminder"],
+  map: ["location", "navigation"],
+  pin: ["location", "map", "marker", "place"],
+  marker: ["location", "map", "pin"],
+  compass: ["navigation", "direction"],
+  globe: ["world", "web", "internet", "language"],
+  phone: ["call", "mobile", "contact", "telephone"],
+  telephone: ["phone", "call", "contact"],
+  monitor: ["screen", "display", "desktop", "computer"],
+  smartphone: ["phone", "mobile", "device"],
+  laptop: ["computer", "device"],
+  tv: ["television", "screen"],
+  cloud: ["weather", "storage"],
+  sun: ["weather", "day", "light", "bright"],
+  moon: ["night", "dark", "sleep"],
+  rain: ["weather", "storm"],
+  snow: ["weather", "winter", "cold"],
+  wind: ["weather", "air"],
+  fire: ["flame", "hot", "burn"],
+  flame: ["fire", "hot", "burn"],
+  bolt: ["lightning", "power", "flash", "energy"],
+  gift: ["present", "reward", "box"],
+  trophy: ["award", "winner", "prize"],
+  award: ["prize", "medal", "winner"],
+  bug: ["error", "debug", "issue"],
+  code: ["developer", "programming"],
+  terminal: ["console", "command", "code"],
+  database: ["storage", "server", "data"],
+  server: ["hosting", "database"],
+  package: ["box", "shipping", "delivery"],
+  inbox: ["mail", "messages"],
+  wifi: ["network", "internet", "signal"],
+  battery: ["power", "charge", "energy"],
+  bluetooth: ["wireless", "connect"],
+  link: ["url", "chain", "connect"],
+  share: ["social", "send"],
+  filter: ["funnel", "sort"],
+  funnel: ["filter"],
+  grid: ["layout", "apps", "menu"],
+  layout: ["grid", "template", "page"],
+  plus: ["add", "new", "create"],
+  minus: ["remove", "subtract"],
+  arrow: ["direction", "navigate"],
+  chevron: ["arrow", "direction"],
+  refresh: ["reload", "sync", "update"],
+  reload: ["refresh", "sync"],
+  play: ["media", "video", "start"],
+  pause: ["media", "stop"],
+  volume: ["sound", "audio", "speaker"],
+  microphone: ["mic", "audio", "record"],
+  headphone: ["audio", "music", "sound"],
+  leaf: ["nature", "eco", "plant"],
+  tree: ["nature", "plant", "forest"],
+  droplet: ["water", "drop", "liquid"],
+  thermometer: ["temperature", "weather", "hot", "cold"],
+  umbrella: ["weather", "rain"],
+  rocket: ["launch", "startup", "space"],
+  bulb: ["idea", "light", "lamp"],
+  lightbulb: ["idea", "light", "lamp"],
+  cart2: ["shopping", "buy"],
+  car: ["vehicle", "auto", "transport", "drive"],
+  bus: ["vehicle", "transport", "travel"],
+  train: ["vehicle", "transport", "railway", "travel"],
+  plane: ["airplane", "flight", "travel", "transport"],
+  bike: ["bicycle", "cycle", "vehicle"],
+  ship: ["boat", "sea", "transport", "travel"],
+  anchor: ["ship", "boat", "nautical", "sea"],
+  fuel: ["gas", "petrol", "station", "energy"],
+  face: ["emoji", "emoticon", "smiley", "mood", "reaction"],
+  smile: ["emoji", "happy", "face"],
+  frown: ["emoji", "sad", "face"],
+  meh: ["emoji", "neutral", "face"],
+  laugh: ["emoji", "happy", "face"],
+  angry: ["emoji", "mad", "face"],
+  bold: ["format", "text", "strong"],
+  italic: ["format", "text", "emphasis"],
+  underline: ["format", "text"],
+  strikethrough: ["format", "text"],
+  heading: ["title", "text", "header", "format"],
+  paragraph: ["text", "format"],
+  quote: ["blockquote", "text", "citation"],
+  list: ["items", "menu", "bullets"],
+  undo: ["back", "revert", "history"],
+  redo: ["forward", "repeat", "history"],
+  sync: ["refresh", "reload", "update"],
+  scan: ["qr", "barcode", "camera", "scanner"],
+  zoom: ["magnify", "scale", "search"],
+  move: ["drag", "arrows", "reposition"],
+  git: ["version", "code", "branch", "vcs"],
+  braces: ["code", "curly", "json", "object"],
+  brackets: ["code", "array", "square"],
+  commit: ["git", "code", "save"],
+  merge: ["git", "combine"],
+  fork: ["git", "branch", "copy"],
+  hexagon: ["shape", "polygon"],
+  octagon: ["shape", "polygon", "stop"],
+  pentagon: ["shape", "polygon"],
+  diamond: ["shape", "gem", "rhombus"],
+  mic: ["microphone", "audio", "record", "voice"],
+  pill: ["medicine", "drug", "health", "medical", "capsule"],
+  stethoscope: ["health", "medical", "doctor"],
+  aid: ["health", "medical", "help", "kit"],
+  pulse: ["heart", "health", "activity", "beat"],
+  panel: ["layout", "sidebar", "sider"],
+  corner: ["arrow", "direction"],
+  qr: ["code", "scan", "barcode"],
+  barcode: ["scan", "code", "product"],
+  ticket: ["event", "pass", "coupon", "voucher"],
+  coupon: ["discount", "voucher", "ticket", "deal"],
+  toggle: ["switch", "on", "off", "control"],
+  target: ["aim", "goal", "focus", "bullseye"],
+  checkbox: ["check", "done", "task", "select"],
+  sunrise: ["weather", "morning", "sun", "dawn"],
+  sunset: ["weather", "evening", "sun", "dusk"],
+  equalizer: ["audio", "sound", "sliders", "music"],
+  subtitle: ["caption", "cc", "video"],
+  cast: ["screen", "stream", "chromecast", "tv"],
+  airplay: ["screen", "stream", "apple", "tv"],
+  crop: ["image", "cut", "resize"],
+  flip: ["mirror", "reflect", "transform"],
+  contrast: ["brightness", "display", "color"],
+  kanban: ["board", "tasks", "columns", "project"],
+  dashboard: ["overview", "analytics", "layout", "home"],
+  cake: ["birthday", "dessert", "food", "celebration"],
+  egg: ["food", "breakfast"],
+  ice: ["cream", "dessert", "food"],
+  cup: ["drink", "soda", "beverage", "cup"],
+  cookie: ["food", "sweet", "biscuit"],
+  utensils: ["food", "cutlery", "fork", "knife", "restaurant", "eat"],
+  droplets: ["water", "drops", "liquid"],
+  rainbow: ["weather", "colors", "pride"],
+  moon: ["night", "dark", "sleep", "weather"],
+  grip: ["drag", "move", "handle", "reorder"],
+  columns: ["layout", "grid", "split"],
+  rows: ["layout", "grid", "list"],
+  contact: ["user", "person", "card", "address"],
+  badge: ["id", "card", "pass"],
+  id: ["card", "identity", "badge"],
+  dog: ["pet", "animal", "puppy"],
+  cat: ["pet", "animal", "kitten"],
+  bird: ["animal", "tweet", "fly"],
+  fish: ["animal", "sea", "aquarium"],
+  paw: ["pet", "animal", "print"],
+  flower: ["nature", "plant", "bloom"],
+  sprout: ["nature", "plant", "grow", "seedling", "eco"],
+  mountain: ["nature", "hill", "peak", "outdoor"],
+  cpu: ["processor", "chip", "hardware", "computer"],
+  hard: ["drive", "disk", "storage", "hardware"],
+  drive: ["disk", "storage", "hard"],
+  usb: ["port", "drive", "hardware", "connector"],
+  memory: ["ram", "stick", "hardware", "storage"],
+  router: ["network", "wifi", "modem", "internet"],
+  satellite: ["dish", "signal", "antenna", "network"],
+  plug: ["power", "electric", "energy", "charge"],
+  keyboard: ["type", "keys", "input"],
+  json: ["code", "data", "file"],
+  notebook: ["notes", "book", "journal", "diary"],
+  note: ["notes", "memo", "reminder"],
+  pen: ["draw", "write", "design", "vector"],
+  paintbrush: ["paint", "draw", "art", "design"],
+  paint: ["draw", "art", "design", "fill"],
+  eraser: ["delete", "rubber", "clear"],
+  pipette: ["eyedropper", "color", "pick", "sample"],
+  aperture: ["camera", "photo", "lens"],
+  frame: ["photo", "border", "picture"],
+  stamp: ["approve", "seal", "mark"],
+  infinity: ["loop", "endless", "unlimited"],
+  asterisk: ["star", "required", "wildcard"],
+  ellipsis: ["more", "dots", "menu", "options"],
+  slash: ["divide", "line", "forward"],
+  equal: ["equals", "math"],
+  divide: ["math", "divided", "obelus"],
+  dot: ["point", "circle", "bullet"],
+  align: ["text", "format", "justify"],
+  indent: ["text", "tab", "format"],
+  outdent: ["text", "format"],
+  wrap: ["text", "format"],
+  subscript: ["text", "format", "math"],
+  superscript: ["text", "format", "math", "power"],
+  bed: ["sleep", "bedroom", "hotel", "furniture"],
+  sofa: ["couch", "furniture", "living"],
+  lamp: ["light", "desk", "lighting", "furniture"],
+  door: ["exit", "entrance", "room"],
+  tent: ["camping", "outdoor", "travel"],
+  luggage: ["travel", "suitcase", "bag", "trip"],
+  backpack: ["bag", "travel", "school"],
+  waves: ["water", "sea", "ocean", "sound"],
+  presentation: ["slides", "chart", "board", "meeting"],
+  fingerprint: ["security", "biometric", "touch", "id"],
+  scan: ["face", "biometric", "security", "qr"],
+  shield: ["security", "protect", "safe", "guard"],
+  key: ["password", "access", "login", "secure"],
+  headset: ["support", "audio", "call", "gaming"],
+  film: ["movie", "video", "cinema", "media"],
+  clapperboard: ["movie", "film", "video", "director"],
+  gamepad: ["game", "controller", "console", "play"],
+  dice: ["game", "random", "roll", "chance"],
+  puzzle: ["game", "piece", "extension", "plugin"],
+  popcorn: ["movie", "cinema", "snack", "food"],
+  disc: ["cd", "vinyl", "record", "music", "album"],
+  wrench: ["tool", "settings", "fix", "repair"],
+  screwdriver: ["tool", "fix", "repair"],
+  hammer: ["tool", "build", "fix", "repair"],
+  toolbox: ["tools", "kit", "repair"],
+  football: ["soccer", "ball", "sport"],
+  basketball: ["ball", "sport", "nba"],
+  tennis: ["ball", "sport"],
+  dumbbell: ["gym", "fitness", "weight", "exercise", "workout"],
+  whistle: ["referee", "sport", "coach"],
+  beer: ["drink", "alcohol", "pub", "bar"],
+  cocktail: ["drink", "alcohol", "bar", "martini"],
+  donut: ["food", "sweet", "dessert", "doughnut"],
+  hamburger: ["food", "burger", "fastfood", "meal"],
+  candy: ["sweet", "food", "sugar"],
+  banana: ["fruit", "food"],
+  tooth: ["dental", "dentist", "health"],
+  bone: ["skeleton", "health", "dog"],
+  ear: ["hearing", "listen", "body"],
+  hand: ["palm", "gesture", "wave"],
+  syringe: ["injection", "vaccine", "medical", "health", "shot"],
+  truck: ["delivery", "shipping", "transport", "vehicle"],
+  motorcycle: ["bike", "vehicle", "transport"],
+  sailboat: ["boat", "sea", "travel", "sailing"],
+  ambulance: ["emergency", "medical", "hospital", "vehicle"],
+  traffic: ["light", "signal", "road"],
+  parking: ["car", "park", "road"],
+  atm: ["bank", "money", "cash", "machine"],
+  candlestick: ["chart", "stock", "trading", "finance"],
+  transfer: ["money", "send", "payment"],
+  alert: ["warning", "caution", "danger", "attention"],
+  copyright: ["legal", "rights", "license"],
+  registered: ["trademark", "legal", "brand"],
+  crosshair: ["target", "aim", "focus"],
+  route: ["path", "navigation", "map", "direction"],
+  milestone: ["signpost", "goal", "marker"],
+  signal: ["network", "wifi", "reception", "bars"],
+  ring: ["bell", "notification", "alert"],
+  mushroom: ["fungi", "food", "nature"],
+  cactus: ["plant", "desert", "nature"],
+  apple: ["fruit", "food"],
+  grapes: ["fruit", "food", "wine"],
+  skull: ["death", "danger", "bones", "pirate"],
+  lungs: ["health", "medical", "breathe", "organ"],
+  dna: ["genetics", "biology", "science", "helix"],
+  bandage: ["health", "medical", "plaster", "aid"],
+  wheelchair: ["accessibility", "disabled", "health"],
+  armchair: ["furniture", "chair", "seat", "living"],
+  candle: ["light", "flame", "wax"],
+  bathtub: ["bath", "bathroom", "washroom"],
+  shower: ["bathroom", "wash", "water"],
+  toilet: ["bathroom", "wc", "washroom"],
+  iron: ["laundry", "clothes", "press"],
+  mirror: ["reflection", "glass", "beauty"],
+  robot: ["bot", "ai", "android", "automation"],
+  circuit: ["board", "electronics", "chip", "tech"],
+  sim: ["card", "phone", "network"],
+  sd: ["card", "memory", "storage"],
+  cable: ["wire", "connector", "plug"],
+  webcam: ["camera", "video", "stream"],
+  scroll: ["document", "paper", "parchment"],
+  book: ["read", "library", "learn", "story"],
+  document: ["file", "paper", "text"],
+  pi: ["math", "constant", "greek"],
+  sigma: ["math", "sum", "greek"],
+  root: ["math", "square", "sqrt"],
+  ampersand: ["and", "symbol"],
+  function: ["math", "code", "fx"],
+  rotate: ["turn", "spin", "refresh"],
+  highlighter: ["marker", "pen", "text"],
+  swatches: ["color", "palette", "samples", "design"],
+  vector: ["design", "nodes", "points", "path"],
+  spline: ["curve", "bezier", "design"],
+  gem: ["diamond", "jewel", "premium", "crystal"],
+  magnet: ["attract", "magnetic", "snap"],
+  telescope: ["space", "astronomy", "stars", "science"],
+  radar: ["detect", "scan", "sonar"],
+  tornado: ["weather", "storm", "twister"],
+  hexagon: ["shape", "polygon"],
+  gauge: ["speed", "meter", "dashboard", "performance"],
+  anvil: ["forge", "blacksmith", "tool"],
+  hail: ["weather", "storm", "ice"],
+};
+
+const iconData = icons.map(([name, Icon]) => {
+  const tokens = tokenize(name);
+  const extra = new Set<string>();
+  for (const t of tokens) for (const s of SYNONYMS[t] ?? []) extra.add(s);
+  const keywords = [name.toLowerCase(), ...tokens, ...extra].join(" ");
+  return { name, Icon, keywords };
+});
+---
+
+<BaseLayout
+  title="Browse Icons"
+  description={`Search ${icons.length}+ free, open-source React SVG icons from Lumina.`}
+>
+  <SiteHeader />
+
+  <main class="mx-auto max-w-6xl px-6 py-12">
+    <header class="max-w-2xl">
+      <a href="/icons" class="inline-flex items-center gap-1.5 text-sm text-text-secondary transition hover:text-text-primary">
+        <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="m15 18-6-6 6-6"></path>
+        </svg>
+        Icons docs
+      </a>
+      <h1 class="font-display mt-3 text-4xl font-medium text-text-primary md:text-5xl">
+        Browse all icons
+      </h1>
+      <p class="mt-4 text-lg text-text-secondary">
+        {icons.length} icons. Click any one to copy its import statement.
+      </p>
+    </header>
+
+    <!-- Search -->
+    <div class="sticky top-16 z-30 -mx-6 mt-8 border-y border-border bg-background/90 px-6 py-4 backdrop-blur">
+      <div class="flex flex-wrap items-center gap-3">
+        <div class="relative flex-1 md:min-w-80">
+          <svg class="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path>
+          </svg>
+          <input
+            id="icon-search"
+            type="search"
+            placeholder="Search icons…"
+            autocomplete="off"
+            class="w-full rounded-(--radius-control) border border-border bg-background-raised py-2 pr-3 pl-9 text-sm text-text-primary outline-none placeholder:text-text-muted focus-visible:ring-2 focus-visible:ring-primary-500"
+          />
+        </div>
+        <p id="icon-count" class="font-mono text-xs text-text-muted">{icons.length} icons</p>
+      </div>
+    </div>
+
+    <!-- Grid -->
+    <ul id="icon-grid" class="mt-6 grid grid-cols-[repeat(auto-fill,minmax(96px,1fr))] gap-2">
+      {
+        iconData.map(({ name, Icon, keywords }) => (
+          <li data-icon data-name={keywords}>
+            <button
+              type="button"
+              data-copy={`import { ${name} } from "@lumina/icons";`}
+              title={name}
+              class="group flex aspect-square w-full flex-col items-center justify-center gap-2 rounded-(--radius-control) border border-transparent p-2 text-text-secondary transition hover:border-border hover:bg-background-soft hover:text-text-primary"
+            >
+              <Icon size={26} />
+              <span class="w-full truncate text-center text-[10px] leading-tight text-text-muted group-hover:text-text-secondary">
+                {name}
+              </span>
+            </button>
+          </li>
+        ))
+      }
+    </ul>
+
+    <p id="icon-empty" class="hidden py-16 text-center text-text-secondary">
+      No icons match your search.
+    </p>
+  </main>
+
+  <!-- Copy toast -->
+  <div
+    id="copy-toast"
+    class="pointer-events-none fixed bottom-6 left-1/2 z-50 -translate-x-1/2 translate-y-2 rounded-(--radius-control) bg-background-inverted px-4 py-2 text-sm font-medium text-background opacity-0 shadow-lg transition"
+  >
+    Copied import
+  </div>
+</BaseLayout>
+
+<script>
+  function initIconGallery() {
+    const search = document.getElementById("icon-search") as HTMLInputElement | null;
+    const grid = document.getElementById("icon-grid");
+    const count = document.getElementById("icon-count");
+    const empty = document.getElementById("icon-empty");
+    const toast = document.getElementById("copy-toast");
+    if (!search || !grid) return;
+
+    const items = Array.from(grid.querySelectorAll<HTMLElement>("[data-icon]"));
+    const total = items.length;
+
+    function filter() {
+      const q = search!.value.trim().toLowerCase();
+      const terms = q.split(/\s+/).filter(Boolean);
+      let shown = 0;
+      for (const el of items) {
+        const kw = el.dataset.name || "";
+        // Every typed term must appear somewhere in the icon's keywords.
+        const match = terms.length === 0 || terms.every((t) => kw.includes(t));
+        el.classList.toggle("hidden", !match);
+        if (match) shown++;
+      }
+      if (count) count.textContent = q ? `${shown} of ${total} icons` : `${total} icons`;
+      if (empty) empty.classList.toggle("hidden", shown !== 0);
+    }
+    search.addEventListener("input", filter);
+
+    let toastTimer: ReturnType<typeof setTimeout>;
+    grid.addEventListener("click", async (e) => {
+      const btn = (e.target as HTMLElement).closest<HTMLButtonElement>("[data-copy]");
+      if (!btn) return;
+      try {
+        await navigator.clipboard.writeText(btn.dataset.copy || "");
+        if (toast) {
+          toast.style.opacity = "1";
+          toast.style.transform = "translate(-50%, 0)";
+          clearTimeout(toastTimer);
+          toastTimer = setTimeout(() => {
+            toast.style.opacity = "0";
+            toast.style.transform = "translate(-50%, 8px)";
+          }, 1400);
+        }
+      } catch {}
+    });
+  }
+
+  initIconGallery();
+  document.addEventListener("astro:after-swap", initIconGallery);
+</script>

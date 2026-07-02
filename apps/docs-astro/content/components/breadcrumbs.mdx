@@ -1,0 +1,103 @@
+---
+title: React Breadcrumbs Components
+description: A React breadcrumbs component that shows the current page’s location in a site hierarchy. Helps users understand navigation paths and move between parent pages.
+---
+
+import BreadcrumbsPreview from "@/components/preview/breadcrumb/breadcrumbs-preview";
+import BreadcrumbsStylesPreview from "@/components/preview/breadcrumb/breadcrumbs-styles-preview";
+import BreadcrumbsWithIconPreview from "@/components/preview/breadcrumb/breadcrumbs-with-icon-preview";
+import { getFileContent } from "@/utils/get-file-content";
+
+# Breadcrumbs
+
+React Breadcrumbs components show the current page’s location within a site hierarchy. They help users understand where they are and navigate back to parent pages.
+
+This Breadcrumbs component is built with React and styled using Tailwind CSS, giving developers control over layout, separators, and icons.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/breadcrumb/breadcrumbs-preview.tsx"
+  )}
+>
+  <BreadcrumbsPreview />
+</ComponentPreview>
+
+## Installation
+
+Install the component using the Lumina CLI.
+
+```npm
+npx @lumina/cli add breadcrumbs
+```
+
+## Usage
+
+Import the component and pass the required props.
+
+```tsx
+import { Breadcrumbs } from "@/components/lumina/core/breadcrumbs";
+
+export const BreadcrumbsExample = () => (
+  <Breadcrumbs
+    items={[
+      { href: "/", label: "Home" },
+      { href: "/products", label: "Products" },
+      { href: "/products/laptop", label: "Laptop" }
+    ]}
+  />
+);
+```
+
+## Examples
+
+### With Icons
+
+Show navigation context by adding an `icon` to individual items within the `items` array.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/breadcrumb/breadcrumbs-with-icon-preview.tsx"
+  )}
+>
+  <BreadcrumbsWithIconPreview />
+</ComponentPreview>
+
+Note: Icons are automatically sized to `16px` (1rem) via the `[&>svg]:size-4` class.
+
+### Divider Types
+
+Use different divider styles between breadcrumb items using the `dividerType` prop.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/breadcrumb/breadcrumbs-styles-preview.tsx"
+  )}
+>
+  <BreadcrumbsStylesPreview />
+</ComponentPreview>
+
+Note: The last item in the breadcrumb trail is automatically styled with darker text to indicate the current page.
+
+## API Reference
+
+### Breadcrumbs
+
+| Prop          | Type                            | Default   | Description                          |
+| :------------ | :------------------------------ | :-------- | :----------------------------------- |
+| `items`       | `BreadcrumbItem[]`              | -         | Array of breadcrumb items (required) |
+| `dividerType` | `'slash' \| 'chevron' \| 'dot'` | `'slash'` | Style of divider between items       |
+
+`BreadcrumbItem`
+
+| Property | Type              | Description                    |
+| :------- | :---------------- | :----------------------------- |
+| `href`   | `string`          | Link destination (required)    |
+| `label`  | `string`          | Display text (required)        |
+| `icon`   | `React.ReactNode` | Optional icon before the label |
+
+## Accessibility
+
+- Uses semantic `<ol>` and `<li>` elements for navigation
+- The last item is visually distinguished with darker text color
+- Icons inherit the current text color for consistent styling
+- All links support keyboard navigation

@@ -1,0 +1,186 @@
+---
+title: Astro
+description: Install and configure Lumina for Astro.
+---
+
+# Astro Installation
+
+Follow these steps to set up Lumina in your Astro project.
+
+<Steps>
+
+<Step>
+### Create project
+
+Create a new Astro project:
+
+```npm
+npm create astro@latest
+```
+
+</Step>
+
+<Step>
+### Install Tailwind CSS
+
+Install Tailwind CSS and the Vite plugin:
+
+```npm
+npm install tailwindcss @tailwindcss/vite
+```
+
+#### Configure Vite plugin
+
+Add the `@tailwindcss/vite` plugin to your Vite plugins in your Astro config file.
+
+```js title="astro.config.mjs"
+// @ts-check
+import { defineConfig } from "astro/config";
+import tailwindcss from "@tailwindcss/vite";
+
+// https://astro.build/config
+export default defineConfig({
+  vite: {
+    plugins: [tailwindcss()]
+  }
+});
+```
+
+#### Import Tailwind CSS
+
+Create a `src/styles/global.css` file and add an `@import` for Tailwind CSS.
+
+```css title="src/styles/global.css"
+@import "tailwindcss";
+```
+
+#### Import styles
+
+Add the following line to your `src/pages/index.astro` file:
+
+```astro title="src/pages/index.astro"
+---
+import "../styles/global.css";
+---
+```
+
+Visit [here](https://tailwindcss.com/docs/installation/framework-guides/astro) to learn more about Tailwind CSS installation.
+
+</Step>
+
+<Step>
+### Initialize Lumina
+
+Run the command in the CLI to initialize Lumina in your project:
+
+```npm
+npx @lumina/cli@latest init
+```
+
+Follow the prompts to configure your project.
+
+**Note:** If you have chosen not to replace the content of your main CSS file, you will need to copy and paste the styles of [lumina.css](/get-started/global-variables) into your main CSS file (e.g., `src/app/globals.css` or `src/index.css`).
+
+</Step>
+
+<Step>
+### React Integration
+
+Run the command in the CLI to integrate React with Astro:
+
+```npm
+npx astro add react
+```
+
+</Step>
+
+<Step>
+### Configure Path Aliases
+
+Vite requires some configuration for path aliases. Update your `tsconfig.json` file.
+
+#### tsconfig.json
+
+```json title="tsconfig.json"
+{
+  "extends": "astro/tsconfigs/strict",
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist"],
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
+```
+
+</Step>
+
+<Step>
+### Add Components
+
+Use the CLI to add components to your project:
+
+```npm
+npx @lumina/cli@latest add button
+```
+
+</Step>
+
+<Step>
+### Use the Component
+
+Import and use the component in your Astro page:
+
+```astro title="src/pages/index.astro"
+---
+import { Button } from "@/components/lumina/core/button";
+---
+
+<div class="flex min-h-svh items-center justify-center">
+  <Button client:load>Click me</Button>
+</div>
+```
+
+**Note:** You may need to update the import path based on your project structure.
+
+</Step>
+
+</Steps>
+
+## Client Directives (Astro Islands)
+
+Lumina components are plain React components. Astro renders React to static HTML on the server by default and ships **zero JavaScript** unless you explicitly opt a component into hydration with a [client directive](https://docs.astro.build/en/reference/directives-reference/#client-directives).
+
+Purely presentational components with no state or event handlers (`Spinner`, `Badge`, static `Card`) don't need a directive at all — leave them without one and no JS is sent to the browser:
+
+```astro title="src/pages/index.astro"
+---
+import { Spinner } from "@/components/lumina/core/spinner";
+---
+
+<Spinner />
+```
+
+Components that hold state or respond to interaction (`Button` with an `onClick`, `Dialog`, `Combobox`, form fields) need hydration. Pick the directive based on how soon the component needs to be interactive:
+
+| Directive        | When to use                                                              |
+| ----------------- | ------------------------------------------------------------------------ |
+| `client:load`    | Above the fold and interactive immediately (e.g. a nav `Combobox`).      |
+| `client:idle`    | Default choice — hydrates once the main thread is free.                  |
+| `client:visible` | Below the fold; hydrates only when it scrolls into view (e.g. a `Dialog` triggered further down the page). |
+
+```astro title="src/pages/index.astro"
+---
+import { Button } from "@/components/lumina/core/button";
+import { Dialog } from "@/components/lumina/core/dialog";
+---
+
+<Button client:idle>Click me</Button>
+<Dialog client:visible />
+```
+
+**Note:** A directive only hydrates the component it's attached to — wrapping a static component in an interactive one doesn't require the static one to have its own directive.

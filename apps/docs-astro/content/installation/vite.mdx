@@ -1,0 +1,152 @@
+---
+title: Vite
+description: Install and configure Lumina for Vite.
+---
+
+# Vite Installation
+
+Follow these steps to set up Lumina in your React project using Vite.
+
+<Steps>
+
+<Step>
+### Create project
+
+Create a new React project using Vite with TypeScript:
+
+```npm
+npm create vite@latest my-app -- --template react-ts
+cd my-app
+npm install
+```
+
+</Step>
+
+<Step>
+### Add Tailwind CSS
+
+Install Tailwind CSS and the Vite plugin:
+
+```npm
+npm install tailwindcss @tailwindcss/vite
+```
+
+</Step>
+
+<Step>
+### Configure Path Aliases
+
+Vite requires some configuration for path aliases. Update your `tsconfig.json`, `tsconfig.app.json`, and `vite.config.ts`.
+
+#### tsconfig.json
+
+```jsonc title="tsconfig.json"
+{
+  // ...existing code
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
+```
+
+#### tsconfig.app.json
+
+```jsonc title="tsconfig.app.json"
+{
+  // ...existing code
+  "compilerOptions": {
+    // ...existing code
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
+```
+
+#### vite.config.ts
+
+```ts title="vite.config.ts"
+import path from "path";
+import tailwindcss from "@tailwindcss/vite";
+import react from "@vitejs/plugin-react";
+import { defineConfig } from "vite";
+
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src")
+    }
+  }
+});
+```
+
+</Step>
+
+<Step>
+### Initialize Lumina
+
+Run the CLI in your project root to initialize Lumina:
+
+```npm
+npx @lumina/cli@latest init
+```
+
+Follow the prompts to configure your project.
+
+**Note:** If you have chosen not to replace the content of your main CSS file, you will need to copy and paste the styles of [lumina.css](/get-started/global-variables) into your main CSS file (e.g., `src/app/globals.css` or `src/index.css`).
+
+</Step>
+
+<Step>
+### Add Components
+
+Add a component using the CLI:
+
+```npm
+npx @lumina/cli@latest add button
+```
+
+</Step>
+
+<Step>
+### Use the Component
+
+Use the component in your app:
+
+```tsx title="src/App.tsx"
+import { Button } from "@/components/lumina/core/button";
+
+function App() {
+  return (
+    <div className="flex min-h-svh items-center justify-center">
+      <Button>Click me</Button>
+    </div>
+  );
+}
+
+export default App;
+```
+
+**Note:** You may need to update the import path based on your project structure.
+
+</Step>
+
+</Steps>
+
+## Troubleshooting
+
+After the path alias configuration, if component still imports from relative paths, add the following to your code editor's `settings.json`:
+
+```jsonc title="settings.json"
+{
+    "typescript.preferences.importModuleSpecifier": "non-relative",
+    "typescript.preferences.importModuleSpecifierEnding": "minimal",
+    "javascript.preferences.importModuleSpecifier": "non-relative",
+    "javascript.preferences.importModuleSpecifierEnding": "minimal"
+}
+```

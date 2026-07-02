@@ -1,0 +1,66 @@
+/* ============================================
+   DARK THEME — "ember on charcoal"
+   Apply when: <html data-theme="dark">
+   ============================================ */
+
+[data-theme="dark"] {
+  --theme-primary-50: #3a1206;
+  --theme-primary-100: #6b280f;
+  --theme-primary-200: #852d0f;
+  --theme-primary-300: #a8390a;
+  --theme-primary-400: #d14e08;
+  --theme-primary-500: #ff8033;
+  --theme-primary-600: #ffa35a;
+  --theme-primary-700: #ffc794;
+  --theme-primary-800: #ffe4c7;
+  --theme-primary-900: #fff4ea;
+  --theme-primary-950: #fff4ea;
+
+  --theme-primary-text: #1d1a17;
+  --theme-brand-color: #ff8033;
+
+  --theme-ink-50: #100e0c;
+  --theme-ink-100: #1d1a17;
+  --theme-ink-200: #2e2a25;
+  --theme-ink-300: #453f37;
+  --theme-ink-400: #5c5347;
+  --theme-ink-500: #7d7062;
+  --theme-ink-600: #a99a86;
+  --theme-ink-700: #d3c6b4;
+  --theme-ink-800: #e6ddd0;
+  --theme-ink-900: #f2ede4;
+  --theme-ink-950: #faf7f2;
+
+  --theme-text-primary: var(--theme-ink-900);
+  --theme-text-secondary: var(--theme-ink-600);
+  --theme-text-muted: var(--theme-ink-400);
+  --theme-text-on-brand: #1d1a17;
+
+  --theme-error-500: #e26a5f;
+  --theme-success-500: #5cb37f;
+  --theme-warning-500: #e0b750;
+  --theme-info-500: #6ba7c9;
+
+  --theme-background: var(--theme-ink-50);
+  --theme-background-raised: var(--theme-ink-100);
+  --theme-background-soft: var(--theme-ink-200);
+  --theme-background-inverted: var(--theme-ink-900);
+
+  --theme-border: var(--theme-ink-300);
+  --theme-border-strong: var(--theme-ink-400);
+
+  --theme-button-primary-background: var(--theme-primary-500);
+  --theme-button-primary-hover-background: var(--theme-primary-600);
+  --theme-button-primary-text: #1d1a17;
+
+  --theme-button-outline-background: var(--theme-ink-200);
+  --theme-button-outline-border: var(--theme-ink-400);
+  --theme-button-outline-text: var(--theme-ink-800);
+  --theme-button-outline-hover-background: var(--theme-ink-300);
+
+  --theme-shadow-card: 4px 4px 0 0 rgba(0, 0, 0, 0.35);
+  --theme-shadow-card-hover: 6px 6px 0 0 rgba(0, 0, 0, 0.45);
+  --theme-shadow-brand: 3px 3px 0 0 rgba(255, 128, 51, 0.35);
+
+  --theme-grain-opacity: 0.08;
+}

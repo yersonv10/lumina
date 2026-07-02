@@ -1,0 +1,84 @@
+---
+export const prerender = true;
+
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import SiteHeader from "@/components/SiteHeader.astro";
+
+const features = [
+  {
+    title: "Accessible by default",
+    body: "Every component is built on React Aria and Base UI, so keyboard, screen-reader, and touch behavior come free.",
+  },
+  {
+    title: "Own your code",
+    body: "Install components as source via the CLI — no black-box package, just files you can read and change.",
+  },
+  {
+    title: "Themeable to the core",
+    body: "A small set of design tokens controls color, radius, and shadow across the entire library — no fighting defaults.",
+  },
+];
+---
+
+<BaseLayout title="Lumina">
+  <SiteHeader />
+
+  <main>
+    <section class="bg-grain relative overflow-hidden border-b border-border">
+      <!-- signature asymmetric rule-line motif, replaces the old radial "glow" -->
+      <svg
+        class="pointer-events-none absolute -top-24 right-[-10%] h-[140%] w-[70%] text-primary-500/25"
+        viewBox="0 0 400 400"
+        fill="none"
+        aria-hidden="true"
+      >
+        <line x1="40" y1="0" x2="400" y2="360" stroke="currentColor" stroke-width="1" />
+        <line x1="120" y1="0" x2="400" y2="280" stroke="currentColor" stroke-width="1" />
+        <line x1="200" y1="0" x2="400" y2="200" stroke="currentColor" stroke-width="1" />
+        <line x1="280" y1="0" x2="400" y2="120" stroke="currentColor" stroke-width="1" />
+        <circle cx="330" cy="70" r="3" fill="currentColor" />
+        <circle cx="250" cy="230" r="3" fill="currentColor" />
+      </svg>
+
+      <div class="relative mx-auto max-w-6xl px-6 py-24 md:py-32">
+        <p class="font-mono text-xs tracking-widest text-primary-500 uppercase">
+          Lumina · React component library
+        </p>
+        <h1 class="font-display mt-4 max-w-2xl text-5xl leading-[1.05] font-medium text-text-primary md:text-6xl">
+          Build interfaces that feel considered.
+        </h1>
+        <p class="mt-6 max-w-xl text-lg text-text-secondary">
+          An open-source, accessible React component library — copy the source into your
+          project, keep full control, ship faster.
+        </p>
+        <div class="mt-10 flex flex-wrap gap-4">
+          <a
+            href="/get-started/quick-start"
+            class="rounded-(--radius-control) bg-button-primary-background px-5 py-2.5 text-sm font-medium text-button-primary-text shadow-(--shadow-brand) transition hover:bg-button-primary-hover-background"
+          >
+            Get started
+          </a>
+          <a
+            href="/components"
+            class="rounded-(--radius-control) border border-button-outline-border bg-button-outline-background px-5 py-2.5 text-sm font-medium text-button-outline-text transition hover:bg-button-outline-hover-background"
+          >
+            Browse components
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-6 py-20">
+      <div class="grid gap-6 md:grid-cols-3">
+        {
+          features.map((feature) => (
+            <div class="rounded-(--radius-card) border border-border bg-background-raised p-6 shadow-(--shadow-card) transition hover:shadow-(--shadow-card-hover)">
+              <h2 class="font-display text-xl font-medium text-text-primary">{feature.title}</h2>
+              <p class="mt-2 text-sm text-text-secondary">{feature.body}</p>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+  </main>
+</BaseLayout>

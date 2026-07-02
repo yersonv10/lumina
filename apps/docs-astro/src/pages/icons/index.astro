@@ -1,0 +1,125 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import SiteHeader from "@/components/SiteHeader.astro";
+import PackageManagerTabs from "@/components/PackageManagerTabs.astro";
+import CodeBlockCard from "@/components/CodeBlockCard.astro";
+import * as LuminaIcons from "@lumina/icons";
+
+export const prerender = true;
+
+const iconCount = (Object.values(LuminaIcons) as unknown[]).filter(
+  (c) => typeof c === "function",
+).length;
+
+const usageBasic = `import { Sparkle, StarIcon } from "@lumina/icons";
+
+export function Example() {
+  return (
+    <div className="flex items-center gap-2">
+      <Sparkle />
+      {/* size defaults to 24 */}
+      <StarIcon size={32} />
+    </div>
+  );
+}`;
+
+const usageStyling = `// Icons paint with \`currentColor\`, so color is controlled by any
+// text-* utility; size with the \`size\` prop or width/height utilities.
+<StarIcon className="size-6 text-primary-500 hover:text-primary-600" />
+
+// Standard SVG props are forwarded through.
+<StarIcon size={40} aria-label="Rating" onClick={handleClick} />`;
+---
+
+<BaseLayout
+  title="Icons"
+  description={`${iconCount}+ free, open-source React SVG icons — typed components for React and Tailwind CSS.`}
+>
+  <SiteHeader />
+
+  <main class="mx-auto max-w-3xl px-6 py-12">
+    <header>
+      <p class="font-mono text-xs tracking-widest text-primary-500 uppercase">Lumina · Icons</p>
+      <h1 class="font-display mt-3 text-4xl font-medium text-text-primary md:text-5xl">
+        Free and open-source SVG icons
+      </h1>
+      <p class="mt-4 text-lg text-text-secondary">
+        {iconCount}+ React SVG icons exported as typed components. Built for React and Tailwind CSS —
+        no icon fonts, no raw files.
+      </p>
+    </header>
+
+    <div class="mt-8 max-w-md">
+      <PackageManagerTabs command="npm install @lumina/icons" />
+    </div>
+
+    <!-- Usage -->
+    <section class="mt-12">
+      <h2 class="font-display text-2xl font-medium text-text-primary">Usage</h2>
+      <p class="mt-2 text-text-secondary">
+        Import any icon by name and render it as a React component. Every icon is a typed SVG
+        component.
+      </p>
+      <CodeBlockCard snippet={usageBasic} lang="tsx" fileName="example.tsx" />
+
+      <h3 class="mt-10 text-lg font-semibold text-text-primary">Props</h3>
+      <p class="mt-2 text-text-secondary">
+        Each icon accepts a <code class="rounded bg-background-soft px-1 py-0.5 font-mono text-sm text-text-primary">size</code>
+        prop and forwards every standard SVG attribute (via
+        <code class="rounded bg-background-soft px-1 py-0.5 font-mono text-sm text-text-primary">React.SVGProps&lt;SVGSVGElement&gt;</code>).
+      </p>
+      <div class="mt-4 overflow-hidden rounded-(--radius-card) border border-border">
+        <table class="w-full border-collapse text-left text-sm">
+          <thead class="bg-background-soft text-text-secondary">
+            <tr>
+              <th class="px-4 py-2.5 font-medium">Prop</th>
+              <th class="px-4 py-2.5 font-medium">Type</th>
+              <th class="px-4 py-2.5 font-medium">Default</th>
+              <th class="px-4 py-2.5 font-medium">Description</th>
+            </tr>
+          </thead>
+          <tbody class="text-text-secondary [&_td]:border-t [&_td]:border-border [&_td]:px-4 [&_td]:py-2.5 [&_code]:font-mono [&_code]:text-text-primary">
+            <tr>
+              <td><code>size</code></td>
+              <td><code>number</code></td>
+              <td><code>24</code></td>
+              <td>Width and height in pixels.</td>
+            </tr>
+            <tr>
+              <td><code>className</code></td>
+              <td><code>string</code></td>
+              <td>—</td>
+              <td>CSS / Tailwind classes. Color via <code>text-*</code>, size via <code>size-*</code>.</td>
+            </tr>
+            <tr>
+              <td><code>...props</code></td>
+              <td><code>SVGProps&lt;SVGSVGElement&gt;</code></td>
+              <td>—</td>
+              <td>Any standard SVG attribute — <code>style</code>, <code>onClick</code>, <code>aria-*</code>, etc.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="mt-10 text-lg font-semibold text-text-primary">Styling with Tailwind</h3>
+      <p class="mt-2 text-text-secondary">
+        Icons render with <code class="rounded bg-background-soft px-1 py-0.5 font-mono text-sm text-text-primary">fill="currentColor"</code>,
+        so they inherit the current text color — style them like text.
+      </p>
+      <CodeBlockCard snippet={usageStyling} lang="tsx" fileName="styling.tsx" />
+    </section>
+
+    <div class="mt-14 rounded-(--radius-card) border border-border bg-background-soft p-6 text-center">
+      <p class="text-text-primary">Looking for a specific icon?</p>
+      <a
+        href="/icons/browse"
+        class="mt-3 inline-flex items-center justify-center gap-2 rounded-(--radius-control) bg-button-primary-background px-5 py-2.5 text-sm font-medium text-button-primary-text transition hover:bg-button-primary-hover-background"
+      >
+        Browse all {iconCount} icons
+        <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M13 6l6 6-6 6"></path>
+        </svg>
+      </a>
+    </div>
+  </main>
+</BaseLayout>

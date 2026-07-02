@@ -1,0 +1,213 @@
+---
+import { REGISTRIES } from "../../../../packages/cli/src/registries";
+import { COMPONENT_CATEGORIES } from "@/lib/component-catalog";
+
+import { AccordionPreview as Preview_accordion } from "@/components/preview/accordion/accordion-preview";
+import { AlertPreview as Preview_alert } from "@/components/preview/alert/alert-preview";
+import Preview_alert_dialog from "@/components/preview/alert-dialog/alert-dialog-preview";
+import Preview_aspect_ratio from "@/components/preview/aspect-ratio/aspect-ratio-preview";
+import Preview_avatar from "@/components/preview/avatar/avatar-preview";
+import Preview_badge from "@/components/preview/badge/badge-preview";
+import Preview_breadcrumbs from "@/components/preview/breadcrumb/breadcrumbs-preview";
+import Preview_button from "@/components/preview/button/button-preview";
+import Preview_button_group from "@/components/preview/button-group/button-group-preview";
+import Preview_calendar from "@/components/preview/calendar/calendar-preview";
+import Preview_card from "@/components/preview/card/card-preview";
+import Preview_carousel from "@/components/preview/carousel/carousel-preview";
+import Preview_chart from "@/components/preview/chart/chart-preview";
+import Preview_checkbox from "@/components/preview/checkbox/checkbox-preview";
+import Preview_collapsible from "@/components/preview/collapsible/collapsible-preview";
+import Preview_combobox from "@/components/preview/combobox/combobox-preview";
+import Preview_command from "@/components/preview/command/command-preview";
+import { ContextMenuPreview as Preview_context_menu } from "@/components/preview/context-menu/context-menu-preview";
+import Preview_date_field from "@/components/preview/date-field/date-field-preview";
+import Preview_date_picker from "@/components/preview/date-picker/date-picker-basic-preview";
+import Preview_description from "@/components/preview/description/description-preview";
+import Preview_dialog from "@/components/preview/dialog/dialog-preview";
+import Preview_drawer from "@/components/preview/drawer/drawer-preview";
+import Preview_dropdown from "@/components/preview/dropdown/dropdown-preview";
+import Preview_field from "@/components/preview/field/field-preview";
+import Preview_hover_card from "@/components/preview/hover-card/hover-card-preview";
+import Preview_input from "@/components/preview/input/input-preview";
+import Preview_input_group from "@/components/preview/input-group/input-group-preview";
+import Preview_label from "@/components/preview/label/label-preview";
+import Preview_link from "@/components/preview/link/link-preview";
+import Preview_list from "@/components/preview/list/list-preview";
+import Preview_menubar from "@/components/preview/menubar/menubar-preview";
+import Preview_native_select from "@/components/preview/native-select/native-select-preview";
+import Preview_navigation_menu from "@/components/preview/navigation-menu/navigation-menu-preview";
+import Preview_number_field from "@/components/preview/number-field/number-field-preview";
+import Preview_otp_input from "@/components/preview/otp-input/otp-input-preview";
+import Preview_overlay from "@/components/preview/overlay/overlay-preview";
+import Preview_pagination from "@/components/preview/pagination/pagination-default-preview-source";
+import Preview_popover from "@/components/preview/popover/popover-preview";
+import Preview_progress from "@/components/preview/progress/progress-preview";
+import Preview_radio_input from "@/components/preview/radio/radio-preview";
+import Preview_range_calendar from "@/components/preview/range-calendar/range-calendar-preview";
+import Preview_resizable from "@/components/preview/resizable/resizable-preview";
+import { ScrollAreaPreview as Preview_scroll_area } from "@/components/preview/scroll-area/scroll-area-preview";
+import Preview_select from "@/components/preview/select/select-preview";
+import Preview_separator from "@/components/preview/separator/separator-preview";
+import Preview_sheet from "@/components/preview/sheet/sheet-preview";
+import Preview_sidebar from "@/components/preview/sidebar/sidebar-preview";
+import Preview_skeleton from "@/components/preview/skeleton/skeleton-preview";
+import Preview_slider from "@/components/preview/slider/slider-default-preview";
+import Preview_social_button from "@/components/preview/social-button/social-button-preview";
+import Preview_spinner from "@/components/preview/spinner/spinner-preview";
+import Preview_table from "@/components/preview/table/table-preview";
+import Preview_tabs from "@/components/preview/tabs/tabs-preview";
+import Preview_text_area from "@/components/preview/text-area/text-area-preview";
+import Preview_text_field from "@/components/preview/text-field/text-field-preview";
+import Preview_time_field from "@/components/preview/time-field/time-field-preview";
+import Preview_time_picker from "@/components/preview/time-picker/time-picker-preview";
+import Preview_toast from "@/components/preview/toast/toast-preview";
+import Preview_toggle from "@/components/preview/toggle/toggle-basic-preview";
+import Preview_tooltip from "@/components/preview/tooltip/tooltip-default-preview";
+import {
+  AvatarCatalogPreview,
+  ChartCatalogPreview,
+  CarouselCatalogPreview,
+  ComboboxCatalogPreview,
+  HoverCardCatalogPreview,
+} from "@/components/preview/_catalog/catalog-overrides";
+
+const PREVIEWS: Record<string, any> = {
+  "accordion": Preview_accordion,
+  "alert": Preview_alert,
+  "alert-dialog": Preview_alert_dialog,
+  "aspect-ratio": Preview_aspect_ratio,
+  "avatar": AvatarCatalogPreview,
+  "badge": Preview_badge,
+  "breadcrumbs": Preview_breadcrumbs,
+  "button": Preview_button,
+  "button-group": Preview_button_group,
+  "calendar": Preview_calendar,
+  "card": Preview_card,
+  "carousel": CarouselCatalogPreview,
+  "chart": ChartCatalogPreview,
+  "checkbox": Preview_checkbox,
+  "collapsible": Preview_collapsible,
+  "combobox": ComboboxCatalogPreview,
+  "command": Preview_command,
+  "context-menu": Preview_context_menu,
+  "date-field": Preview_date_field,
+  "date-picker": Preview_date_picker,
+  "description": Preview_description,
+  "dialog": Preview_dialog,
+  "drawer": Preview_drawer,
+  "dropdown": Preview_dropdown,
+  "field": Preview_field,
+  "hover-card": HoverCardCatalogPreview,
+  "input": Preview_input,
+  "input-group": Preview_input_group,
+  "label": Preview_label,
+  "link": Preview_link,
+  "list": Preview_list,
+  "menubar": Preview_menubar,
+  "native-select": Preview_native_select,
+  "navigation-menu": Preview_navigation_menu,
+  "number-field": Preview_number_field,
+  "otp-input": Preview_otp_input,
+  "overlay": Preview_overlay,
+  "pagination": Preview_pagination,
+  "popover": Preview_popover,
+  "progress": Preview_progress,
+  "radio-input": Preview_radio_input,
+  "range-calendar": Preview_range_calendar,
+  "resizable": Preview_resizable,
+  "scroll-area": Preview_scroll_area,
+  "select": Preview_select,
+  "separator": Preview_separator,
+  "sheet": Preview_sheet,
+  "sidebar": Preview_sidebar,
+  "skeleton": Preview_skeleton,
+  "slider": Preview_slider,
+  "social-button": Preview_social_button,
+  "spinner": Preview_spinner,
+  "table": Preview_table,
+  "tabs": Preview_tabs,
+  "text-area": Preview_text_area,
+  "text-field": Preview_text_field,
+  "time-field": Preview_time_field,
+  "time-picker": Preview_time_picker,
+  "toast": Preview_toast,
+  "toggle": Preview_toggle,
+  "tooltip": Preview_tooltip,
+};
+
+const components = REGISTRIES.filter((r) => r.type === "component");
+const byId = new Map(components.map((c) => [c.id, c]));
+
+const grouped = COMPONENT_CATEGORIES.map((cat) => ({
+  ...cat,
+  items: cat.ids.map((id) => byId.get(id)).filter(Boolean),
+}));
+
+const categorized = new Set(COMPONENT_CATEGORIES.flatMap((c) => c.ids));
+const other = components.filter((c) => !categorized.has(c.id));
+if (other.length) {
+  grouped.push({
+    id: "other",
+    label: "Other",
+    description: "",
+    ids: other.map((c) => c.id),
+    items: other,
+  });
+}
+---
+
+<div class="not-prose space-y-16 pt-10 pb-16">
+  {
+    grouped.map((cat) => (
+      <section aria-labelledby={`cat-${cat.id}`}>
+        <div class="mb-6 border-b border-border pb-3">
+          <h2
+            id={`cat-${cat.id}`}
+            class="font-display text-2xl font-medium text-text-primary"
+          >
+            {cat.label}
+          </h2>
+          {cat.description && (
+            <p class="mt-1 text-sm text-text-secondary">{cat.description}</p>
+          )}
+        </div>
+
+        <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {cat.items.map((component) => {
+            const Preview = PREVIEWS[component.id];
+            return (
+              /* Stretched-link card: the previews can render their own <a>
+                 (breadcrumbs, sidebar, links). Wrapping them in a card <a>
+                 would nest anchors (invalid HTML) and break layout, so the
+                 card is a <div> and the whole surface is made clickable by an
+                 absolutely-positioned sibling <a>. */
+              <div class="group relative flex h-full flex-col overflow-hidden rounded-(--radius-card) border border-border transition hover:border-text-muted hover:shadow-(--shadow-card-hover)">
+                <div class="relative h-44 overflow-hidden border-b border-border bg-background-soft">
+                  <div class="absolute inset-0 flex items-center justify-center p-5">
+                    <div class="pointer-events-none flex origin-center scale-[0.82] select-none items-center justify-center [&_*]:!cursor-default">
+                      {Preview && <Preview />}
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between px-5 py-4">
+                  <h3 class="m-0 text-base font-medium text-text-primary group-hover:text-brand">
+                    {component.name}
+                  </h3>
+                  <span class="text-xs text-text-muted">
+                    {component.exampleCount || 1}{" "}
+                    {component.exampleCount === 1 ? "example" : "examples"}
+                  </span>
+                </div>
+                <a
+                  href={`/components/${component.id}`}
+                  class="absolute inset-0 z-10 rounded-(--radius-card) focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:outline-none"
+                  aria-label={component.name}
+                />
+              </div>
+            );
+          })}
+        </div>
+      </section>
+    ))
+  }
+</div>

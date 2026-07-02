@@ -1,0 +1,331 @@
+---
+title: React Combobox Components
+description: A React combobox component built with Tailwind CSS. Create searchable dropdowns with input filtering, single or multi-select options, and accessible keyboard navigation.
+---
+
+import ComboboxAvatarPreview from "@/components/preview/combobox/combobox-avatar-preview";
+import ComboboxCommandPreview from "@/components/preview/combobox/combobox-command-preview";
+import ComboboxDisabledPreview from "@/components/preview/combobox/combobox-disabled-preview";
+import ComboboxIconPreview from "@/components/preview/combobox/combobox-icon-preview";
+import ComboboxLabelDescriptionPreview from "@/components/preview/combobox/combobox-label-description-preview";
+import ComboboxPreview from "@/components/preview/combobox/combobox-preview";
+import ComboboxSectionsPreview from "@/components/preview/combobox/combobox-sections-preview";
+import ComboboxValidationPreview from "@/components/preview/combobox/combobox-validation-preview";
+import MultiComboboxControlledPreview from "@/components/preview/combobox/multi-combobox-controlled-preview";
+import MultiComboboxCustomDisplayPreview from "@/components/preview/combobox/multi-combobox-custom-display-preview";
+import MultiComboboxPreview from "@/components/preview/combobox/multi-combobox-preview";
+import { getFileContent } from "@/utils/get-file-content";
+import { Tab, Tabs } from "@/components/compat/tabs";
+
+# Combobox
+
+The React Combobox component combines an input field with a dropdown list, allowing users to search and select an option. It lets users type to filter results and quickly find what they need.
+
+It is useful when you have a large list of options. For example, users can search for a country, user, or category instead of scrolling through a long list. It also supports selecting multiple options with MultiCombobox, with selected items displayed as tags.
+
+Built with React and styled using Tailwind CSS. It supports filtering, keyboard navigation, and accessible selection patterns.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/combobox/combobox-preview.tsx"
+  )}
+>
+  <ComboboxPreview client:visible />
+</ComponentPreview>
+
+## Installation
+
+Install the component using the Lumina CLI.
+
+```npm
+npx @lumina/cli add combobox
+```
+
+## Anatomy
+
+Import the component and pass the required props.
+
+```tsx
+import {
+  Combobox,
+  ComboboxInput,
+  ComboboxInputWrapper,
+  ComboboxItem,
+  ComboboxList,
+  ComboboxContent,
+  ComboboxEmpty,
+  ComboboxTrigger
+} from "@/components/lumina/core/combobox";
+
+export default function ComboboxExample() {
+  return (
+    <Combobox>
+      <ComboboxInputWrapper>
+        <ComboboxInput placeholder="Select fruit" />
+        <ComboboxTrigger />
+      </ComboboxInputWrapper>
+      <ComboboxContent>
+        <ComboboxList>
+          <ComboboxItem id="apple">Apple</ComboboxItem>
+          <ComboboxItem id="banana">Banana</ComboboxItem>
+        </ComboboxList>
+        <ComboboxEmpty>No results found</ComboboxEmpty>
+      </ComboboxContent>
+    </Combobox>
+  );
+}
+```
+
+## Examples
+
+### With Label and Description
+
+Add a label and description to providing additional context for the selection.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/combobox/combobox-label-description-preview.tsx"
+  )}
+>
+  <ComboboxLabelDescriptionPreview client:visible />
+</ComponentPreview>
+
+### Sections
+
+Group related items together using `ComboboxSection` and `ComboboxHeader`.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/combobox/combobox-sections-preview.tsx"
+  )}
+>
+  <ComboboxSectionsPreview client:visible />
+</ComponentPreview>
+
+### Multi Selection
+
+The `MultiCombobox` component allows users to select multiple options, which are displayed as tags.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/combobox/multi-combobox-preview.tsx"
+  )}
+>
+  <MultiComboboxPreview client:visible />
+</ComponentPreview>
+
+### Controlled
+
+Manage the selection state externally using the `value` and `onChange` props.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/combobox/multi-combobox-controlled-preview.tsx"
+  )}
+>
+  <MultiComboboxControlledPreview client:visible />
+</ComponentPreview>
+
+### Validation
+
+Mark the combobox as required and display error messages using `ComboboxErrorMessage`.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/combobox/combobox-validation-preview.tsx"
+  )}
+>
+  <ComboboxValidationPreview client:visible />
+</ComponentPreview>
+
+### Disabled
+
+Disable the entire component or individual items to prevent user interaction.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/combobox/combobox-disabled-preview.tsx"
+  )}
+>
+  <ComboboxDisabledPreview client:visible />
+</ComponentPreview>
+
+### With Avatars
+
+Display items with avatars and secondary text for a more informative selection experience.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/combobox/combobox-avatar-preview.tsx"
+  )}
+>
+  <ComboboxAvatarPreview client:visible />
+</ComponentPreview>
+
+### With Icons
+
+Use icons to visually represent categories or types within the combobox.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/combobox/combobox-icon-preview.tsx"
+  )}
+>
+  <ComboboxIconPreview client:visible />
+</ComponentPreview>
+
+### Custom Tag Rendering
+
+The `MultiCombobox` component can be customized to render selection tags with different styles.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/combobox/multi-combobox-custom-display-preview.tsx"
+  )}
+>
+  <MultiComboboxCustomDisplayPreview client:visible />
+</ComponentPreview>
+
+### Command Palette
+
+A minimalist, search-focused design that can be used as a command palette with keyboard shortcut hints.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/combobox/combobox-command-preview.tsx"
+  )}
+>
+  <ComboboxCommandPreview client:visible />
+</ComponentPreview>
+
+## API Reference
+
+### Combobox
+
+The root component that manages the selection state and coordinates between the input and the listbox.
+
+| Prop                    | Type                                      | Default | Description                                                |
+| :---------------------- | :---------------------------------------- | :------ | :--------------------------------------------------------- |
+| `value`                 | `Key`                                     | -       | The currently selected key (controlled).                   |
+| `defaultValue`          | `Key`                                     | -       | The initial selected key (uncontrolled).                   |
+| `onChange`              | `(key: Key) => void`                      | -       | Handler that is called when the selection changes.         |
+| `allowsEmptyCollection` | `boolean`                                 | `true`  | Whether the combobox allows an empty collection.           |
+| `label`                 | `string`                                  | -       | The label for the combobox (convenience prop).             |
+| `description`           | `string`                                  | -       | The description for the combobox (convenience prop).       |
+| `errorMessage`          | `string \| ((validation: any) => string)` | -       | The error message for the combobox (convenience prop).     |
+| `items`                 | `Iterable<T>`                             | -       | The items to display in the combobox.                      |
+| `isDisabled`            | `boolean`                                 | -       | Whether the combobox is disabled.                          |
+| `isInvalid`             | `boolean`                                 | -       | Whether the combobox is in an invalid state.               |
+| `isRequired`            | `boolean`                                 | -       | Whether the combobox is required.                          |
+| `className`             | `string`                                  | -       | Additional CSS classes to apply to the combobox container. |
+
+### ComboboxInputWrapper
+
+The wrapper for the input field and trigger button, providing consistent styling.
+
+| Prop        | Type     | Default | Description                                                   |
+| :---------- | :------- | :------ | :------------------------------------------------------------ |
+| `className` | `string` | -       | Additional CSS classes to apply to the input wrapper element. |
+
+### ComboboxInput
+
+The text input field where users type to filter options.
+
+| Prop        | Type     | Default | Description                                         |
+| :---------- | :------- | :------ | :-------------------------------------------------- |
+| `className` | `string` | -       | Additional CSS classes to apply to the input field. |
+
+### ComboboxTrigger
+
+The button that toggles the visibility of the listbox.
+
+| Prop        | Type     | Default | Description                                            |
+| :---------- | :------- | :------ | :----------------------------------------------------- |
+| `className` | `string` | -       | Additional CSS classes to apply to the trigger button. |
+
+### ComboboxContent
+
+The popover container that holds the listbox of options.
+
+| Prop          | Type        | Default | Description                                                          |
+| :------------ | :---------- | :------ | :------------------------------------------------------------------- |
+| `isNonModal`  | `boolean`   | `false` | Whether the popover should be non-modal (doesn't block interaction). |
+| `placement`   | `Placement` | -       | The placement of the popover relative to the trigger.                |
+| `offset`      | `number`    | -       | The distance between the trigger and the popover.                    |
+| `crossOffset` | `number`    | -       | The distance along the trigger's edge.                               |
+| `children`    | `ReactNode` | -       | The content to be rendered within the popover.                       |
+| `className`   | `string`    | -       | Additional CSS classes to apply to the popover content.              |
+
+### ComboboxList
+
+The listbox component that renders the collection of items.
+
+| Prop               | Type         | Default | Description                                                                  |
+| :----------------- | :----------- | :------ | :--------------------------------------------------------------------------- |
+| `renderEmptyState` | `() => Node` | -       | A function that returns the content to display when the collection is empty. |
+| `className`        | `string`     | -       | Additional CSS classes to apply to the list content.                         |
+
+### ComboboxEmpty
+
+A convenience component to display a message when no results are found. Should be placed inside `ComboboxContent`.
+
+| Prop        | Type     | Default | Description                                           |
+| :---------- | :------- | :------ | :---------------------------------------------------- |
+| `className` | `string` | -       | Additional CSS classes to apply to the empty message. |
+
+### ComboboxItem
+
+An individual option within the listbox.
+
+| Prop         | Type               | Default | Description                                                                                  |
+| :----------- | :----------------- | :------ | :------------------------------------------------------------------------------------------- |
+| `id`         | `string \| number` | -       | The unique identifier for the item.                                                          |
+| `textValue`  | `string`           | -       | A text representation of the item's content, used for keyboard navigation and accessibility. |
+| `isDisabled` | `boolean`          | -       | Whether the item is disabled.                                                                |
+| `className`  | `string`           | -       | Additional CSS classes to apply to the item.                                                 |
+
+### ComboboxSection
+
+A container for grouping related items within the listbox.
+
+| Prop        | Type     | Default | Description                                               |
+| :---------- | :------- | :------ | :-------------------------------------------------------- |
+| `className` | `string` | -       | Additional CSS classes to apply to the section container. |
+
+### ComboboxHeader
+
+The header for a group of items within a section.
+
+| Prop        | Type     | Default | Description                                    |
+| :---------- | :------- | :------ | :--------------------------------------------- |
+| `className` | `string` | -       | Additional CSS classes to apply to the header. |
+
+### MultiCombobox
+
+A specialized combobox for selecting multiple values.
+
+| Prop                | Type                         | Default | Description                                         |
+| :------------------ | :--------------------------- | :------ | :-------------------------------------------------- |
+| `value`             | `Key[]`                      | -       | The currently selected keys (controlled).           |
+| `defaultValue`      | `Key[]`                      | -       | The initial selected keys (uncontrolled).           |
+| `onChange`          | `(keys: Key[]) => void`      | -       | Handler that is called when the selection changes.  |
+| `onSelectionChange` | `(key: Key \| null) => void` | -       | Handler called when an individual item is selected. |
+
+### MultiComboboxDisplay
+
+Renders the selected items as tags above or below the combobox.
+
+| Prop        | Type                 | Default | Description                                            |
+| :---------- | :------------------- | :------ | :----------------------------------------------------- |
+| `renderTag` | `(key: Key) => Node` | -       | Custom tag renderer.                                   |
+| `className` | `string`             | -       | Additional CSS classes to apply to the tags container. |
+
+The `Key` type supports `string` and `number`. See [React Aria's Combobox](https://react-aria.adobe.com/ComboBox) for more details.
+
+## Accessibility
+
+- **Keyboard support:** Users can navigate options using `Arrow` keys, select an option with `Enter`, and close the list with `Escape`.
+- **Search and filtering:** As users type in the input, the list updates to show matching results.
+- **Focus management:** Focus stays on the input while users navigate the list.
+- **Selection behavior:** Supports single and multiple selection depending on configuration.
+- **Label and description:** Provide a label and optional description so users understand the purpose of the input.

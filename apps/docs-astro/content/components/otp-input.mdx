@@ -1,0 +1,154 @@
+---
+title: React OTP Input Components
+description: A React OTP input component for entering one-time passwords or verification codes. Uses multiple input fields with auto focus, paste handling, and accessible behavior.
+---
+
+import CodeBlockCard from "@/components/CodeBlockCard.astro";
+import ComponentPreview from "@/components/ComponentPreview.astro";
+import OtpInputControlledPreview from "@/components/preview/otp-input/otp-input-controlled-preview";
+import OtpInputCustomPreview from "@/components/preview/otp-input/otp-input-custom-preview";
+import OtpInputDefaultPreview from "@/components/preview/otp-input/otp-input-default-preview";
+import OtpInputDisabledPreview from "@/components/preview/otp-input/otp-input-disabled-preview";
+import OtpInputPreview from "@/components/preview/otp-input/otp-input-preview";
+import OtpInputSixDigitPreview from "@/components/preview/otp-input/otp-input-six-digit-preview";
+import { getFileContent } from "@/utils/get-file-content";
+
+# OTP Input
+
+React OTP Input components are used to collect one-time passwords (OTP) or verification codes. They are commonly used in authentication flows such as login verification, password reset, and two-factor authentication.
+
+This OTP Input component is built with React and styled using Tailwind CSS. It splits the code into multiple-input fields and handles focus, paste, labels, and hints with keyboard interaction.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/otp-input/otp-input-preview.tsx"
+  )}
+>
+  <OtpInputPreview client:visible />
+</ComponentPreview>
+
+## Installation
+
+Install the component using the Lumina CLI.
+
+```npm
+npx @lumina/cli add otp-input
+```
+
+## Usage
+
+Import the component and control the OTP value using state.
+
+```tsx
+import { OtpInput } from "@/components/lumina/core/otp-input";
+
+export default OtpInputPreview = () => {
+  const [value, setValue] = useState("");
+
+  return (
+    <OtpInput
+      label="Verification Code"
+      digitLength={6}
+      value={value}
+      onChange={e => setValue(e.target.value)}
+      hint="Enter the 6-digit code sent to your email."
+    />
+  );
+};
+```
+
+## Examples
+
+### Default
+
+Start with a standard 4-digit code entry by using the default `digitLength` configuration.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/otp-input/otp-input-default-preview.tsx"
+  )}
+>
+  <OtpInputDefaultPreview client:visible />
+</ComponentPreview>
+
+### Six Digit Code
+
+Accommodate longer verification codes by setting the `digitLength` prop to `6`.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/otp-input/otp-input-six-digit-preview.tsx"
+  )}
+>
+  <OtpInputSixDigitPreview client:visible />
+</ComponentPreview>
+
+### Controlled
+
+Pass `value` and `onChange` to control the OTP input from state.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/otp-input/otp-input-controlled-preview.tsx"
+  )}
+>
+  <OtpInputControlledPreview client:visible />
+</ComponentPreview>
+
+### Disabled
+
+Prevent all user interactions and focus state transitions by setting the `disabled` prop to `true`.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/otp-input/otp-input-disabled-preview.tsx"
+  )}
+>
+  <OtpInputDisabledPreview client:visible />
+</ComponentPreview>
+
+### Custom
+
+Use `className` to customize the input appearance.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/otp-input/otp-input-custom-preview.tsx"
+  )}
+>
+  <OtpInputCustomPreview client:visible />
+</ComponentPreview>
+
+Note: The custom example demonstrates how you can override styles and structure for specific use cases like a secure login form.
+
+## API Reference
+
+### OtpInput
+
+Extends `input` element props (except `value`).
+
+| Prop          | Type                       | Default | Description                                   |
+| ------------- | -------------------------- | ------- | --------------------------------------------- |
+| `digitLength` | `4 \| 6`                   | `4`     | Number of OTP fields                          |
+| `label`       | `string`                   | -       | Optional field label                          |
+| `hint`        | `string`                   | -       | Helper text shown below the field             |
+| `value`       | `string`                   | -       | Controlled OTP value (auto-synced to fields)  |
+| `disabled`    | `boolean`                  | `false` | Disable all OTP inputs                        |
+| `className`   | `string`                   | -       | Appended to each input element                |
+| `onChange`    | `React.ChangeEventHandler` | -       | Returns concatenated OTP digits as one string |
+
+### Behavior
+
+- Each box only accepts a **single numeric digit**
+- Auto-focus moves to the next box as you type
+- Backspace moves focus to the previous input when empty
+- Handles paste of full OTP (e.g., pasting `"123456"`)
+- Automatically pads if `value` prop is shorter
+
+## Accessibility
+
+- Each digit is a native `<input type="text" />`
+- Label is connected via `htmlFor`
+- Focus ring follows system and custom Lumina styles
+- Digits select their content when focused—making replacement easier
+- Screen readers read the label and each digit individually

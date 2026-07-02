@@ -1,0 +1,391 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Component source now lives in the @lumina-ui/ui workspace package, outside
+   this app's default Tailwind scan root -- without this, classes used only
+   there (e.g. Backdrop's `bg-black/50`) silently never get generated. */
+@source "../../../../packages/ui/src/**/*.{ts,tsx}";
+
+/* Steps.astro opts markdown content out of `.prose` via `not-prose` for its custom
+   layout, which also strips list markers from any bullet/numbered list authored
+   inside a <Step>. Restore markers for plain (unclassed) lists in that scope only. */
+.not-prose ul:not([class]) {
+  list-style-type: disc;
+  padding-left: 1.25em;
+}
+.not-prose ol:not([class]) {
+  list-style-type: decimal;
+  padding-left: 1.25em;
+}
+
+/* Theming is driven by <html data-theme="light|dark">, not prefers-color-scheme,
+   so `dark:` utilities must target that attribute instead of Tailwind's default. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@import "@fontsource-variable/fraunces";
+@import "@fontsource-variable/inter";
+@import "@fontsource/geist-mono";
+
+@import "./themes/light.css";
+@import "./themes/dark.css";
+
+:root {
+  --font-fraunces: "Fraunces Variable", ui-serif, serif;
+  --font-inter: "Inter Variable", ui-sans-serif, sans-serif;
+  --font-geist-mono: "Geist Mono", ui-monospace, monospace;
+}
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-fraunces);
+  --font-mono: var(--font-geist-mono);
+
+  /* Brand accent (ember) — reserved for links/focus/CTA, never a large fill */
+  --color-primary-50: var(--theme-primary-50);
+  --color-primary-100: var(--theme-primary-100);
+  --color-primary-200: var(--theme-primary-200);
+  --color-primary-300: var(--theme-primary-300);
+  --color-primary-400: var(--theme-primary-400);
+  --color-primary-500: var(--theme-primary-500);
+  --color-primary-600: var(--theme-primary-600);
+  --color-primary-700: var(--theme-primary-700);
+  --color-primary-800: var(--theme-primary-800);
+  --color-primary-900: var(--theme-primary-900);
+  --color-primary-950: var(--theme-primary-950);
+  --color-brand: var(--theme-brand-color);
+
+  /* Ink (warm charcoal / parchment neutrals) */
+  --color-ink-50: var(--theme-ink-50);
+  --color-ink-100: var(--theme-ink-100);
+  --color-ink-200: var(--theme-ink-200);
+  --color-ink-300: var(--theme-ink-300);
+  --color-ink-400: var(--theme-ink-400);
+  --color-ink-500: var(--theme-ink-500);
+  --color-ink-600: var(--theme-ink-600);
+  --color-ink-700: var(--theme-ink-700);
+  --color-ink-800: var(--theme-ink-800);
+  --color-ink-900: var(--theme-ink-900);
+  --color-ink-950: var(--theme-ink-950);
+
+  /* Text */
+  --color-text-primary: var(--theme-text-primary);
+  --color-text-secondary: var(--theme-text-secondary);
+  --color-text-muted: var(--theme-text-muted);
+  --color-text-on-brand: var(--theme-text-on-brand);
+
+  /* Semantic */
+  --color-error: var(--theme-error-500);
+  --color-success: var(--theme-success-500);
+  --color-warning: var(--theme-warning-500);
+  --color-info: var(--theme-info-500);
+
+  /* Surfaces */
+  --color-background: var(--theme-background);
+  --color-background-raised: var(--theme-background-raised);
+  --color-background-soft: var(--theme-background-soft);
+  --color-background-inverted: var(--theme-background-inverted);
+
+  /* Borders */
+  --color-border: var(--theme-border);
+  --color-border-strong: var(--theme-border-strong);
+
+  /* Buttons */
+  --color-button-primary-background: var(--theme-button-primary-background);
+  --color-button-primary-hover-background: var(
+    --theme-button-primary-hover-background
+  );
+  --color-button-primary-text: var(--theme-button-primary-text);
+  --color-button-outline-background: var(--theme-button-outline-background);
+  --color-button-outline-border: var(--theme-button-outline-border);
+  --color-button-outline-text: var(--theme-button-outline-text);
+  --color-button-outline-hover-background: var(
+    --theme-button-outline-hover-background
+  );
+
+  /* ============================================================
+     @lumina-ui/ui compatibility tokens.
+     The components were authored against the CLI's default palette
+     (background-100, base-100, text-100, title-50, button-error-*,
+     badge-*, alert-*, …). The site only mapped a handful, so every
+     variant/semantic surface rendered transparent. Map the whole
+     vocabulary onto this theme's --theme-* vars so components render
+     correctly and switch with light/dark automatically.
+     ============================================================ */
+
+  /* Surfaces */
+  --color-background-50: var(--theme-background-raised);
+  --color-background-100: var(--theme-background-raised);
+  --color-background-soft-50: var(--theme-ink-50);
+  --color-background-soft-100: var(--theme-background-soft);
+  --color-background-soft-200: var(--theme-ink-200);
+  --color-background-soft-300: var(--theme-ink-200);
+  --color-background-soft-400: var(--theme-ink-300);
+  --color-background-soft-500: var(--theme-ink-500);
+  --color-card-background-50: var(--theme-background-raised);
+  --color-offset-background-50: var(--theme-background);
+  --color-foreground-soft-50: var(--theme-ink-900);
+  --color-white-100: #ffffff;
+  --color-skeleton-gradient-50: var(--theme-ink-200);
+
+  /* Borders (base-*) */
+  --color-base-50: var(--theme-ink-100);
+  --color-base-100: var(--theme-border);
+  --color-base-200: var(--theme-border);
+  --color-base-300: var(--theme-border-strong);
+  --color-base-400: var(--theme-ink-400);
+
+  /* Text + titles */
+  --color-text-50: var(--theme-text-primary);
+  --color-text-100: var(--theme-text-secondary);
+  --color-text-200: var(--theme-text-muted);
+  --color-text-300: var(--theme-border);
+  --color-title-50: var(--theme-text-primary);
+  --color-title-100: var(--theme-ink-800);
+
+  /* Semantic (numbered) */
+  --color-success-500: var(--theme-success-500);
+  --color-error-500: var(--theme-error-500);
+  --color-warning-500: var(--theme-warning-500);
+  --color-info-500: var(--theme-info-500);
+
+  /* Buttons — primary/outline extend the ones defined above */
+  --color-button-primary-focus-ring: var(--theme-primary-300);
+  --color-button-outline-focus-ring: var(--theme-primary-300);
+  --color-button-outline-hover-text: var(--theme-text-primary);
+  --color-button-disabled-background: var(--theme-ink-200);
+  --color-button-disabled-text: var(--theme-ink-400);
+  --color-button-outline-disabled-background: var(--theme-background);
+  --color-button-outline-disabled-border: var(--theme-ink-200);
+  --color-button-outline-disabled-text: var(--theme-ink-400);
+
+  /* Button — danger (error) */
+  --color-button-error-background: var(--theme-error-500);
+  --color-button-error-hover-background: color-mix(in oklab, var(--theme-error-500), #000 14%);
+  --color-button-error-text: #ffffff;
+  --color-button-error-focus-ring: var(--theme-error-500);
+  --color-button-error-outline-background: transparent;
+  --color-button-error-outline-border: var(--theme-error-500);
+  --color-button-error-outline-text: var(--theme-error-500);
+  --color-button-error-outline-hover-background: color-mix(in oklab, var(--theme-error-500) 12%, var(--theme-background));
+  --color-button-error-outline-hover-text: var(--theme-error-500);
+  --color-button-error-outline-focus-ring: var(--theme-error-500);
+
+  /* Button — success */
+  --color-button-success-background: var(--theme-success-500);
+  --color-button-success-hover-background: color-mix(in oklab, var(--theme-success-500), #000 14%);
+  --color-button-success-text: #ffffff;
+  --color-button-success-focus-ring: var(--theme-success-500);
+  --color-button-success-outline-background: transparent;
+  --color-button-success-outline-border: var(--theme-success-500);
+  --color-button-success-outline-text: var(--theme-success-500);
+  --color-button-success-outline-hover-background: color-mix(in oklab, var(--theme-success-500) 12%, var(--theme-background));
+  --color-button-success-outline-focus-ring: var(--theme-success-500);
+
+  /* Button — ghost + group */
+  --color-button-ghost-text: var(--theme-text-secondary);
+  --color-button-ghost-hover-background: var(--theme-background-soft);
+  --color-button-ghost-hover-text: var(--theme-text-primary);
+  --color-button-group-primary-text: var(--theme-text-secondary);
+  --color-button-group-primary-hover-background: var(--theme-background-soft);
+  --color-button-group-primary-hover-text: var(--theme-text-primary);
+
+  /* Alerts */
+  --color-alert-default-background: var(--theme-background-soft);
+  --color-alert-default-border: var(--theme-border);
+  --color-alert-default-icon-background: var(--theme-ink-200);
+  --color-alert-success-background: color-mix(in oklab, var(--theme-success-500) 12%, var(--theme-background));
+  --color-alert-success-border: color-mix(in oklab, var(--theme-success-500) 32%, var(--theme-background));
+  --color-alert-success-icon-background: var(--theme-success-500);
+  --color-alert-warning-background: color-mix(in oklab, var(--theme-warning-500) 12%, var(--theme-background));
+  --color-alert-warning-border: color-mix(in oklab, var(--theme-warning-500) 32%, var(--theme-background));
+  --color-alert-warning-icon-background: var(--theme-warning-500);
+  --color-alert-danger-background: color-mix(in oklab, var(--theme-error-500) 12%, var(--theme-background));
+  --color-alert-danger-border: color-mix(in oklab, var(--theme-error-500) 32%, var(--theme-background));
+  --color-alert-danger-icon-background: var(--theme-error-500);
+  --color-alert-info-background: color-mix(in oklab, var(--theme-info-500) 12%, var(--theme-background));
+  --color-alert-info-border: color-mix(in oklab, var(--theme-info-500) 32%, var(--theme-background));
+  --color-alert-info-icon-background: var(--theme-info-500);
+
+  /* Badges — soft tint background + saturated text, per hue */
+  --color-badge-primary-background: color-mix(in oklab, var(--theme-primary-500) 15%, var(--theme-background));
+  --color-badge-primary-text: var(--theme-primary-600);
+  --color-badge-neutral-background: var(--theme-background-soft);
+  --color-badge-neutral-text: var(--theme-text-secondary);
+  --color-badge-success-background: color-mix(in oklab, var(--theme-success-500) 15%, var(--theme-background));
+  --color-badge-success-text: var(--theme-success-500);
+  --color-badge-error-background: color-mix(in oklab, var(--theme-error-500) 15%, var(--theme-background));
+  --color-badge-error-text: var(--theme-error-500);
+  --color-badge-warning-background: color-mix(in oklab, var(--theme-warning-500) 15%, var(--theme-background));
+  --color-badge-warning-text: var(--theme-warning-500);
+  --color-badge-blue-background: color-mix(in oklab, #3b82f6 15%, var(--theme-background));
+  --color-badge-blue-text: #3b82f6;
+  --color-badge-sky-background: color-mix(in oklab, #0ea5e9 15%, var(--theme-background));
+  --color-badge-sky-text: #0ea5e9;
+  --color-badge-cyan-background: color-mix(in oklab, #06b6d4 15%, var(--theme-background));
+  --color-badge-cyan-text: #06b6d4;
+  --color-badge-orange-background: color-mix(in oklab, #f97316 15%, var(--theme-background));
+  --color-badge-orange-text: #f97316;
+  --color-badge-pink-background: color-mix(in oklab, #ec4899 15%, var(--theme-background));
+  --color-badge-pink-text: #ec4899;
+  --color-badge-rose-background: color-mix(in oklab, #f43f5e 15%, var(--theme-background));
+  --color-badge-rose-text: #f43f5e;
+  --color-badge-purple-background: color-mix(in oklab, #a855f7 15%, var(--theme-background));
+  --color-badge-purple-text: #a855f7;
+  --color-badge-violet-background: color-mix(in oklab, #8b5cf6 15%, var(--theme-background));
+  --color-badge-violet-text: #8b5cf6;
+
+  /* Form controls + component surfaces */
+  --color-checkbox-background: var(--theme-background-raised);
+  --color-checkbox-checked-background: var(--theme-primary-500);
+  --color-checkbox-checked-border: var(--theme-primary-500);
+  --color-input-background: var(--theme-background-raised);
+  --color-input-placeholder-text: var(--theme-text-muted);
+  --color-input-disabled-text: var(--theme-ink-400);
+  --color-input-label-text: var(--theme-text-secondary);
+  --color-input-primary-focus-border: var(--theme-primary-500);
+  --color-input-error-focus-border: var(--theme-error-500);
+  --color-input-success-focus-border: var(--theme-success-500);
+  --color-dropdown-background: var(--theme-background-raised);
+  --color-dropdown-hover-background: var(--theme-background-soft);
+  --color-popover-border: var(--theme-border);
+  --color-tooltip-border: var(--theme-border);
+  --color-tooltip-text: var(--theme-text-primary);
+  --color-toggle-active-background: var(--theme-primary-500);
+  --color-toggle-default-background: var(--theme-ink-300);
+  --color-toggle-disabled-background: var(--theme-ink-200);
+  --color-tab-active-background: var(--theme-background-raised);
+  --color-tab-secondary-active-background: var(--theme-background-soft);
+  --color-datepicker-selected-background: var(--theme-primary-500);
+  --color-datepicker-selected-hover-background: var(--theme-primary-600);
+
+  /* Alert titles/descriptions + misc long-tail tokens */
+  --color-alert-default-title: var(--theme-text-primary);
+  --color-alert-success-title: var(--theme-text-primary);
+  --color-alert-warning-title: var(--theme-text-primary);
+  --color-alert-danger-title: var(--theme-text-primary);
+  --color-alert-info-title: var(--theme-text-primary);
+  --color-alert-danger-description: var(--theme-text-secondary);
+  --color-alert-danger-button-text: var(--theme-text-primary);
+  --color-button-disabled-border: var(--theme-ink-200);
+  --color-dropdown-divider: var(--theme-border);
+  --color-input-error: var(--theme-error-500);
+  --color-input-success: var(--theme-success-500);
+  --color-toggle-disabled-foreground: var(--theme-ink-400);
+
+  /* Badge icon colors mirror each badge's text hue */
+  --color-badge-primary-icon-color: var(--theme-primary-600);
+  --color-badge-neutral-icon-color: var(--theme-text-secondary);
+  --color-badge-success-icon-color: var(--theme-success-500);
+  --color-badge-error-icon-color: var(--theme-error-500);
+  --color-badge-warning-icon-color: var(--theme-warning-500);
+  --color-badge-blue-icon-color: #3b82f6;
+  --color-badge-sky-icon-color: #0ea5e9;
+  --color-badge-cyan-icon-color: #06b6d4;
+  --color-badge-orange-icon-color: #f97316;
+  --color-badge-pink-icon-color: #ec4899;
+  --color-badge-rose-icon-color: #f43f5e;
+  --color-badge-purple-icon-color: #a855f7;
+  --color-badge-violet-icon-color: #8b5cf6;
+
+  /* Remaining long-tail surface/text tokens */
+  --color-background-200: var(--theme-ink-200);
+  --color-base-500: var(--theme-ink-500);
+  --color-checkbox-checked-icon-color: var(--theme-text-on-brand);
+  --color-error-600: color-mix(in oklab, var(--theme-error-500), #000 12%);
+  --color-foreground-50: var(--theme-ink-950);
+  --color-foreground-100: var(--theme-ink-900);
+  --color-foreground-soft-100: var(--theme-ink-900);
+  --color-foreground-soft-200: var(--theme-ink-800);
+  --color-foreground-soft-300: var(--theme-ink-950);
+  --color-foreground-soft-500: var(--theme-ink-700);
+  --color-text-0: var(--theme-text-on-brand);
+  --color-text-400: var(--theme-ink-300);
+  --color-text-soft-100: var(--theme-text-secondary);
+
+  /* Stray tokens inherited from shadcn/fumadocs/tailgrid-derived previews */
+  --color-accent-foreground: var(--theme-text-primary);
+  --color-muted-foreground: var(--theme-text-muted);
+  --color-primary-foreground: var(--theme-text-on-brand);
+  --color-dark-2: var(--theme-ink-800);
+  --color-dark-3: var(--theme-border);
+  --color-fd-border: var(--theme-border);
+  --color-tg-text: var(--theme-text-primary);
+  --color-tg-border-1: var(--theme-border);
+  --color-stroke-100: var(--theme-border);
+
+  /* Deliberate two-step radius scale (not Tailwind's 6-step default) */
+  --radius-control: 0.5rem;
+  --radius-card: 1.25rem;
+
+  /* Hard-offset, brand-tinted shadow language (no neutral gray blur) */
+  --shadow-card: var(--theme-shadow-card);
+  --shadow-card-hover: var(--theme-shadow-card-hover);
+  --shadow-brand: var(--theme-shadow-brand);
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+}
+
+/* Prism syntax colors for prose code fences (see astro.config.mjs: syntaxHighlight
+   is "prism", not Shiki, because Cloudflare Workers forbid the WASM engine Shiki's
+   default highlighter needs — this is pure JS/CSS, matching our token palette). */
+pre.astro-code,
+pre[class*="language-"] {
+  background: var(--color-background-soft);
+  border-radius: var(--radius-card);
+  padding: 1rem;
+  overflow-x: auto;
+}
+/* @tailwindcss/typography assumes code fences sit on a dark editor background
+   and hardcodes a light gray `--tw-prose-pre-code`, regardless of page theme.
+   This project puts a theme-matched (light-in-light-mode) background on
+   `pre` above, so override the plugin's fixed color or plain/untokenized
+   text becomes nearly invisible in light mode. */
+pre.astro-code code,
+pre[class*="language-"] code {
+  color: var(--color-text-primary);
+}
+.token.keyword,
+.token.tag {
+  color: var(--color-primary-500);
+}
+.token.string,
+.token.attr-value {
+  color: var(--color-success);
+}
+.token.function,
+.token.class-name {
+  color: var(--color-info);
+}
+.token.comment {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+.token.punctuation,
+.token.attr-equals {
+  color: var(--color-text-secondary);
+}
+
+/* Signature grain texture — the replacement for the old radial "glow" hero */
+.bg-grain {
+  position: relative;
+  isolation: isolate;
+}
+
+.bg-grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: var(--theme-grain-opacity);
+  background-image: url("/textures/grain.svg");
+  background-size: 220px 220px;
+  pointer-events: none;
+}

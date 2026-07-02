@@ -1,0 +1,30 @@
+"use client";
+
+import { Spinner } from "@lumina/ui/core/spinner";
+
+export default function SpinnerCustomPreview() {
+  return (
+    <div className="flex flex-wrap items-end gap-8">
+      {/* Primary Color Spinner */}
+      <div className="flex flex-col items-center gap-2">
+        <Spinner className="text-primary-500" />
+        <span className="text-xs text-text-100">Brand Color</span>
+      </div>
+
+      {/* Slow Motion Spinner */}
+      <div className="flex flex-col items-center gap-2">
+        <Spinner className="animate-[spin_3s_linear_infinite]" />
+        <span className="text-xs text-text-100">Slow Motion</span>
+      </div>
+
+      {/* Dual Spinner Style */}
+      <div className="relative flex flex-col items-center gap-2">
+        <div className="relative size-12">
+          <Spinner size="xxl" className="absolute inset-0 opacity-20" />
+          <Spinner size="lg" className="absolute inset-0 m-auto" />
+        </div>
+        <span className="text-xs text-text-100">Dual Track</span>
+      </div>
+    </div>
+  );
+}

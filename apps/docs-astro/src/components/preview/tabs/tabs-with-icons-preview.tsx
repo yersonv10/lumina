@@ -1,0 +1,45 @@
+import { TabContent, TabList, TabRoot, TabTrigger } from "@lumina/ui/core/tabs";
+import { FileText, Gear1, Home, PieChart1 } from "@lumina/icons";
+
+export default function TabsWithIconsPreview() {
+  return (
+    <div className="w-full max-w-xl mx-auto">
+      <TabRoot defaultValue="home" variant="default">
+        <TabList>
+          <TabTrigger value="home" icon={<Home />}>
+            Home
+          </TabTrigger>
+          <TabTrigger value="analytics" icon={<PieChart1 />}>
+            Analytics
+          </TabTrigger>
+          <TabTrigger value="reports" icon={<FileText />}>
+            Reports
+          </TabTrigger>
+          <TabTrigger value="settings" icon={<Gear1 />}>
+            Settings
+          </TabTrigger>
+        </TabList>
+        <TabContent value="home">
+          <p className="text-text-100">
+            Access your main dashboard and summary.
+          </p>
+        </TabContent>
+        <TabContent value="analytics">
+          <p className="text-text-100">
+            View detailed charts and performance metrics.
+          </p>
+        </TabContent>
+        <TabContent value="reports">
+          <p className="text-text-100">
+            Download and review your monthly reports.
+          </p>
+        </TabContent>
+        <TabContent value="settings">
+          <p className="text-text-100">
+            Adjust your system preferences and configurations.
+          </p>
+        </TabContent>
+      </TabRoot>
+    </div>
+  );
+}

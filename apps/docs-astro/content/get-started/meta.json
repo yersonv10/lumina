@@ -1,0 +1,5 @@
+{
+  "title": "Get Started",
+  "defaultOpen": true,
+  "pages": ["quick-start", "global-variables"]
+}

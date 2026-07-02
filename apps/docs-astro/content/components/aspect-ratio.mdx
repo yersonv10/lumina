@@ -1,0 +1,109 @@
+---
+title: React Aspect Ratio Components
+description: A React aspect ratio component built with Tailwind CSS. Keep images, videos, and embeds in a fixed ratio with responsive scaling and no layout shift.
+---
+
+import AspectRatioCustomPreview from "@/components/preview/aspect-ratio/aspect-ratio-custom-preview";
+import AspectRatioImagePreview from "@/components/preview/aspect-ratio/aspect-ratio-image-preview";
+import AspectRatioPreview from "@/components/preview/aspect-ratio/aspect-ratio-preview";
+import AspectRatioVariantsPreview from "@/components/preview/aspect-ratio/aspect-ratio-variants-preview";
+import { getFileContent } from "@/utils/get-file-content";
+
+# Aspect Ratio
+
+The React Aspect Ratio component keeps an element’s width and height in a fixed ratio. It is useful for images, videos, and embeds that need to keep the same shape across different screen sizes.
+
+It adjusts the height based on the container width. So, the content scales correctly, and the layout does not shift during loading or resizing.
+
+Built with React and styled using Tailwind CSS. It supports predefined aspect ratios and custom values for flexible layouts.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/aspect-ratio/aspect-ratio-preview.tsx"
+  )}
+>
+  <AspectRatioPreview />
+</ComponentPreview>
+
+## Installation
+
+Install the component using the Lumina CLI.
+```npm
+npx @lumina/cli add aspect-ratio
+```
+
+## Anatomy
+
+Import the component and pass the desired aspect ratio variant or custom ratio.
+
+```tsx
+import { AspectRatio } from "@/components/lumina/core/aspect-ratio";
+
+export const AspectRatioExample = () => (
+  <AspectRatio ratio="video" className="rounded-lg overflow-hidden">
+    <img
+      src="path/to/image.jpg"
+      alt="Description"
+      className="size-full object-cover"
+    />
+  </AspectRatio>
+);
+```
+
+## Examples
+
+### Variants
+
+The AspectRatio component supports eight predefined Tailwind CSS aspect ratio variants: `square` (1:1), `video` (16:9), `4/3`, `3/4`, `21/9`, `9/16`, `3/2`, and `2/3`.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/aspect-ratio/aspect-ratio-variants-preview.tsx"
+  )}
+>
+  <AspectRatioVariantsPreview />
+</ComponentPreview>
+
+### Custom Ratio
+
+You can specify a custom aspect ratio using the `customRatio` prop, which accepts any numeric value (e.g., `2.35` for cinematic widescreen).
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/aspect-ratio/aspect-ratio-custom-preview.tsx"
+  )}
+>
+  <AspectRatioCustomPreview />
+</ComponentPreview>
+
+**Note:** The `customRatio` prop takes precedence over the `ratio` variant when both are provided.
+
+### Images
+
+The AspectRatio component works seamlessly with responsive images. Use `object-cover` or `object-contain` classes to control how images fill the container.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/aspect-ratio/aspect-ratio-image-preview.tsx"
+  )}
+>
+  <AspectRatioImagePreview />
+</ComponentPreview>
+
+## API Reference
+
+### AspectRatio
+
+| Prop          | Type                                                                          | Default   | Description                                                                     |
+| :------------ | :---------------------------------------------------------------------------- | :-------- | :------------------------------------------------------------------------------ |
+| `ratio`       | `'square' \| 'video' \| '4/3' \| '3/4' \| '21/9' \| '9/16' \| '3/2' \| '2/3'` | `'video'` | Predefined aspect ratio variant based on Tailwind CSS classes                   |
+| `customRatio` | `number`                                                                      | -         | Custom aspect ratio value (e.g., `16/9 \| 2.35`). Takes precedence over `ratio` |
+| `className`   | `string`                                                                      | -         | Additional CSS classes to apply to the container                                |
+| `children`    | `React.ReactNode`                                                             | -         | Content to display within the aspect ratio container **Required**               |
+
+## Accessibility
+
+- **Semantic structure:** The component uses a standard `<div>`. Add semantic elements inside it when needed, such as `<img>`, `<video>`, or `<iframe>`.
+- **Alt text for images:** Always provide a clear `alt` attribute when using images so screen readers can understand the content.
+- **Focus handling:** The component forwards refs, so you can manage focus if the content inside is interactive.
+- **Responsive behavior:** The aspect ratio stays consistent across screen sizes, so content does not shift or break layout.

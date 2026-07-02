@@ -1,0 +1,39 @@
+{
+  "name": "@lumina/ui",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "description": "Source for Lumina's React components, consumed by the docs/CLI registry.",
+  "type": "module",
+  "exports": {
+    "./core/combobox": "./src/core/combobox/index.ts",
+    "./core/spinner": "./src/core/spinner/index.tsx",
+    "./core/*": "./src/core/*.tsx",
+    "./utils/*": "./src/utils/*.ts"
+  },
+  "dependencies": {
+    "@base-ui/react": "^1.2.0",
+    "@floating-ui/react": "^0.27.16",
+    "@internationalized/date": "^3.12.1",
+    "@lumina/icons": "*",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "embla-carousel-autoplay": "^8.6.0",
+    "embla-carousel-react": "^8.6.0",
+    "framer-motion": "^12.25.0",
+    "react": "^19.2.6",
+    "react-aria": "^3.50.0",
+    "react-aria-components": "^1.16.0",
+    "react-dom": "^19.2.6",
+    "react-resizable-panels": "^4.7.1",
+    "react-stately": "^3.42.0",
+    "recharts": "^3.8.0",
+    "tailwind-merge": "^3.3.1"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "*",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.1",
+    "typescript": "5.9.2"
+  }
+}

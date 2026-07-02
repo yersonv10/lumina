@@ -1,0 +1,45 @@
+---
+interface Framework {
+  name: string;
+  icon: string | { light: string; dark: string };
+  href: string;
+}
+
+const frameworks: Framework[] = [
+  { name: "Next.js", icon: "next-js.svg", href: "/installation/next" },
+  { name: "Vite", icon: "vite.svg", href: "/installation/vite" },
+  { name: "Tanstack Start", icon: "tanstack.svg", href: "/installation/tanstack" },
+  {
+    name: "React Router",
+    icon: { light: "react-router-light.svg", dark: "react-router-dark.svg" },
+    href: "/installation/react-router",
+  },
+  { name: "Manual", icon: "react.svg", href: "/installation/manual" },
+  {
+    name: "Astro",
+    icon: { light: "astro-light.svg", dark: "astro-dark.svg" },
+    href: "/installation/astro",
+  },
+];
+---
+
+<div class="not-prose my-6 grid grid-cols-1 gap-2.5 sm:grid-cols-2 md:grid-cols-3">
+  {
+    frameworks.map((framework) => (
+      <a
+        href={framework.href}
+        class="flex flex-col items-center gap-3 rounded-(--radius-card) border border-border bg-background-raised p-10 no-underline transition hover:bg-background-soft"
+      >
+        {typeof framework.icon === "object" ? (
+          <>
+            <img src={`/images/logos/${framework.icon.light}`} alt={framework.name} width="40" height="40" class="size-10 dark:hidden" />
+            <img src={`/images/logos/${framework.icon.dark}`} alt={framework.name} width="40" height="40" class="hidden size-10 dark:block" />
+          </>
+        ) : (
+          <img src={`/images/logos/${framework.icon}`} alt={framework.name} width="40" height="40" class="size-10" />
+        )}
+        <p class="text-text-primary text-nowrap">{framework.name}</p>
+      </a>
+    ))
+  }
+</div>

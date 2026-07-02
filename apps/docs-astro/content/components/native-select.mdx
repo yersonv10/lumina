@@ -1,0 +1,133 @@
+---
+title: Native Select Components
+description: A Native select component built with React and Tailwind CSS. Create dropdown menus using the browser’s select input with mobile-friendly behavior and built-in accessibility.
+---
+
+import NativeSelectDisabledPreview from "@/components/preview/native-select/native-select-disabled-preview";
+import NativeSelectOptGroupPreview from "@/components/preview/native-select/native-select-optgroup-preview";
+import NativeSelectPlaceholderPreview from "@/components/preview/native-select/native-select-placeholder-preview";
+import NativeSelectPreview from "@/components/preview/native-select/native-select-preview";
+import NativeSelectStatesPreview from "@/components/preview/native-select/native-select-states-preview";
+import { getFileContent } from "@/utils/get-file-content";
+
+# Native Select
+
+The Native Select component lets users choose an option from a dropdown list using the browser’s built-in select menu. It provides a simple and familiar way to handle selections.
+
+It uses the native HTML select behavior, which works well on mobile devices and supports accessibility by default.
+
+Built with React and styled using Tailwind CSS. It supports different states, such as error and success, along with placeholders and grouped items.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/native-select/native-select-preview.tsx"
+  )}
+>
+  <NativeSelectPreview client:visible />
+</ComponentPreview>
+
+## Installation
+
+Install the component using the Lumina CLI.
+```npm
+npx @lumina/cli add native-select
+```
+
+## Anatomy
+
+Import the component and pass the required props.
+
+```tsx
+import {
+  NativeSelect,
+  NativeSelectOption
+} from "@/components/lumina/core/native-select";
+
+export const NativeSelectExample = () => (
+  <NativeSelect>
+    <NativeSelectOption value="option1">Option 1</NativeSelectOption>
+    <NativeSelectOption value="option2">Option 2</NativeSelectOption>
+  </NativeSelect>
+);
+```
+
+## Examples
+
+### States
+
+The Native Select component supports `error` and `success` states for validation feedback.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/native-select/native-select-states-preview.tsx"
+  )}
+>
+  <NativeSelectStatesPreview client:visible />
+</ComponentPreview>
+
+### Placeholder
+
+Use the `placeholder` prop to display a placeholder when no value is selected.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/native-select/native-select-placeholder-preview.tsx"
+  )}
+>
+  <NativeSelectPlaceholderPreview client:visible />
+</ComponentPreview>
+
+### Disabled
+
+The component can be disabled to prevent user interaction.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/native-select/native-select-disabled-preview.tsx"
+  )}
+>
+  <NativeSelectDisabledPreview client:visible />
+</ComponentPreview>
+
+### Option Groups
+
+Use `NativeSelectOptGroup` to group related options together.
+
+<ComponentPreview
+  codeSnippet={getFileContent(
+    "/src/components/preview/native-select/native-select-optgroup-preview.tsx"
+  )}
+>
+  <NativeSelectOptGroupPreview client:visible />
+</ComponentPreview>
+
+## API Reference
+
+### NativeSelect
+
+| Prop          | Type                                | Default     | Description                                    |
+| :------------ | :---------------------------------- | :---------- | :--------------------------------------------- |
+| `variant`     | `'default' \| 'success' \| 'error'` | `'default'` | Controls the visual state of the select        |
+| `placeholder` | `string`                            | -           | Sets a placeholder for the select              |
+| `disabled`    | `boolean`                           | -           | Disables the select                            |
+| `className`   | `string`                            | -           | Additional CSS classes to apply to the wrapper |
+
+### NativeSelectOption
+
+| Prop        | Type     | Default | Description            |
+| :---------- | :------- | :------ | :--------------------- |
+| `className` | `string` | -       | Additional CSS classes |
+
+### NativeSelectOptGroup
+
+| Prop        | Type     | Default | Description            |
+| :---------- | :------- | :------ | :--------------------- |
+| `className` | `string` | -       | Additional CSS classes |
+
+## Accessibility
+
+- **Semantic structure:** Uses the native `<select>` element, so it follows standard form behavior by default.
+- **Keyboard support:** Users can open the dropdown and move between options using keyboard keys such as `Arrow` keys, `Enter`, and `Space`.
+- **Label association:** The select can be linked to a label using `htmlFor` and `id`, so users understand what the field is for.
+- **Screen reader support:** Options, selected values, and groups are handled through the browser’s built-in accessibility behavior.
+- **Disabled state:** Disabled selects and options are handled natively and are not interactive.

@@ -1,0 +1,75 @@
+/* ============================================
+   LIGHT THEME — "warm ink on parchment"
+   Apply when: <html data-theme="light">
+   ============================================ */
+
+[data-theme="light"] {
+  /* Ember (brand accent) — used sparingly: links, focus, primary CTA */
+  --theme-primary-50: #fff4ea;
+  --theme-primary-100: #ffe4c7;
+  --theme-primary-200: #ffc794;
+  --theme-primary-300: #ffa35a;
+  --theme-primary-400: #ff8033;
+  --theme-primary-500: #f2660f;
+  --theme-primary-600: #d14e08;
+  --theme-primary-700: #a8390a;
+  --theme-primary-800: #852d0f;
+  --theme-primary-900: #6b280f;
+  --theme-primary-950: #3a1206;
+
+  --theme-primary-text: #fff4ea;
+  --theme-brand-color: #f2660f;
+
+  /* Charcoal-warm neutrals (surfaces + text), not Tailwind gray */
+  --theme-ink-50: #faf7f2;
+  --theme-ink-100: #f2ede4;
+  --theme-ink-200: #e6ddd0;
+  --theme-ink-300: #d3c6b4;
+  --theme-ink-400: #a99a86;
+  --theme-ink-500: #7d7062;
+  --theme-ink-600: #5c5347;
+  --theme-ink-700: #453f37;
+  --theme-ink-800: #2e2a25;
+  --theme-ink-900: #1d1a17;
+  --theme-ink-950: #100e0c;
+
+  /* Text */
+  --theme-text-primary: var(--theme-ink-900);
+  --theme-text-secondary: var(--theme-ink-600);
+  --theme-text-muted: var(--theme-ink-400);
+  --theme-text-on-brand: #fff4ea;
+
+  /* Semantic (warmed, not stock Tailwind hues) */
+  --theme-error-500: #d1453a;
+  --theme-success-500: #3a8f5c;
+  --theme-warning-500: #cf9a1f;
+  --theme-info-500: #3d7ea6;
+
+  /* Surfaces */
+  --theme-background: var(--theme-ink-50);
+  --theme-background-raised: #ffffff;
+  --theme-background-soft: var(--theme-ink-100);
+  --theme-background-inverted: var(--theme-ink-900);
+
+  /* Borders */
+  --theme-border: var(--theme-ink-200);
+  --theme-border-strong: var(--theme-ink-300);
+
+  /* Buttons */
+  --theme-button-primary-background: var(--theme-primary-500);
+  --theme-button-primary-hover-background: var(--theme-primary-600);
+  --theme-button-primary-text: #fff4ea;
+
+  --theme-button-outline-background: var(--theme-background-raised);
+  --theme-button-outline-border: var(--theme-ink-300);
+  --theme-button-outline-text: var(--theme-ink-800);
+  --theme-button-outline-hover-background: var(--theme-ink-100);
+
+  /* Signature hard-offset shadow, tinted with brand ink instead of neutral gray blur */
+  --theme-shadow-card: 4px 4px 0 0 rgba(29, 26, 23, 0.08);
+  --theme-shadow-card-hover: 6px 6px 0 0 rgba(29, 26, 23, 0.12);
+  --theme-shadow-brand: 3px 3px 0 0 rgba(242, 102, 15, 0.35);
+
+  /* Grain texture overlay opacity tuned per-theme */
+  --theme-grain-opacity: 0.05;
+}
