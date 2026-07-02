@@ -1,6 +1,6 @@
 "use client";
 
-import { TimePicker, TimePickerTrigger } from "@lumina/ui/core/time-picker";
+import { TimePicker, TimePickerTrigger } from "@lumina/ui";
 import { ClockThree } from "@lumina/icons";
 import { useState } from "react";
 

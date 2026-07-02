@@ -1,4 +1,4 @@
-import { Link } from "@lumina/ui/core/link";
+import { Link } from "@lumina/ui";
 import { Link1AngularRight } from "@lumina/icons";
 
 export default function LinkExternalPreview() {

@@ -1,9 +1,9 @@
 "use client";
 
-import luminaUiIcon from "@/assets/logo/lumina-icon.svg";
-import { Breadcrumbs } from "@lumina/ui/core/breadcrumbs";
-import { buttonStyles } from "@lumina/ui/core/button";
-import { Collapsible, CollapsibleContent } from "@lumina/ui/core/collapsible";
+import luminaUiIcon from "@/assets/logo/lumina-ui-icon.svg";
+import { Breadcrumbs } from "@lumina/ui";
+import { buttonStyles } from "@lumina/ui";
+import { Collapsible, CollapsibleContent } from "@lumina/ui";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,7 +11,7 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger
-} from "@lumina/ui/core/dropdown";
+} from "@lumina/ui";
 import {
   Sidebar,
   SidebarContent,
@@ -27,7 +27,7 @@ import {
   SidebarMenuSubItem,
   SidebarProvider,
   SidebarTrigger
-} from "@lumina/ui/core/sidebar";
+} from "@lumina/ui";
 import { cn } from "@/utils/cn";
 import {
   BotUser1,

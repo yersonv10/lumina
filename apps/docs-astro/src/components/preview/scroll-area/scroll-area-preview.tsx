@@ -2,7 +2,7 @@ import {
   ScrollArea,
   ScrollAreaViewport,
   ScrollBar
-} from "@lumina/ui/core/scroll-area";
+} from "@lumina/ui";
 
 const tags = Array.from({ length: 50 }).map(
   (_, i, a) => `v1.2.0-beta.${a.length - i}`

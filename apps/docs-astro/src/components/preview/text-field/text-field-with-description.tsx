@@ -1,10 +1,10 @@
 "use client";
 
-import { Description } from "@lumina/ui/core/description";
-import { FieldError } from "@lumina/ui/core/field";
-import { Input } from "@lumina/ui/core/input";
-import { Label } from "@lumina/ui/core/label";
-import { TextField } from "@lumina/ui/core/text-field";
+import { Description } from "@lumina/ui";
+import { FieldError } from "@lumina/ui";
+import { Input } from "@lumina/ui";
+import { Label } from "@lumina/ui";
+import { TextField } from "@lumina/ui";
 
 export default function TextFieldWithDescription() {
   return (

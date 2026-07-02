@@ -1,12 +1,12 @@
 "use client";
 
-import { FieldDescription, FieldLabel } from "@lumina/ui/core/field";
-import { Input } from "@lumina/ui/core/input";
+import { FieldDescription, FieldLabel } from "@lumina/ui";
+import { Input } from "@lumina/ui";
 import {
   NumberField,
   NumberFieldAction,
   NumberFieldGroup
-} from "@lumina/ui/core/number-field";
+} from "@lumina/ui";
 import { Minus, Plus } from "@lumina/icons";
 
 export default function NumberFieldUncontrolled() {

@@ -4,7 +4,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious
-} from "@lumina/ui/core/carousel";
+} from "@lumina/ui";
 
 export default function CarouselPreview() {
   return (

@@ -1,8 +1,8 @@
 "use client";
 
-import { Input } from "@lumina/ui/core/input";
-import { Label } from "@lumina/ui/core/label";
-import { TextField } from "@lumina/ui/core/text-field";
+import { Input } from "@lumina/ui";
+import { Label } from "@lumina/ui";
+import { TextField } from "@lumina/ui";
 import { useState } from "react";
 
 export default function TextFieldControlled() {

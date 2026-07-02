@@ -5,9 +5,9 @@ import {
   InputGroupAddon,
   InputGroupButton,
   InputGroupTextarea
-} from "@lumina/ui/core/input-group";
-import { Label } from "@lumina/ui/core/label";
-import { TextField } from "@lumina/ui/core/text-field";
+} from "@lumina/ui";
+import { Label } from "@lumina/ui";
+import { TextField } from "@lumina/ui";
 import { useState } from "react";
 
 export default function InputGroupAlignPreview() {

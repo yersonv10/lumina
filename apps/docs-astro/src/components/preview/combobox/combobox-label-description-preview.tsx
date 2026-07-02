@@ -11,7 +11,7 @@ import {
   ComboboxLabel,
   ComboboxList,
   ComboboxTrigger
-} from "@lumina/ui/core/combobox/combobox";
+} from "@lumina/ui";
 
 export default function ComboboxLabelDescriptionPreview() {
   return (

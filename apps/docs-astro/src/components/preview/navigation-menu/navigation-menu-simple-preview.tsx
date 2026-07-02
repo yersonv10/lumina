@@ -6,7 +6,7 @@ import {
   NavigationMenuList,
   NavigationMenuPositioner,
   NavigationMenuTrigger
-} from "@lumina/ui/core/navigation-menu";
+} from "@lumina/ui";
 import {
   ArrowRight,
   Bolt1,

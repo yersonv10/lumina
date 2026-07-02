@@ -1,7 +1,7 @@
 import {
   NativeSelect,
   NativeSelectOption
-} from "@lumina/ui/core/native-select";
+} from "@lumina/ui";
 
 export default function NativeSelectPlaceholderPreview() {
   return (

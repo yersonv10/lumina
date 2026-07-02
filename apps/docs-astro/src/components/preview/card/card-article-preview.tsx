@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader } from "@lumina/ui/core/card";
+import { Card, CardContent, CardHeader } from "@lumina/ui";
 import Image from "@/components/compat/image";
 
 export default function CardArticlePreview() {

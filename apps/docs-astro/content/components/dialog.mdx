@@ -33,10 +33,10 @@ Built with React and `react-aria-components` Components, and styled using Tailwi
 
 ## Installation
 
-Install the component using the Lumina CLI.
+Install the package.
 
 ```npm
-npx @lumina/cli add dialog
+npm install @lumina/ui
 ```
 
 ## Anatomy
@@ -44,8 +44,8 @@ npx @lumina/cli add dialog
 Wrap the `Dialog` component with `OverlayWrapper` and `Backdrop` from the overlay module to create a complete dialog experience with trigger and backdrop behavior.
 
 ```tsx
-import { OverlayWrapper } from "@/components/lumina/core/overlay";
-import { Backdrop } from "@/components/lumina/core/overlay";
+import { OverlayWrapper } from "@lumina/ui";
+import { Backdrop } from "@lumina/ui";
 import {
   Dialog,
   DialogHeader,
@@ -54,7 +54,7 @@ import {
   DialogBody,
   DialogFooter,
   DialogClose
-} from "@/components/lumina/core/dialog";
+} from "@lumina/ui";
 
 export default function DialogAnatomy() {
   return (

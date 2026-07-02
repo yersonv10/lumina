@@ -1,4 +1,4 @@
-import { TabContent, TabList, TabRoot, TabTrigger } from "@lumina/ui/core/tabs";
+import { TabContent, TabList, TabRoot, TabTrigger } from "@lumina/ui";
 import { FileText, Gear1, Home, PieChart1 } from "@lumina/icons";
 
 export default function TabsWithIconsPreview() {

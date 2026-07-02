@@ -1,7 +1,7 @@
 "use client";
 
-import { Input } from "@lumina/ui/core/input";
-import { Label } from "@lumina/ui/core/label";
+import { Input } from "@lumina/ui";
+import { Label } from "@lumina/ui";
 import { useId } from "react";
 
 export default function InputPreview() {

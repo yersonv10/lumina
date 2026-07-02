@@ -1,4 +1,4 @@
-import { List } from "@lumina/ui/core/list";
+import { List } from "@lumina/ui";
 
 export default function ListHorizontalPreview() {
   return (

@@ -10,7 +10,7 @@ import {
   CalendarHeading,
   NavButton,
   type DateValue
-} from "@lumina/ui/core/calendar";
+} from "@lumina/ui";
 import { getLocalTimeZone, today } from "@internationalized/date";
 import { Check, InfoTriangle } from "@lumina/icons";
 import { useState } from "react";

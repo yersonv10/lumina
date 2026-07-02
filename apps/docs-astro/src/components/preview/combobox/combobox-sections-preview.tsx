@@ -12,7 +12,7 @@ import {
   ComboboxSection,
   ComboboxSeparator,
   ComboboxTrigger
-} from "@lumina/ui/core/combobox";
+} from "@lumina/ui";
 
 export default function ComboboxSectionsPreview() {
   return (

@@ -1,7 +1,7 @@
 "use client";
 
-import { TabContent, TabList, TabRoot, TabTrigger } from "@lumina/ui/core/tabs";
-import { Toggle } from "@lumina/ui/core/toggle";
+import { TabContent, TabList, TabRoot, TabTrigger } from "@lumina/ui";
+import { Toggle } from "@lumina/ui";
 import { cn } from "@/utils/cn";
 import {
   BarChartSquare,

@@ -1,6 +1,6 @@
 "use client";
 
-import OtpInput from "@lumina/ui/core/otp-input";
+import { OtpInput } from "@lumina/ui";
 
 export default function OtpInputCustomPreview() {
   return (

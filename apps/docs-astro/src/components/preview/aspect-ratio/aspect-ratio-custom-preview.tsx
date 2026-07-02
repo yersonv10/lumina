@@ -1,4 +1,4 @@
-import { AspectRatio } from "@lumina/ui/core/aspect-ratio";
+import { AspectRatio } from "@lumina/ui";
 
 export default function AspectRatioCustomPreview() {
   return (

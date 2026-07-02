@@ -1,6 +1,6 @@
 "use client";
 
-import { buttonStyles } from "@lumina/ui/core/button";
+import { buttonStyles } from "@lumina/ui";
 import {
   Sheet,
   SheetBody,
@@ -11,7 +11,7 @@ import {
   SheetOverlay,
   SheetTitle,
   SheetTrigger
-} from "@lumina/ui/core/sheet";
+} from "@lumina/ui";
 
 export default function SheetScrollablePreview() {
   const SKELETON_ITEMS = Array.from({ length: 20 });

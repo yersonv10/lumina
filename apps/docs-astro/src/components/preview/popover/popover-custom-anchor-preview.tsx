@@ -1,8 +1,8 @@
 "use client";
 
-import { Button } from "@lumina/ui/core/button";
-import { OverlayWrapper } from "@lumina/ui/core/overlay";
-import { Popover, PopoverArrow } from "@lumina/ui/core/popover";
+import { Button } from "@lumina/ui";
+import { OverlayWrapper } from "@lumina/ui";
+import { Popover, PopoverArrow } from "@lumina/ui";
 import { InfoCircle } from "@lumina/icons";
 import { useRef } from "react";
 

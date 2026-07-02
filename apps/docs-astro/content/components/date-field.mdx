@@ -31,18 +31,19 @@ React Date Field components allow users to select a specific date value using a 
 
 The Date Field relies on the `react-aria-components` library.
 
-Install the component using the Lumina CLI.
+Install the package.
+
 ```npm
-npx @lumina/cli add date-field
+npm install @lumina/ui
 ```
 
 ## Anatomy
 
 ```tsx
-import { Label } from "@/components/lumina/core/label";
-import { Description } from "@/components/lumina/core/description";
-import { DateField } from "@/components/lumina/core/date-field";
-import { DateInput, DateSegment } from "@/components/lumina/core/date-field";
+import { Label } from "@lumina/ui";
+import { Description } from "@lumina/ui";
+import { DateField } from "@lumina/ui";
+import { DateInput, DateSegment } from "@lumina/ui";
 
 export const DateFieldExample = () => (
   <DateField>

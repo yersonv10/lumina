@@ -1,6 +1,6 @@
 "use client";
 
-import { Pagination } from "@lumina/ui/core/pagination";
+import { Pagination } from "@lumina/ui";
 import { useState } from "react";
 
 export default function PaginationLabelSidePreview() {

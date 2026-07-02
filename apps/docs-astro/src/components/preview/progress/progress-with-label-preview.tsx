@@ -1,4 +1,4 @@
-import { Progress } from "@lumina/ui/core/progress";
+import { Progress } from "@lumina/ui";
 
 export default function ProgressWithLabelPreview() {
   return (

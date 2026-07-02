@@ -6,7 +6,7 @@ import {
   AlertDescription,
   AlertIndicator,
   AlertTitle
-} from "@lumina/ui/core/alert";
+} from "@lumina/ui";
 
 export function AlertPreview() {
   return (

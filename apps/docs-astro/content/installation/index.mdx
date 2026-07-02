@@ -7,19 +7,24 @@ import FrameworkCards from "@/components/FrameworkCards.astro";
 
 # Installation
 
-To get started with Lumina, you first need a React project with [Tailwind CSS](https://tailwindcss.com/) set up.
+To get started with Lumina, you first need a React project with [Tailwind CSS 4](https://tailwindcss.com/) set up.
 
 ## Quick Start
 
-The fastest way to get started is by using our CLI. Run the following command in your project root:
+Lumina is a regular npm package — no CLI required.
 
 ```npm
-npx @lumina/cli@latest init
+npm install @lumina/ui @lumina/icons
 ```
 
-This will initialize Lumina by installing required dependencies, generating the config file, and adding base styles.
+Then add the theme to your global CSS, after your `@import "tailwindcss";`:
 
-**Note:** If you have chosen not to replace the content of your main CSS file, you will need to copy and paste the styles of [lumina.css](/get-started/global-variables) into your main CSS file (e.g., `src/app/globals.css` or `src/index.css`).
+```css
+@import "tailwindcss";
+@import "@lumina/ui/theme.css";
+```
+
+See [Global CSS Variables](/get-started/global-variables) for the full list of tokens this brings in.
 
 ## Pick Your Framework
 

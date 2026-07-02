@@ -1,4 +1,4 @@
-import { Button } from "@lumina/ui/core/button";
+import { Button } from "@lumina/ui";
 import { RefreshCircle1Clockwise } from "@lumina/icons";
 
 export default function ButtonDisabledPreview() {

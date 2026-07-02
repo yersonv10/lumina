@@ -8,7 +8,7 @@ import CheckboxControlledPreview from "@/components/preview/checkbox/checkbox-co
 import CheckboxPreview from "@/components/preview/checkbox/checkbox-preview";
 import CheckboxSizesPreview from "@/components/preview/checkbox/checkbox-sizes-preview";
 import CheckboxWithLabelPreview from "@/components/preview/checkbox/checkbox-with-label-preview";
-import { Checkbox } from "@lumina/ui/core/checkbox";
+import { Checkbox } from "@lumina/ui";
 import { getFileContent } from "@/utils/get-file-content";
 
 # Checkbox
@@ -27,8 +27,10 @@ This Checkbox component is built with React and styled using Tailwind CSS, provi
 
 ## Installation
 
+Install the package.
+
 ```npm
-npx @lumina/cli add checkbox
+npm install @lumina/ui
 ```
 
 ## Usage
@@ -36,8 +38,8 @@ npx @lumina/cli add checkbox
 Import the component and either provide an accessible name directly or pair it with the standalone `Label` component.
 
 ```tsx
-import { Checkbox } from "@/components/lumina/core/checkbox";
-import { Label } from "@/components/lumina/core/label";
+import { Checkbox } from "@lumina/ui";
+import { Label } from "@lumina/ui";
 import { useId } from "react";
 
 export default function CheckboxExample() {

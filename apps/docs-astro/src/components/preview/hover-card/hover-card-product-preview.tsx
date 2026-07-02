@@ -4,7 +4,7 @@ import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger
-} from "@lumina/ui/core/hover-card";
+} from "@lumina/ui";
 import Image from "@/components/compat/image";
 
 export default function HoverCardProductPreview() {

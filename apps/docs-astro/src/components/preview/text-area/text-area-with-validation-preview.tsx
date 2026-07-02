@@ -1,11 +1,11 @@
 "use client";
 
-import { Button } from "@lumina/ui/core/button";
-import { Description } from "@lumina/ui/core/description";
-import { FieldError } from "@lumina/ui/core/field";
-import { Label } from "@lumina/ui/core/label";
-import { TextArea } from "@lumina/ui/core/text-area";
-import { TextField } from "@lumina/ui/core/text-field";
+import { Button } from "@lumina/ui";
+import { Description } from "@lumina/ui";
+import { FieldError } from "@lumina/ui";
+import { Label } from "@lumina/ui";
+import { TextArea } from "@lumina/ui";
+import { TextField } from "@lumina/ui";
 import { type FormEvent, useState } from "react";
 import { Form } from "react-aria-components";
 

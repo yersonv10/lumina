@@ -1,4 +1,4 @@
-import { ButtonGroup } from "@lumina/ui/core/button-group";
+import { ButtonGroup } from "@lumina/ui";
 
 export default function ButtonGroupSizesPreview() {
   return (

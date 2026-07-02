@@ -1,9 +1,9 @@
 "use client";
 
-import { DateInput, DateSegment } from "@lumina/ui/core/date-field";
-import { Description } from "@lumina/ui/core/description";
-import { Label } from "@lumina/ui/core/label";
-import { TimeField } from "@lumina/ui/core/time-field";
+import { DateInput, DateSegment } from "@lumina/ui";
+import { Description } from "@lumina/ui";
+import { Label } from "@lumina/ui";
+import { TimeField } from "@lumina/ui";
 import { Time } from "@internationalized/date";
 import { useState } from "react";
 

@@ -7,7 +7,7 @@ import {
   InputGroupAddon,
   InputGroupButton,
   InputGroupInput
-} from "@lumina/ui/core/input-group";
+} from "@lumina/ui";
 import { Check, Copy4, Link1AngularRight } from "@lumina/icons";
 
 export default function InputGroupPreview() {

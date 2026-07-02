@@ -1,4 +1,4 @@
-import { Separator } from "@lumina/ui/core/separator";
+import { Separator } from "@lumina/ui";
 
 export default function SeparatorDecorativePreview() {
   return (

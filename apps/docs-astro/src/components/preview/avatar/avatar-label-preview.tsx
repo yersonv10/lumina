@@ -3,7 +3,7 @@ import {
   AvatarBadge,
   AvatarFallback,
   AvatarImage
-} from "@lumina/ui/core/avatar";
+} from "@lumina/ui";
 
 export default function AvatarPreview() {
   return (

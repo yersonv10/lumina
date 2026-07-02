@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, buttonStyles } from "@lumina/ui/core/button";
+import { Button, buttonStyles } from "@lumina/ui";
 import {
   Dialog,
   DialogBody,
@@ -9,10 +9,10 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle
-} from "@lumina/ui/core/dialog";
-import { Input } from "@lumina/ui/core/input";
-import { Label } from "@lumina/ui/core/label";
-import { Backdrop, OverlayWrapper } from "@lumina/ui/core/overlay";
+} from "@lumina/ui";
+import { Input } from "@lumina/ui";
+import { Label } from "@lumina/ui";
+import { Backdrop, OverlayWrapper } from "@lumina/ui";
 
 export default function DialogWithoutClosePreview() {
   return (

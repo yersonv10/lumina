@@ -27,9 +27,10 @@ It makes forms easier to build and more accessible by linking labels, descriptio
 
 ## Installation
 
-Install the component using the Lumina CLI.
+Install the package.
+
 ```npm
-npx @lumina/cli add field
+npm install @lumina/ui
 ```
 
 ## Anatomy
@@ -47,8 +48,8 @@ import {
   FieldDescription,
   FieldError,
   FieldSeparator
-} from "@/components/lumina/core/field";
-import { TextField } from "@/components/lumina/core/text-field";
+} from "@lumina/ui";
+import { TextField } from "@lumina/ui";
 
 export const FieldAnatomy = () => (
   <FieldSet>

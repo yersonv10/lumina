@@ -1,5 +1,5 @@
 ---
-import { REGISTRIES } from "../../../../packages/cli/src/registries";
+import { COMPONENTS } from "@/lib/components-registry";
 import { COMPONENT_CATEGORIES } from "@/lib/component-catalog";
 
 import { AccordionPreview as Preview_accordion } from "@/components/preview/accordion/accordion-preview";
@@ -135,7 +135,7 @@ const PREVIEWS: Record<string, any> = {
   "tooltip": Preview_tooltip,
 };
 
-const components = REGISTRIES.filter((r) => r.type === "component");
+const components = COMPONENTS;
 const byId = new Map(components.map((c) => [c.id, c]));
 
 const grouped = COMPONENT_CATEGORIES.map((cat) => ({

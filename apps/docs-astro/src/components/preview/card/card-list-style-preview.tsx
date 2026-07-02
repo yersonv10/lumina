@@ -6,7 +6,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle
-} from "@lumina/ui/core/card";
+} from "@lumina/ui";
 import { CheckCircle1, StarFatFalling } from "@lumina/icons";
 
 export default function CardListStylePreview() {

@@ -9,7 +9,7 @@ import {
   CalendarHeader,
   CalendarHeading,
   NavButton
-} from "@lumina/ui/core/calendar";
+} from "@lumina/ui";
 import { I18nProvider } from "react-aria-components";
 
 export default function CalendarInternationalizedPreview() {

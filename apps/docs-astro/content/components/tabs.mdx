@@ -26,9 +26,10 @@ This Tabs component is built with React and styled using Tailwind CSS. It suppor
 
 ## Installation
 
-Install the component using the Lumina CLI.
+Install the package.
+
 ```npm
-npx @lumina/cli add tabs
+npm install @lumina/ui
 ```
 
 ## Anatomy
@@ -41,7 +42,7 @@ import {
   TabList,
   TabTrigger,
   TabContent
-} from "@/components/lumina/core/tabs";
+} from "@lumina/ui";
 
 const TabsExample = () => (
   <TabRoot defaultValue="tab1">
@@ -67,7 +68,7 @@ import {
   TabList,
   TabRoot,
   TabTrigger
-} from "@/components/lumina/core/tabs";
+} from "@lumina/ui";
 
 export default function TabsExample() {
   return (

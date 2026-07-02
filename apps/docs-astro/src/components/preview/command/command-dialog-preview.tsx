@@ -9,7 +9,7 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut
-} from "@lumina/ui/core/command";
+} from "@lumina/ui";
 import {
   Calendar,
   CreditCard,

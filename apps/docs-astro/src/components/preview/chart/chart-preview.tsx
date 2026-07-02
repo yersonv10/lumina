@@ -6,7 +6,7 @@ import {
   ChartLegendContent,
   ChartTooltip,
   ChartTooltipContent
-} from "@lumina/ui/core/chart";
+} from "@lumina/ui";
 import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from "recharts";
 
 export default function ChartPreview() {

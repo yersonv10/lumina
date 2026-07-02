@@ -13,7 +13,7 @@ import {
   SidebarMenuItem,
   SidebarProvider,
   SidebarTrigger
-} from "@lumina/ui/core/sidebar";
+} from "@lumina/ui";
 import {
   AngleDoubleLeft,
   Calendar,

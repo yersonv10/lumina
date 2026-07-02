@@ -1,6 +1,6 @@
 "use client";
 
-import { buttonStyles } from "@lumina/ui/core/button";
+import { buttonStyles } from "@lumina/ui";
 import {
   Drawer,
   DrawerBody,
@@ -9,7 +9,7 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger
-} from "@lumina/ui/core/drawer";
+} from "@lumina/ui";
 
 const SIDES = ["top", "right", "bottom", "left"] as const;
 

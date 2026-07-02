@@ -1,5 +1,5 @@
 "use client";
-import { AvatarToast } from "@lumina/ui/core/toast";
+import { AvatarToast } from "@lumina/ui";
 import { useEffect, useState } from "react";
 
 export default function ToastAvatarPreview() {

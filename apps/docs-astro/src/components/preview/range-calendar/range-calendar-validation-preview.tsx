@@ -11,7 +11,7 @@ import {
   RangeCalendarHeading,
   RangeNavButton,
   type RangeValue
-} from "@lumina/ui/core/range-calendar";
+} from "@lumina/ui";
 import { getLocalTimeZone, today } from "@internationalized/date";
 import { Check, InfoTriangle } from "@lumina/icons";
 import { useState } from "react";

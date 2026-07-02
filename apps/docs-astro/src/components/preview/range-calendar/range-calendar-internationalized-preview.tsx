@@ -9,7 +9,7 @@ import {
   RangeCalendarHeader,
   RangeCalendarHeading,
   RangeNavButton
-} from "@lumina/ui/core/range-calendar";
+} from "@lumina/ui";
 import { I18nProvider } from "react-aria-components";
 
 export default function RangeCalendarInternationalizedPreview() {

@@ -6,8 +6,8 @@ import {
   AlertDescription,
   AlertIndicator,
   AlertTitle
-} from "@lumina/ui/core/alert";
-import { Button } from "@lumina/ui/core/button";
+} from "@lumina/ui";
+import { Button } from "@lumina/ui";
 import { RefreshCircle3Clockwise, Xmark2x } from "@lumina/icons";
 
 export default function AlertFlexibilityPreview() {

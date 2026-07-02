@@ -7,7 +7,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue
-} from "@lumina/ui/core/select";
+} from "@lumina/ui";
 import { Search1 } from "@lumina/icons";
 
 export default function SelectCustomIndicatorPreview() {

@@ -9,7 +9,7 @@ import {
   CalendarHeader,
   CalendarHeading,
   NavButton
-} from "@lumina/ui/core/calendar";
+} from "@lumina/ui";
 import { CalendarDate } from "@internationalized/date";
 import { useState } from "react";
 

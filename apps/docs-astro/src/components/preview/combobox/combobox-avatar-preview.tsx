@@ -1,6 +1,6 @@
 "use client";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@lumina/ui/core/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@lumina/ui";
 import {
   Combobox,
   ComboboxContent,
@@ -11,7 +11,7 @@ import {
   ComboboxLabel,
   ComboboxList,
   ComboboxTrigger
-} from "@lumina/ui/core/combobox";
+} from "@lumina/ui";
 
 const users = [
   {

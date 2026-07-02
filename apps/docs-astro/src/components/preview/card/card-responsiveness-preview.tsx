@@ -1,11 +1,11 @@
-import { Button } from "@lumina/ui/core/button";
+import { Button } from "@lumina/ui";
 import {
   Card,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle
-} from "@lumina/ui/core/card";
+} from "@lumina/ui";
 import { Phone } from "@lumina/icons";
 
 export default function CardResponsivenessPreview() {

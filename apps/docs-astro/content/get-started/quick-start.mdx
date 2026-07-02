@@ -7,69 +7,42 @@ description: Get started with Lumina in your React project.
 
 # Quick Start
 
-Lumina isn't a package you install and import from `node_modules` — components are copied straight into your project as source code, so you own them and can edit anything. This guide covers setup for a project that already has React and Tailwind CSS.
+Lumina is a regular npm package — install it and import components like any other library. This guide covers setup for a project that already has React and Tailwind CSS 4.
 
 **Starting from scratch, or using Astro, Next.js, Vite, TanStack Start, or React Router?** Head to [Installation](/installation) and pick your framework — it walks through scaffolding a project before you get here.
 
 <Steps>
 
 <Step>
-### Initialize Lumina
-
-Run the `init` command in your project root.
+### Install the packages
 
 ```npm
-npx @lumina/cli@latest init
+npm install @lumina/ui @lumina/icons
 ```
 
-This prompts you to:
-
-- Select a theme for your components.
-- Configure an import alias for your project.
-
-It creates:
-
-- `lumina.config.json` — configuration file for the CLI.
-- `lumina.css` — base styles for Lumina components.
-- A `cn` utility file for merging Tailwind CSS classes.
-
-It also installs the required dependencies (`clsx`, `@tailwindcss/forms`, and `tailwind-merge`).
+`@lumina/ui` ships every component; `@lumina/icons` is a separate package with 700+ icon components — install it only if you use icons.
 
 </Step>
 
 <Step>
-### Add Base Styles
+### Add the theme
 
-If you chose not to let `init` replace your main CSS file, copy the contents of the generated `lumina.css` into it (e.g. `globals.css` or `app.css`). See [Global CSS Variables](/get-started/global-variables) for the full list of tokens and what each one controls.
+Add this line to your global CSS, after your existing `@import "tailwindcss";`:
+
+```css title="src/app.css"
+@import "tailwindcss";
+@import "@lumina/ui/theme.css";
+```
+
+This brings in the design tokens every component relies on (colors, radius, shadows) and tells Tailwind to scan `@lumina/ui`'s compiled output for utility classes, since Tailwind never scans `node_modules` by default. See [Global CSS Variables](/get-started/global-variables) for the full list of tokens. Prefer dark mode? Import `@lumina/ui/theme-dark.css` instead.
 
 </Step>
 
 <Step>
-### Add Components
-
-Add components one at a time with the `add` command:
-
-```npm
-npx @lumina/cli@latest add <component-name>
-```
-
-For example, to add the button component:
-
-```npm
-npx @lumina/cli@latest add button
-```
-
-This drops the component's source into your project — browse [Components](/components) for the full list and copy-paste examples of each.
-
-</Step>
-
-<Step>
-### Import and Use Components
-
-Import a component from wherever the CLI placed it and use it like any other React component.
+### Import and use components
 
 ```tsx filename="src/app/page.tsx"
-import { Button } from "@/components/core/button"; // Adjust the import path based on your alias and component location
+import { Button } from "@lumina/ui";
 
 export default function Home() {
   return (

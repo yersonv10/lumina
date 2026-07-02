@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@lumina/ui/core/button";
+import { Button } from "@lumina/ui";
 import {
   Dialog,
   DialogBody,
@@ -9,12 +9,12 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle
-} from "@lumina/ui/core/dialog";
-import { Input } from "@lumina/ui/core/input";
-import { Label } from "@lumina/ui/core/label";
-import { Backdrop, OverlayWrapper } from "@lumina/ui/core/overlay";
-import { TextArea } from "@lumina/ui/core/text-area";
-import { TextField } from "@lumina/ui/core/text-field";
+} from "@lumina/ui";
+import { Input } from "@lumina/ui";
+import { Label } from "@lumina/ui";
+import { Backdrop, OverlayWrapper } from "@lumina/ui";
+import { TextArea } from "@lumina/ui";
+import { TextField } from "@lumina/ui";
 
 export default function DialogCollectInputPreview() {
   return (

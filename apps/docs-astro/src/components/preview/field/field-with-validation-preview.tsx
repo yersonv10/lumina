@@ -1,13 +1,13 @@
 "use client";
 
-import { Button } from "@lumina/ui/core/button";
+import { Button } from "@lumina/ui";
 import {
   FieldDescription,
   FieldError,
   FieldLabel
-} from "@lumina/ui/core/field";
-import { Input } from "@lumina/ui/core/input";
-import { TextField } from "@lumina/ui/core/text-field";
+} from "@lumina/ui";
+import { Input } from "@lumina/ui";
+import { TextField } from "@lumina/ui";
 import { useRef, useState, type FormEvent } from "react";
 import { Form } from "react-aria-components";
 

@@ -26,9 +26,10 @@ For a segment-based keyboard input, see the [Time Field](/components/time-field)
 
 The Time Picker relies on the `react-aria-components` and `react-stately` libraries.
 
-Install the component using the Lumina CLI.
+Install the package.
+
 ```npm
-npx @lumina/cli add time-picker
+npm install @lumina/ui
 ```
 
 ## Anatomy
@@ -39,7 +40,7 @@ Import the component and pass the required props.
 import {
   TimePicker,
   TimePickerTrigger
-} from "@/components/lumina/core/time-picker";
+} from "@lumina/ui";
 
 export const TimePickerExample = () => (
   <TimePicker onSelect={date => console.log(date)}>

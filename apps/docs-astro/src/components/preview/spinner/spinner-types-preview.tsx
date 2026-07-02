@@ -1,6 +1,6 @@
 "use client";
 
-import { Spinner } from "@lumina/ui/core/spinner";
+import { Spinner } from "@lumina/ui";
 
 export default function SpinnerTypesPreview() {
   return (

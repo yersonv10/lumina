@@ -1,5 +1,5 @@
 "use client";
-import { Toast } from "@lumina/ui/core/toast";
+import { Toast } from "@lumina/ui";
 import { useEffect, useState } from "react";
 
 export default function ToastWithUndoPreview() {

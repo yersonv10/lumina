@@ -4,9 +4,9 @@ import {
   FieldDescription,
   FieldError,
   FieldLabel
-} from "@lumina/ui/core/field";
-import { TextArea } from "@lumina/ui/core/text-area";
-import { TextField } from "@lumina/ui/core/text-field";
+} from "@lumina/ui";
+import { TextArea } from "@lumina/ui";
+import { TextField } from "@lumina/ui";
 
 export default function FieldWithTextareaPreview() {
   return (

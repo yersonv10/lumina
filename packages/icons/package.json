@@ -24,6 +24,9 @@
   "exports": {
     ".": "./dist/index.js"
   },
+  "peerDependencies": {
+    "react": "^19.2.6"
+  },
   "dependencies": {
     "@babel/core": "^7.28.5",
     "@babel/plugin-transform-react-jsx": "^7.27.1",

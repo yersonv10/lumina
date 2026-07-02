@@ -10,7 +10,7 @@ import {
   ComboboxTrigger,
   MultiCombobox,
   MultiComboboxDisplay
-} from "@lumina/ui/core/combobox";
+} from "@lumina/ui";
 import { useState } from "react";
 import type { Key } from "react-aria-components";
 

@@ -2,7 +2,7 @@ import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger
-} from "@lumina/ui/core/collapsible";
+} from "@lumina/ui";
 import { Locked3 } from "@lumina/icons";
 
 export default function CollapsibleDisabledPreview() {

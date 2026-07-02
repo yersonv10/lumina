@@ -1,7 +1,7 @@
 "use client";
 
-import { buttonStyles } from "@lumina/ui/core/button";
-import { Link } from "@lumina/ui/core/link";
+import { buttonStyles } from "@lumina/ui";
+import { Link } from "@lumina/ui";
 import {
   Sheet,
   SheetBody,
@@ -10,7 +10,7 @@ import {
   SheetOverlay,
   SheetTitle,
   SheetTrigger
-} from "@lumina/ui/core/sheet";
+} from "@lumina/ui";
 
 export default function SheetMobileNavPreview() {
   const NAV_LINKS = [

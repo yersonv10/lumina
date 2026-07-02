@@ -1,9 +1,9 @@
-import { Badge } from "@lumina/ui/core/badge";
+import { Badge } from "@lumina/ui";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger
-} from "@lumina/ui/core/collapsible";
+} from "@lumina/ui";
 
 export default function CollapsibleOrderSummeryPreview() {
   return (

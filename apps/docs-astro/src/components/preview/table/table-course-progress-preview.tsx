@@ -5,7 +5,7 @@ import {
   TableHeader,
   TableRoot,
   TableRow
-} from "@lumina/ui/core/table";
+} from "@lumina/ui";
 import { MenuKebab1 } from "@lumina/icons";
 import Image from "@/components/compat/image";
 

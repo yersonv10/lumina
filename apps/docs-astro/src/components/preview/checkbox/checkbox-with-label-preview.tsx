@@ -1,7 +1,7 @@
 "use client";
 
-import { Checkbox } from "@lumina/ui/core/checkbox";
-import { Label } from "@lumina/ui/core/label";
+import { Checkbox } from "@lumina/ui";
+import { Label } from "@lumina/ui";
 import { useId } from "react";
 
 export default function CheckboxWithLabelPreview() {

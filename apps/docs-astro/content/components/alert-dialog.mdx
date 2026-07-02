@@ -26,10 +26,10 @@ Built with React and `react-aria-components`, and styled using Tailwind CSS. It 
 
 ## Installation
 
-Install the component using the Lumina CLI.
+Install the package.
 
 ```npm
-npx @lumina/cli add alert-dialog
+npm install @lumina/ui
 ```
 
 ## Anatomy
@@ -39,16 +39,16 @@ Wrap the `AlertDialog` component with `Backdrop` to create a complete alert dial
 ```tsx
 "use client";
 
-import { AlertDialog } from "@lumina/ui/core/alert-dialog";
-import { Button } from "@lumina/ui/core/button";
+import { AlertDialog } from "@lumina/ui";
+import { Button } from "@lumina/ui";
 import {
   DialogClose,
   DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle
-} from "@lumina/ui/core/dialog";
-import { OverlayWrapper } from "@lumina/ui/core/overlay";
+} from "@lumina/ui";
+import { OverlayWrapper } from "@lumina/ui";
 
 export default function AlertDialogPreview() {
   return (

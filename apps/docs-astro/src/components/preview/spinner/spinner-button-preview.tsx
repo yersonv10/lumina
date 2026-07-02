@@ -1,5 +1,5 @@
-import { Button } from "@lumina/ui/core/button";
-import { Spinner } from "@lumina/ui/core/spinner";
+import { Button } from "@lumina/ui";
+import { Spinner } from "@lumina/ui";
 
 export default function SpinnerButtonPreview() {
   return (

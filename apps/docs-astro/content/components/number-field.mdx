@@ -31,21 +31,22 @@ React Number Field components allow users to enter a numeric value with incremen
 
 The Number Field relies on the `react-aria-components` library.
 
-Install the component using the Lumina CLI.
+Install the package.
+
 ```npm
-npx @lumina/cli add number-field
+npm install @lumina/ui
 ```
 
 ## Anatomy
 
 ```tsx
-import { FieldDescription, FieldLabel } from "@lumina/ui/core/field";
-import { Input } from "@lumina/ui/core/input";
+import { FieldDescription, FieldLabel } from "@lumina/ui";
+import { Input } from "@lumina/ui";
 import {
   NumberField,
   NumberFieldAction,
   NumberFieldGroup
-} from "@lumina/ui/core/number-field";
+} from "@lumina/ui";
 import { Minus, Plus } from "@lumina/icons";
 
 export const NumberFieldExample = () => (

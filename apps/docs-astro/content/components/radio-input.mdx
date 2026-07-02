@@ -31,9 +31,10 @@ Built with React and styled using Tailwind CSS. It uses native radio inputs for 
 
 ## Installation
 
-Install the component using the Lumina CLI.
+Install the package.
+
 ```npm
-npx @lumina/cli add radio-input
+npm install @lumina/ui
 ```
 
 ## Usage
@@ -41,8 +42,8 @@ npx @lumina/cli add radio-input
 Import the component and the `Label` component, then wrap the `RadioInput` within the `Label` for proper association.
 
 ```tsx
-import { Label } from "@/components/lumina/core/label";
-import { RadioInput } from "@/components/lumina/core/radio-input";
+import { Label } from "@lumina/ui";
+import { RadioInput } from "@lumina/ui";
 
 export default function RadioWithLabelPreview() {
   return (

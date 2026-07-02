@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@lumina/ui/core/button";
+import { Button } from "@lumina/ui";
 import {
   Dialog,
   DialogBody,
@@ -8,7 +8,7 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle
-} from "@lumina/ui/core/dialog";
+} from "@lumina/ui";
 import { BarChart2, Bolt1, Sparkle } from "@lumina/icons";
 import { useState } from "react";
 

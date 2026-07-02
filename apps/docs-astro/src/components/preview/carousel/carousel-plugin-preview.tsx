@@ -6,7 +6,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious
-} from "@lumina/ui/core/carousel";
+} from "@lumina/ui";
 import Autoplay from "embla-carousel-autoplay";
 
 export default function CarouselPluginPreview() {

@@ -23,28 +23,20 @@ Follow the prompts to configure your project with TypeScript and Tailwind CSS.
 </Step>
 
 <Step>
-### Initialize Lumina
-
-Run the command in the CLI to initialize Lumina in your project:
+### Install Lumina
 
 ```npm
-npx @lumina/cli@latest init
+npm install @lumina/ui @lumina/icons
 ```
 
-Follow the prompts to configure Lumina
+Add the theme to your global CSS, after your `@import "tailwindcss";`:
 
-**Note:** If you have chosen not to replace the content of your main CSS file, you will need to copy and paste the styles of [lumina.css](/get-started/global-variables) into your main CSS file (e.g., `src/app/globals.css` or `src/index.css`).
-
-</Step>
-
-<Step>
-### Add Components
-
-Use the CLI to add components to your project:
-
-```npm
-npx @lumina/cli@latest add button
+```css
+@import "tailwindcss";
+@import "@lumina/ui/theme.css";
 ```
+
+See [Global CSS Variables](/get-started/global-variables) for the full list of tokens this brings in.
 
 </Step>
 
@@ -54,7 +46,7 @@ npx @lumina/cli@latest add button
 Import and use the component in your application:
 
 ```tsx title="src/routes/index.tsx"
-import { Button } from "@/components/lumina/core/button";
+import { Button } from "@lumina/ui";
 
 export default function Home() {
   return (
@@ -64,8 +56,6 @@ export default function Home() {
   );
 }
 ```
-
-**Note:** You may need to update the import path based on your project structure.
 
 </Step>
 

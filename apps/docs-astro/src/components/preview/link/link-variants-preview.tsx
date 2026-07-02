@@ -1,4 +1,4 @@
-import { Link } from "@lumina/ui/core/link";
+import { Link } from "@lumina/ui";
 
 export default function LinkVariantsPreview() {
   return (

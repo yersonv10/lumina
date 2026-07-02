@@ -1,16 +1,16 @@
 "use client";
 
-import { Badge } from "@lumina/ui/core/badge";
-import { Input } from "@lumina/ui/core/input";
+import { Badge } from "@lumina/ui";
+import { Input } from "@lumina/ui";
 
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger
-} from "@lumina/ui/core/dropdown";
+} from "@lumina/ui";
 
-import { buttonStyles } from "@lumina/ui/core/button";
+import { buttonStyles } from "@lumina/ui";
 import {
   TableBody,
   TableCell,
@@ -18,7 +18,7 @@ import {
   TableHeader,
   TableRoot,
   TableRow
-} from "@lumina/ui/core/table";
+} from "@lumina/ui";
 import { Search1, SlidersDoubleHorizontal } from "@lumina/icons";
 import Image from "@/components/compat/image";
 

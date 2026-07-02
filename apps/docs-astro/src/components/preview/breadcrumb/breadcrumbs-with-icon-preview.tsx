@@ -1,4 +1,4 @@
-import { Breadcrumbs } from "@lumina/ui/core/breadcrumbs";
+import { Breadcrumbs } from "@lumina/ui";
 import { Home, ThreeDCube1 } from "@lumina/icons";
 
 export default function BreadcrumbsWithIconPreview() {

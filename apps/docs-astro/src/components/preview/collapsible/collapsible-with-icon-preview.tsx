@@ -2,7 +2,7 @@ import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger
-} from "@lumina/ui/core/collapsible";
+} from "@lumina/ui";
 import { CheckCircle1 } from "@lumina/icons";
 
 const logs: { text: string; ok: boolean }[] = [

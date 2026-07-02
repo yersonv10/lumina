@@ -69,21 +69,6 @@ Visit [here](https://tailwindcss.com/docs/installation/framework-guides/astro) t
 </Step>
 
 <Step>
-### Initialize Lumina
-
-Run the command in the CLI to initialize Lumina in your project:
-
-```npm
-npx @lumina/cli@latest init
-```
-
-Follow the prompts to configure your project.
-
-**Note:** If you have chosen not to replace the content of your main CSS file, you will need to copy and paste the styles of [lumina.css](/get-started/global-variables) into your main CSS file (e.g., `src/app/globals.css` or `src/index.css`).
-
-</Step>
-
-<Step>
 ### React Integration
 
 Run the command in the CLI to integrate React with Astro:
@@ -95,38 +80,20 @@ npx astro add react
 </Step>
 
 <Step>
-### Configure Path Aliases
-
-Vite requires some configuration for path aliases. Update your `tsconfig.json` file.
-
-#### tsconfig.json
-
-```json title="tsconfig.json"
-{
-  "extends": "astro/tsconfigs/strict",
-  "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"],
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "jsxImportSource": "react",
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  }
-}
-```
-
-</Step>
-
-<Step>
-### Add Components
-
-Use the CLI to add components to your project:
+### Install Lumina
 
 ```npm
-npx @lumina/cli@latest add button
+npm install @lumina/ui @lumina/icons
 ```
+
+Add the theme to `src/styles/global.css`, after `@import "tailwindcss";`:
+
+```css title="src/styles/global.css"
+@import "tailwindcss";
+@import "@lumina/ui/theme.css";
+```
+
+See [Global CSS Variables](/get-started/global-variables) for the full list of tokens this brings in.
 
 </Step>
 
@@ -137,15 +104,13 @@ Import and use the component in your Astro page:
 
 ```astro title="src/pages/index.astro"
 ---
-import { Button } from "@/components/lumina/core/button";
+import { Button } from "@lumina/ui";
 ---
 
 <div class="flex min-h-svh items-center justify-center">
   <Button client:load>Click me</Button>
 </div>
 ```
-
-**Note:** You may need to update the import path based on your project structure.
 
 </Step>
 
@@ -159,7 +124,7 @@ Purely presentational components with no state or event handlers (`Spinner`, `Ba
 
 ```astro title="src/pages/index.astro"
 ---
-import { Spinner } from "@/components/lumina/core/spinner";
+import { Spinner } from "@lumina/ui";
 ---
 
 <Spinner />
@@ -175,8 +140,7 @@ Components that hold state or respond to interaction (`Button` with an `onClick`
 
 ```astro title="src/pages/index.astro"
 ---
-import { Button } from "@/components/lumina/core/button";
-import { Dialog } from "@/components/lumina/core/dialog";
+import { Button, Dialog } from "@lumina/ui";
 ---
 
 <Button client:idle>Click me</Button>

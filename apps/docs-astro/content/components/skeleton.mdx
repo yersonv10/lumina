@@ -30,9 +30,10 @@ This Skeleton component is built with React and styled using Tailwind CSS. It pr
 
 ## Installation
 
-Install the component using the Lumina CLI.
+Install the package.
+
 ```npm
-npx @lumina/cli add skeleton
+npm install @lumina/ui
 ```
 
 ## Usage
@@ -40,7 +41,7 @@ npx @lumina/cli add skeleton
 The Skeleton component provides a base animation. You can customize its dimensions by adjusting the height and width using `className` prop to match your layout requirements.
 
 ```tsx
-import { Skeleton } from "@/components/lumina/core/skeleton";
+import { Skeleton } from "@lumina/ui";
 
 export default function SkeletonUsage() {
   return <Skeleton className="h-4 w-48" />;

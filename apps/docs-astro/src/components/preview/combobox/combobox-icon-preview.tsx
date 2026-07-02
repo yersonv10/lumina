@@ -10,7 +10,7 @@ import {
   ComboboxLabel,
   ComboboxList,
   ComboboxTrigger
-} from "@lumina/ui/core/combobox";
+} from "@lumina/ui";
 import {
   Briefcase4,
   Buildings11,

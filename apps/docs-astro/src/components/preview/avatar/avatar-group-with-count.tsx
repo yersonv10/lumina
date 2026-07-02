@@ -4,7 +4,7 @@ import {
   AvatarGroup,
   AvatarGroupCount,
   AvatarImage
-} from "@lumina/ui/core/avatar";
+} from "@lumina/ui";
 import { teamMembersGroup } from "./data";
 
 export default function AvatarGroupWithCountPreview() {

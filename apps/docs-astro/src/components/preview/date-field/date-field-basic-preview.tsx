@@ -1,8 +1,8 @@
 "use client";
 
-import { DateField, DateInput, DateSegment } from "@lumina/ui/core/date-field";
-import { Description } from "@lumina/ui/core/description";
-import { Label } from "@lumina/ui/core/label";
+import { DateField, DateInput, DateSegment } from "@lumina/ui";
+import { Description } from "@lumina/ui";
+import { Label } from "@lumina/ui";
 
 export default function DateFieldBasicPreview() {
   return (

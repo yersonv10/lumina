@@ -1,7 +1,7 @@
 "use client";
 
-import { buttonStyles } from "@lumina/ui/core/button";
-import { TimePicker, TimePickerTrigger } from "@lumina/ui/core/time-picker";
+import { buttonStyles } from "@lumina/ui";
+import { TimePicker, TimePickerTrigger } from "@lumina/ui";
 import { useState } from "react";
 
 export default function TimePickerPreview() {

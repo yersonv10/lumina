@@ -8,7 +8,7 @@ import {
   MenubarSeparator,
   MenubarShortcut,
   MenubarTrigger
-} from "@lumina/ui/core/menubar";
+} from "@lumina/ui";
 
 export default function MenubarWithShortcuts() {
   return (

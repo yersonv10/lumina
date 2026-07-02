@@ -1,8 +1,8 @@
 "use client";
 
-import { Description } from "@lumina/ui/core/description";
-import { Input } from "@lumina/ui/core/input";
-import { Label } from "@lumina/ui/core/label";
+import { Description } from "@lumina/ui";
+import { Input } from "@lumina/ui";
+import { Label } from "@lumina/ui";
 import { useId, useState } from "react";
 
 export default function InputControlledPreview() {

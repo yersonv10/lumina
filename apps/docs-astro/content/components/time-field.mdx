@@ -29,18 +29,19 @@ React Time Field components allow users to select a specific time value using a 
 
 The Time Field relies on the `react-aria-components` library.
 
-Install the component using the Lumina CLI.
+Install the package.
+
 ```npm
-npx @lumina/cli add time-field
+npm install @lumina/ui
 ```
 
 ## Anatomy
 
 ```tsx
-import { Label } from "@/components/lumina/core/label";
-import { Description } from "@/components/lumina/core/description";
-import { TimeField } from "@/components/lumina/core/time-field";
-import { DateInput, DateSegment } from "@/components/lumina/core/date-field";
+import { Label } from "@lumina/ui";
+import { Description } from "@lumina/ui";
+import { TimeField } from "@lumina/ui";
+import { DateInput, DateSegment } from "@lumina/ui";
 
 export const TimeFieldExample = () => (
   <TimeField>

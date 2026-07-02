@@ -8,7 +8,7 @@ import ToastPreview from "@/components/preview/toast/toast-preview";
 import ToastVariantsPreview from "@/components/preview/toast/toast-variants-preview";
 import ToastWithTitlePreview from "@/components/preview/toast/toast-with-title-preview";
 import ToastWithUndoPreview from "@/components/preview/toast/toast-with-undo-preview";
-import { AvatarToast, Toast } from "@lumina/ui/core/toast";
+import { AvatarToast, Toast } from "@lumina/ui";
 import { getFileContent } from "@/utils/get-file-content";
 
 # Toast
@@ -27,9 +27,10 @@ This Toast component supports multiple variants, optional titles, action buttons
 
 ## Installation
 
-Install the component using the Lumina CLI.
+Install the package.
+
 ```npm
-npx @lumina/cli add toast
+npm install @lumina/ui
 ```
 
 ## Anatomy
@@ -37,7 +38,7 @@ npx @lumina/cli add toast
 Import the component and pass the required props.
 
 ```tsx
-import { Toast, AvatarToast } from "@/components/lumina/core/toast";
+import { Toast, AvatarToast } from "@lumina/ui";
 
 export const ToastExample = () => (
   <Toast

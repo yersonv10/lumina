@@ -1,7 +1,7 @@
 "use client";
 
-import { TextArea } from "@lumina/ui/core/text-area";
-import { TextField } from "@lumina/ui/core/text-field";
+import { TextArea } from "@lumina/ui";
+import { TextField } from "@lumina/ui";
 
 export default function TextAreaPreview() {
   return (

@@ -1,6 +1,6 @@
 "use client";
 
-import { Badge } from "@lumina/ui/core/badge";
+import { Badge } from "@lumina/ui";
 import {
   ComboboxContent,
   ComboboxEmpty,
@@ -13,7 +13,7 @@ import {
   MultiCombobox,
   MultiComboboxContext,
   MultiComboboxDisplay
-} from "@lumina/ui/core/combobox";
+} from "@lumina/ui";
 import { XmarkCircle2x } from "@lumina/icons";
 import React from "react";
 

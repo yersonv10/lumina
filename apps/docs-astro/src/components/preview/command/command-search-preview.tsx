@@ -8,7 +8,7 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator
-} from "@lumina/ui/core/command";
+} from "@lumina/ui";
 import { FileText, Folder1, Search1 } from "@lumina/icons";
 
 export function CommandSearchPreview() {

@@ -4,8 +4,8 @@ import {
   AvatarFallback,
   AvatarImage,
   type AvatarStatus
-} from "@lumina/ui/core/avatar";
-import { List } from "@lumina/ui/core/list";
+} from "@lumina/ui";
+import { List } from "@lumina/ui";
 
 const users = [
   {

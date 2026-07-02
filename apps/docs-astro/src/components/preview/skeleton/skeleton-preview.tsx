@@ -1,4 +1,4 @@
-import { Skeleton } from "@lumina/ui/core/skeleton";
+import { Skeleton } from "@lumina/ui";
 
 export default function SkeletonPreview() {
   return (

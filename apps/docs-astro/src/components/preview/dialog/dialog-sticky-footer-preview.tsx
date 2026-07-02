@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, buttonStyles } from "@lumina/ui/core/button";
+import { Button, buttonStyles } from "@lumina/ui";
 import {
   Dialog,
   DialogBody,
@@ -9,13 +9,13 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle
-} from "@lumina/ui/core/dialog";
-import { Backdrop, OverlayWrapper } from "@lumina/ui/core/overlay";
+} from "@lumina/ui";
+import { Backdrop, OverlayWrapper } from "@lumina/ui";
 import {
   ScrollArea,
   ScrollAreaViewport,
   ScrollBar
-} from "@lumina/ui/core/scroll-area";
+} from "@lumina/ui";
 
 export default function DialogStickyFooterPreview() {
   return (

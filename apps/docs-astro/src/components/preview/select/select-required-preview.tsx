@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@lumina/ui/core/button";
+import { Button } from "@lumina/ui";
 import {
   Select,
   SelectContent,
@@ -10,7 +10,7 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue
-} from "@lumina/ui/core/select";
+} from "@lumina/ui";
 
 export default function SelectRequiredPreview() {
   return (

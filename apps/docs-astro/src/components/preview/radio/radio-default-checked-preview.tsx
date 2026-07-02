@@ -1,5 +1,5 @@
-import { Label } from "@lumina/ui/core/label";
-import { RadioInput } from "@lumina/ui/core/radio-input";
+import { Label } from "@lumina/ui";
+import { RadioInput } from "@lumina/ui";
 
 export default function RadioDefaultCheckedPreview() {
   const plans = [

@@ -105,7 +105,11 @@ async function buildIcon(file: string): Promise<string> {
     })?.code || componentCode;
 
   await fs.writeFile(path.join(OUT_DIR, `${name}.js`), jsCode, "utf8");
-  await fs.writeFile(path.join(OUT_DIR, `${name}.d.ts`), DTS_TEMPLATE(name), "utf8");
+  await fs.writeFile(
+    path.join(OUT_DIR, `${name}.d.ts`),
+    DTS_TEMPLATE(name),
+    "utf8"
+  );
 
   return name;
 }

@@ -1,11 +1,11 @@
-import { Button } from "@lumina/ui/core/button";
+import { Button } from "@lumina/ui";
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle
-} from "@lumina/ui/core/card";
+} from "@lumina/ui";
 
 export default function CardPreview() {
   return (

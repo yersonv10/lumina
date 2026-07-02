@@ -4,7 +4,7 @@ import {
   Tooltip,
   TooltipContent,
   TooltipTrigger
-} from "@lumina/ui/core/tooltip";
+} from "@lumina/ui";
 import { cn } from "@/utils/cn";
 import * as React from "react";
 

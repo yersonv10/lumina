@@ -3,7 +3,7 @@ import {
   AccordionItem,
   AccordionRoot,
   AccordionTrigger
-} from "@lumina/ui/core/accordion";
+} from "@lumina/ui";
 
 export function AccordionStyleFive() {
   return (

@@ -7,9 +7,9 @@ import {
   FieldSeparator,
   FieldSet,
   FieldTitle
-} from "@lumina/ui/core/field";
-import { Input } from "@lumina/ui/core/input";
-import { TextField } from "@lumina/ui/core/text-field";
+} from "@lumina/ui";
+import { Input } from "@lumina/ui";
+import { TextField } from "@lumina/ui";
 
 export default function FieldSetPreview() {
   return (

@@ -1,14 +1,14 @@
 "use client";
 
-import { Badge } from "@lumina/ui/core/badge";
-import { Input } from "@lumina/ui/core/input";
+import { Badge } from "@lumina/ui";
+import { Input } from "@lumina/ui";
 
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger
-} from "@lumina/ui/core/dropdown";
+} from "@lumina/ui";
 import {
   TableBody,
   TableCell,
@@ -16,7 +16,7 @@ import {
   TableHeader,
   TableRoot,
   TableRow
-} from "@lumina/ui/core/table";
+} from "@lumina/ui";
 import { MenuMeatballs1, Search1 } from "@lumina/icons";
 
 const DATA = [

@@ -1,13 +1,13 @@
 "use client";
 
-import { AlertDialog } from "@lumina/ui/core/alert-dialog";
-import { Button } from "@lumina/ui/core/button";
+import { AlertDialog } from "@lumina/ui";
+import { Button } from "@lumina/ui";
 import {
   DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle
-} from "@lumina/ui/core/dialog";
+} from "@lumina/ui";
 import { useState } from "react";
 
 export default function AlertDialogControlledPreview() {

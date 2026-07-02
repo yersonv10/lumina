@@ -4,7 +4,7 @@ import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger
-} from "@lumina/ui/core/collapsible";
+} from "@lumina/ui";
 import { Check, Copy1, Eye, EyeDisabled } from "@lumina/icons";
 import { useState } from "react";
 

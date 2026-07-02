@@ -1,13 +1,13 @@
 "use client";
 
-import { Badge } from "@lumina/ui/core/badge";
-import { Pagination } from "@lumina/ui/core/pagination";
+import { Badge } from "@lumina/ui";
+import { Pagination } from "@lumina/ui";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger
-} from "@lumina/ui/core/dropdown";
+} from "@lumina/ui";
 import {
   TableBody,
   TableCell,
@@ -15,7 +15,7 @@ import {
   TableHeader,
   TableRoot,
   TableRow
-} from "@lumina/ui/core/table";
+} from "@lumina/ui";
 import { ArrowBothDirectionHorizontal2, MenuKebab1 } from "@lumina/icons";
 import { useState } from "react";
 

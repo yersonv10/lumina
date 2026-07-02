@@ -1,4 +1,4 @@
-import { Slider } from "@lumina/ui/core/slider";
+import { Slider } from "@lumina/ui";
 
 export default function SliderDisabledPreview() {
   return (

@@ -1,4 +1,4 @@
-import { TabContent, TabList, TabRoot, TabTrigger } from "@lumina/ui/core/tabs";
+import { TabContent, TabList, TabRoot, TabTrigger } from "@lumina/ui";
 import { Gear1, PieChart1, UserMultiple1 } from "@lumina/icons";
 
 export default function TabsHorizontalPreview() {

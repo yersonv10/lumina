@@ -1,11 +1,11 @@
 "use client";
 
-import { buttonStyles } from "@lumina/ui/core/button";
+import { buttonStyles } from "@lumina/ui";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger
-} from "@lumina/ui/core/collapsible";
+} from "@lumina/ui";
 import { InfoCircle } from "@lumina/icons";
 import { useState } from "react";
 

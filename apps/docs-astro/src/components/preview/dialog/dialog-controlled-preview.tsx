@@ -1,13 +1,13 @@
 "use client";
 
-import { Button } from "@lumina/ui/core/button";
+import { Button } from "@lumina/ui";
 import {
   Dialog,
   DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle
-} from "@lumina/ui/core/dialog";
+} from "@lumina/ui";
 import { useState } from "react";
 
 export default function DialogControlledPreview() {

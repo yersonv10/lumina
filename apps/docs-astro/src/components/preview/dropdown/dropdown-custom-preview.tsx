@@ -8,7 +8,7 @@ import {
   DropdownMenuSection,
   DropdownMenuSeparator,
   DropdownMenuTrigger
-} from "@lumina/ui/core/dropdown";
+} from "@lumina/ui";
 import {
   ChevronDown,
   CreditCard,

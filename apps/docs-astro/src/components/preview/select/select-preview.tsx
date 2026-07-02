@@ -7,7 +7,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue
-} from "@lumina/ui/core/select";
+} from "@lumina/ui";
 
 export default function SelectPreview() {
   return (

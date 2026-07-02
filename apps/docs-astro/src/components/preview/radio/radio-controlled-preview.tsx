@@ -1,7 +1,7 @@
 "use client";
 
-import { Label } from "@lumina/ui/core/label";
-import { RadioInput } from "@lumina/ui/core/radio-input";
+import { Label } from "@lumina/ui";
+import { RadioInput } from "@lumina/ui";
 import { useState } from "react";
 
 export default function RadioControlledPreview() {

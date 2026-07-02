@@ -5,7 +5,7 @@ import {
   InputGroupAddon,
   InputGroupButton,
   InputGroupTextarea
-} from "@lumina/ui/core/input-group";
+} from "@lumina/ui";
 import { Microphone1, Paperclip2, Send4 } from "@lumina/icons";
 import { useState } from "react";
 

@@ -3,7 +3,7 @@ import {
   AvatarFallback,
   AvatarGroup,
   AvatarImage
-} from "@lumina/ui/core/avatar";
+} from "@lumina/ui";
 import { teamMembersGroup } from "./data";
 
 export default function AvatarGroupPreview() {

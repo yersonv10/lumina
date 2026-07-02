@@ -1,9 +1,9 @@
 "use client";
 
 import { Button } from "@/components/ui/Button";
-import { Label } from "@lumina/ui/core/label";
-import { TimeField } from "@lumina/ui/core/time-field";
-import { DateInput, DateSegment } from "@lumina/ui/core/date-field";
+import { Label } from "@lumina/ui";
+import { TimeField } from "@lumina/ui";
+import { DateInput, DateSegment } from "@lumina/ui";
 
 export default function TimeFieldWithFormValidation() {
   return (

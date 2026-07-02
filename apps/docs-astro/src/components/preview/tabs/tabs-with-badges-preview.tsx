@@ -1,4 +1,4 @@
-import { TabContent, TabList, TabRoot, TabTrigger } from "@lumina/ui/core/tabs";
+import { TabContent, TabList, TabRoot, TabTrigger } from "@lumina/ui";
 import { Envelope1, PenToSquare, Send4 } from "@lumina/icons";
 
 export default function TabsWithBadgesPreview() {

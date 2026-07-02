@@ -1,7 +1,7 @@
 "use client";
 
-import { DateField, DateInput, DateSegment } from "@lumina/ui/core/date-field";
-import { Label } from "@lumina/ui/core/label";
+import { DateField, DateInput, DateSegment } from "@lumina/ui";
+import { Label } from "@lumina/ui";
 import { I18nProvider } from "react-aria-components";
 
 export default function DateFieldInternationalizationPreview() {

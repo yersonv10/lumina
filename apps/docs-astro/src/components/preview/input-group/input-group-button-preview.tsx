@@ -5,9 +5,9 @@ import {
   InputGroupAddon,
   InputGroupButton,
   InputGroupInput
-} from "@lumina/ui/core/input-group";
-import { Label } from "@lumina/ui/core/label";
-import { TextField } from "@lumina/ui/core/text-field";
+} from "@lumina/ui";
+import { Label } from "@lumina/ui";
+import { TextField } from "@lumina/ui";
 import { Eye, EyeDisabled, Send4, Xmark } from "@lumina/icons";
 import { useState } from "react";
 

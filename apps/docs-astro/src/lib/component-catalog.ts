@@ -1,7 +1,7 @@
 /**
  * Ordered, categorized grouping for the /components index page.
- * The registry (packages/cli) stays a flat list; this only drives how the
- * showcase page organizes it. Any registry component id not listed here falls
+ * `components-registry.ts` stays a flat list; this only drives how the
+ * showcase page organizes it. Any component id not listed here falls
  * into the "Other" bucket at render time so nothing silently disappears.
  */
 export interface ComponentCategory {

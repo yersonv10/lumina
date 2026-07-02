@@ -10,7 +10,7 @@ import {
   CalendarHeading,
   NavButton,
   type DateValue
-} from "@lumina/ui/core/calendar";
+} from "@lumina/ui";
 import { isWeekend } from "@internationalized/date";
 import { useLocale } from "react-aria-components";
 

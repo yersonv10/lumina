@@ -10,7 +10,7 @@ import {
   CalendarHeading,
   NavButton,
   type DateValue
-} from "@lumina/ui/core/calendar";
+} from "@lumina/ui";
 import { getLocalTimeZone } from "@internationalized/date";
 
 export default function CalendarMinMaxUnavailablePreview() {

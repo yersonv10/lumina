@@ -1,10 +1,10 @@
 "use client";
 
-import { Description } from "@lumina/ui/core/description";
-import { FieldError } from "@lumina/ui/core/field";
-import { Label } from "@lumina/ui/core/label";
-import { TextArea } from "@lumina/ui/core/text-area";
-import { TextField } from "@lumina/ui/core/text-field";
+import { Description } from "@lumina/ui";
+import { FieldError } from "@lumina/ui";
+import { Label } from "@lumina/ui";
+import { TextArea } from "@lumina/ui";
+import { TextField } from "@lumina/ui";
 
 export default function TextAreaStatesPreview() {
   return (

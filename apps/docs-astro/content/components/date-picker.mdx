@@ -37,10 +37,10 @@ This DatePicker component is built with React Aria Components and styled using T
 
 The Date Picker relies on `@internationalized/date` for date manipulation.
 
-Install the component using the Lumina CLI.
+Install the package.
 
 ```npm
-npx @lumina/cli add date-picker
+npm install @lumina/ui
 ```
 
 ## Usage
@@ -53,8 +53,8 @@ import {
   DatePickerGroup,
   DatePickerPopover,
   DatePickerTrigger
-} from "@lumina/ui/core/date-picker";
-import { DateInput, DateSegment } from "@lumina/ui/core/date-field";
+} from "@lumina/ui";
+import { DateInput, DateSegment } from "@lumina/ui";
 import { CalendarDate, getLocalTimeZone, today } from "@internationalized/date";
 import { useState } from "react";
 

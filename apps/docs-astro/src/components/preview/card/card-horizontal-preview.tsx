@@ -1,7 +1,7 @@
 "use client";
 
-import { Button } from "@lumina/ui/core/button";
-import { Card } from "@lumina/ui/core/card";
+import { Button } from "@lumina/ui";
+import { Card } from "@lumina/ui";
 import { ChevronRight } from "@lumina/icons";
 import Image from "@/components/compat/image";
 

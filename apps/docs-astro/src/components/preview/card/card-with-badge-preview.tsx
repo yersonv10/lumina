@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, CardAction, CardHeader } from "@lumina/ui/core/card";
+import { Card, CardAction, CardHeader } from "@lumina/ui";
 import Image from "@/components/compat/image";
 
 export default function CardWithBadgePreview() {

@@ -1,4 +1,4 @@
-import { List } from "@lumina/ui/core/list";
+import { List } from "@lumina/ui";
 import { Exit, Gear1, Home, User2 } from "@lumina/icons";
 
 export default function ListPreview() {

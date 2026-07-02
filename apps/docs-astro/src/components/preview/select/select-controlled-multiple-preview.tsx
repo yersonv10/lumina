@@ -7,7 +7,7 @@ import {
   SelectItem,
   SelectLabel,
   SelectTrigger
-} from "@lumina/ui/core/select";
+} from "@lumina/ui";
 import { useState } from "react";
 import type { Key } from "react-aria-components";
 

@@ -1,8 +1,8 @@
 "use client";
 
-import { buttonStyles } from "@lumina/ui/core/button";
-import { Input } from "@lumina/ui/core/input";
-import { Label } from "@lumina/ui/core/label";
+import { buttonStyles } from "@lumina/ui";
+import { Input } from "@lumina/ui";
+import { Label } from "@lumina/ui";
 import {
   Sheet,
   SheetBody,
@@ -14,7 +14,7 @@ import {
   SheetOverlay,
   SheetTitle,
   SheetTrigger
-} from "@lumina/ui/core/sheet";
+} from "@lumina/ui";
 import { useState } from "react";
 
 export default function SheetFormPreview() {

@@ -10,7 +10,7 @@ import {
   RangeCalendarHeader,
   RangeCalendarHeading,
   RangeNavButton
-} from "@lumina/ui/core/range-calendar";
+} from "@lumina/ui";
 import { isWeekend } from "@internationalized/date";
 import { useLocale } from "react-aria-components";
 

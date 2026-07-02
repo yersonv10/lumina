@@ -1,4 +1,4 @@
-import { List } from "@lumina/ui/core/list";
+import { List } from "@lumina/ui";
 import { Bell1, Gear1, Home, Message1, User2 } from "@lumina/icons";
 
 export default function ListCustomPreview() {

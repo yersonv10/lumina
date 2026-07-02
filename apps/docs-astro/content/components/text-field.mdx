@@ -27,18 +27,19 @@ React Text Field components allow users to enter plain text values using a keybo
 
 The Text Field relies on the `react-aria-components` library and `class-variance-authority`.
 
-Install the component using the Lumina CLI.
+Install the package.
+
 ```npm
-npx @lumina/cli add text-field
+npm install @lumina/ui
 ```
 
 ## Anatomy
 
 ```tsx
-import { Label } from "@/components/lumina/core/label";
-import { Description } from "@/components/lumina/core/description";
-import { Input } from "@/components/lumina/core/input";
-import { TextField } from "@/components/lumina/core/text-field";
+import { Label } from "@lumina/ui";
+import { Description } from "@lumina/ui";
+import { Input } from "@lumina/ui";
+import { TextField } from "@lumina/ui";
 
 export const TextFieldExample = () => (
   <TextField>

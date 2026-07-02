@@ -1,6 +1,6 @@
 "use client";
-import { Button } from "@lumina/ui/core/button";
-import { Toast } from "@lumina/ui/core/toast";
+import { Button } from "@lumina/ui";
+import { Toast } from "@lumina/ui";
 import { useEffect, useState } from "react";
 
 export default function ToastWithTitlePreview() {
