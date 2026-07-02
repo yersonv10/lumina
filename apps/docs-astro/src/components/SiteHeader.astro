@@ -2,9 +2,9 @@
 import ThemeToggle from "@/components/ThemeToggle.astro";
 import logoWithTextLight from "@/assets/brand/logo-with-text-light.webp?url";
 import logoWithTextDark from "@/assets/brand/logo-with-text-dark.webp?url";
+import { getRepoStars } from "@/lib/github";
 
-// Hardcoded for now — swap for a real GitHub stars fetch later.
-const githubStars = "1.4K";
+const githubStars = await getRepoStars();
 const githubUrl = "https://github.com/yersonv10/lumina";
 ---
 
