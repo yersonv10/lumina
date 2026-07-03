@@ -26,11 +26,11 @@ jobs:
         run: bun run build
 
       - name: Publish Icons
-        run: npm publish --workspace=@lumina/icons
+        run: npm publish --workspace=@lumina-kit/icons
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish UI
-        run: npm publish --workspace=@lumina/ui
+        run: npm publish --workspace=@lumina-kit/ui
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
