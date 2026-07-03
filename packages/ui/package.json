@@ -28,7 +28,7 @@
     "@base-ui/react": "^1.2.0",
     "@floating-ui/react": "^0.27.16",
     "@internationalized/date": "^3.12.1",
-    "@lumina/icons": "*",
+    "@lumina-kit/icons": "*",
     "@tailwindcss/forms": "^0.5.10",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
