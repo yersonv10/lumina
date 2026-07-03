@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@lumina/ui";
+import { Button } from "@lumina-kit/ui";
 import {
   Dialog,
   DialogBody,
@@ -8,8 +8,8 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle
-} from "@lumina/ui";
-import { BarChart2, Bolt1, Sparkle } from "@lumina/icons";
+} from "@lumina-kit/ui";
+import { BarChart2, Bolt1, Sparkle } from "@lumina-kit/icons";
 import { useState } from "react";
 
 export default function DialogCustomPreview() {

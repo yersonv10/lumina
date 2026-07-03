@@ -2,7 +2,7 @@
 
 import { buttonStyles } from "./button";
 import { cn } from "../utils/cn";
-import { ChevronDown, ChevronLeft, ChevronRight } from "@lumina/icons";
+import { ChevronDown, ChevronLeft, ChevronRight } from "@lumina-kit/icons";
 import { cva } from "class-variance-authority";
 import {
   useContext,

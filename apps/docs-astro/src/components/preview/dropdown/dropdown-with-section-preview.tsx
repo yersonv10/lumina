@@ -1,6 +1,6 @@
 "use client";
 
-import { buttonStyles } from "@lumina/ui";
+import { buttonStyles } from "@lumina-kit/ui";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -9,7 +9,7 @@ import {
   DropdownMenuSection,
   DropdownMenuSeparator,
   DropdownMenuTrigger
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 
 export default function DropdownWithSectionPreview() {
   return (

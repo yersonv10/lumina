@@ -1,13 +1,13 @@
 "use client";
 
-import { FieldDescription, FieldLabel } from "@lumina/ui";
-import { Input } from "@lumina/ui";
+import { FieldDescription, FieldLabel } from "@lumina-kit/ui";
+import { Input } from "@lumina-kit/ui";
 import {
   NumberField,
   NumberFieldAction,
   NumberFieldGroup
-} from "@lumina/ui";
-import { ThumbsUp2, ThumbsDown2 } from "@lumina/icons";
+} from "@lumina-kit/ui";
+import { ThumbsUp2, ThumbsDown2 } from "@lumina-kit/icons";
 
 export default function NumberFieldCustomIcons() {
   return (

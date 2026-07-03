@@ -9,7 +9,7 @@ import {
   CalendarHeader,
   CalendarYearPicker,
   NavButton
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 
 export default function CalendarYearPickerPreview() {
   return (

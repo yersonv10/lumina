@@ -1,7 +1,7 @@
 "use client";
 
 import { CalendarIcon } from "@/components/ui/icons";
-import { ClockThree } from "@lumina/icons";
+import { ClockThree } from "@lumina-kit/icons";
 import {
   Calendar,
   CalendarCell,
@@ -11,18 +11,18 @@ import {
   CalendarHeader,
   CalendarHeading,
   NavButton
-} from "@lumina/ui";
-import { DateInput, DateSegment } from "@lumina/ui";
+} from "@lumina-kit/ui";
+import { DateInput, DateSegment } from "@lumina-kit/ui";
 import {
   DatePicker,
   DatePickerGroup,
   DatePickerPopover,
   DatePickerTrigger
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 import {
   FieldDescription,
   FieldLabel
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 import { CalendarDate, getLocalTimeZone, today } from "@internationalized/date";
 import { useState } from "react";
 import { useDateFormatter } from "react-aria";

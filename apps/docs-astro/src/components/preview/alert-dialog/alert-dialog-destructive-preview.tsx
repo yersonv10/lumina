@@ -1,15 +1,15 @@
 "use client";
 
-import { AlertDialog } from "@lumina/ui";
-import { Button } from "@lumina/ui";
+import { AlertDialog } from "@lumina-kit/ui";
+import { Button } from "@lumina-kit/ui";
 import {
   DialogClose,
   DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle
-} from "@lumina/ui";
-import { OverlayWrapper } from "@lumina/ui";
+} from "@lumina-kit/ui";
+import { OverlayWrapper } from "@lumina-kit/ui";
 
 export default function AlertDialogDestructivePreview() {
   return (

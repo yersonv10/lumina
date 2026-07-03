@@ -2,10 +2,10 @@ import {
   InputGroup,
   InputGroupAddon,
   InputGroupInput
-} from "@lumina/ui";
-import { Label } from "@lumina/ui";
-import { TextField } from "@lumina/ui";
-import { Locked3, Search1 } from "@lumina/icons";
+} from "@lumina-kit/ui";
+import { Label } from "@lumina-kit/ui";
+import { TextField } from "@lumina-kit/ui";
+import { Locked3, Search1 } from "@lumina-kit/icons";
 
 export default function InputGroupAddonPreview() {
   return (

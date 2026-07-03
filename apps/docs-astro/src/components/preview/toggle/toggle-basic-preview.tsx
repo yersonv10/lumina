@@ -1,6 +1,6 @@
 "use client";
 
-import { Toggle } from "@lumina/ui";
+import { Toggle } from "@lumina-kit/ui";
 
 export default function ToggleBasicPreview() {
   return (

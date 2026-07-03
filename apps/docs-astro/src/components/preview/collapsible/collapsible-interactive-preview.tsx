@@ -4,8 +4,8 @@ import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger
-} from "@lumina/ui";
-import { Check, Copy1, Eye, EyeDisabled } from "@lumina/icons";
+} from "@lumina-kit/ui";
+import { Check, Copy1, Eye, EyeDisabled } from "@lumina-kit/icons";
 import { useState } from "react";
 
 const envVars = [

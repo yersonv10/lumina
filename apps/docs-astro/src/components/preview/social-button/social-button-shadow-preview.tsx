@@ -1,4 +1,4 @@
-import { SocialButton } from "@lumina/ui";
+import { SocialButton } from "@lumina-kit/ui";
 
 const SocialButtonShadowPreview = () => {
   return (

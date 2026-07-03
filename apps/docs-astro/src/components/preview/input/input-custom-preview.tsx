@@ -1,7 +1,7 @@
 "use client";
 
-import { Input } from "@lumina/ui";
-import { Label } from "@lumina/ui";
+import { Input } from "@lumina-kit/ui";
+import { Label } from "@lumina-kit/ui";
 import { useId } from "react";
 
 export default function InputCustomPreview() {

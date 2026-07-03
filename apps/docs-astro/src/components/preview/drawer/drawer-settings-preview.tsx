@@ -1,6 +1,6 @@
 "use client";
 
-import { buttonStyles } from "@lumina/ui";
+import { buttonStyles } from "@lumina-kit/ui";
 import {
   Drawer,
   DrawerBody,
@@ -9,10 +9,10 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger
-} from "@lumina/ui";
-import { Label } from "@lumina/ui";
-import { Toggle } from "@lumina/ui";
-import { Gear1 } from "@lumina/icons";
+} from "@lumina-kit/ui";
+import { Label } from "@lumina-kit/ui";
+import { Toggle } from "@lumina-kit/ui";
+import { Gear1 } from "@lumina-kit/icons";
 
 export default function DrawerSettingsPreview() {
   return (

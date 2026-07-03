@@ -4,7 +4,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 
 const testimonials = [
   {

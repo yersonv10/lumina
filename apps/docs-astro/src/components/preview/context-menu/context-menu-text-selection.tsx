@@ -8,7 +8,7 @@ import {
   ContextMenuSubContent,
   ContextMenuSubTrigger,
   ContextMenuTrigger
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 
 export function ContextMenuTextSelection() {
   return (

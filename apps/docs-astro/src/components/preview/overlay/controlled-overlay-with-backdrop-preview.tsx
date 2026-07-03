@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@lumina/ui";
+import { Button } from "@lumina-kit/ui";
 import {
   Dialog,
   DialogClose,
@@ -8,8 +8,8 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle
-} from "@lumina/ui";
-import { Backdrop } from "@lumina/ui";
+} from "@lumina-kit/ui";
+import { Backdrop } from "@lumina-kit/ui";
 import { useState } from "react";
 
 export default function ControlledOverlayWithBackdropPreview() {

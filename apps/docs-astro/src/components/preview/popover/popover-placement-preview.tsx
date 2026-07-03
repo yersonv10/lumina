@@ -1,8 +1,8 @@
 "use client";
 
-import { Button } from "@lumina/ui";
-import { OverlayWrapper } from "@lumina/ui";
-import { Popover, PopoverArrow } from "@lumina/ui";
+import { Button } from "@lumina-kit/ui";
+import { OverlayWrapper } from "@lumina-kit/ui";
+import { Popover, PopoverArrow } from "@lumina-kit/ui";
 import { cn } from "@/utils/cn";
 import { useState, type ComponentProps } from "react";
 

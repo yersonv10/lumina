@@ -2,8 +2,8 @@ import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger
-} from "@lumina/ui";
-import { CheckCircle1 } from "@lumina/icons";
+} from "@lumina-kit/ui";
+import { CheckCircle1 } from "@lumina-kit/icons";
 
 const logs: { text: string; ok: boolean }[] = [
   { text: "› Installing dependencies…", ok: false },

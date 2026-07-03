@@ -1,4 +1,4 @@
-import { AspectRatio } from "@lumina/ui";
+import { AspectRatio } from "@lumina-kit/ui";
 import Image from "@/components/compat/image";
 
 export default function AspectRatioImagePreview() {

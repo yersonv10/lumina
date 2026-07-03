@@ -2,7 +2,7 @@ import {
   ScrollArea,
   ScrollAreaViewport,
   ScrollBar
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 
 const items = Array.from({ length: 20 }).map((_, i) => `Item ${i + 1}`);
 

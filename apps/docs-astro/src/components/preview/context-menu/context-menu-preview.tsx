@@ -7,7 +7,7 @@ import {
   ContextMenuSeparator,
   ContextMenuShortcut,
   ContextMenuTrigger
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 
 export function ContextMenuPreview() {
   return (

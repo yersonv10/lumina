@@ -8,7 +8,7 @@ import {
   NavigationMenuList,
   NavigationMenuPositioner,
   NavigationMenuTrigger
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 import Image from "@/components/compat/image";
 
 export default function NavigationMenuPreview() {

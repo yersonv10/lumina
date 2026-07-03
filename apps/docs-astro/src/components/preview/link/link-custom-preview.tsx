@@ -1,5 +1,5 @@
-import { Link } from "@lumina/ui";
-import { ArrowRight, Download1, Globe2 } from "@lumina/icons";
+import { Link } from "@lumina-kit/ui";
+import { ArrowRight, Download1, Globe2 } from "@lumina-kit/icons";
 
 export default function LinkCustomPreview() {
   return (

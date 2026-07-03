@@ -26,14 +26,14 @@ Follow the prompts to complete the project setup.
 ### Install Lumina
 
 ```npm
-npm install @lumina/ui @lumina/icons
+npm install @lumina-kit/ui @lumina-kit/icons
 ```
 
 Add the theme to `src/app/globals.css`, after your `@import "tailwindcss";`:
 
 ```css title="src/app/globals.css"
 @import "tailwindcss";
-@import "@lumina/ui/theme.css";
+@import "@lumina-kit/ui/theme.css";
 ```
 
 See [Global CSS Variables](/get-started/global-variables) for the full list of tokens this brings in.
@@ -44,7 +44,7 @@ See [Global CSS Variables](/get-started/global-variables) for the full list of t
 ### Use the Component
 
 ```tsx title="src/app/page.tsx"
-import { Button } from "@lumina/ui";
+import { Button } from "@lumina-kit/ui";
 
 export default function Home() {
   return (

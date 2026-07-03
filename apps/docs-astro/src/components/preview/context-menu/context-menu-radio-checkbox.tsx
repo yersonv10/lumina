@@ -10,7 +10,7 @@ import {
   ContextMenuRadioItem,
   ContextMenuSeparator,
   ContextMenuTrigger
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 import * as React from "react";
 
 export function ContextMenuRadioCheckbox() {

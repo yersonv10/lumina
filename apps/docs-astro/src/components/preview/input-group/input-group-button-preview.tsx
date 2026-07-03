@@ -5,10 +5,10 @@ import {
   InputGroupAddon,
   InputGroupButton,
   InputGroupInput
-} from "@lumina/ui";
-import { Label } from "@lumina/ui";
-import { TextField } from "@lumina/ui";
-import { Eye, EyeDisabled, Send4, Xmark } from "@lumina/icons";
+} from "@lumina-kit/ui";
+import { Label } from "@lumina-kit/ui";
+import { TextField } from "@lumina-kit/ui";
+import { Eye, EyeDisabled, Send4, Xmark } from "@lumina-kit/icons";
 import { useState } from "react";
 
 export default function InputGroupButtonPreview() {

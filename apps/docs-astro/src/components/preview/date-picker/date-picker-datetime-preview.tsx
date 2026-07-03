@@ -10,16 +10,16 @@ import {
   CalendarHeader,
   CalendarHeading,
   NavButton
-} from "@lumina/ui";
-import { DateInput, DateSegment } from "@lumina/ui";
+} from "@lumina-kit/ui";
+import { DateInput, DateSegment } from "@lumina-kit/ui";
 import {
   DatePicker,
   DatePickerGroup,
   DatePickerPopover,
   DatePickerTrigger
-} from "@lumina/ui";
-import { Description } from "@lumina/ui";
-import { FieldLabel } from "@lumina/ui";
+} from "@lumina-kit/ui";
+import { Description } from "@lumina-kit/ui";
+import { FieldLabel } from "@lumina-kit/ui";
 import { CalendarDateTime, getLocalTimeZone } from "@internationalized/date";
 import { useState } from "react";
 import { useDateFormatter } from "react-aria";

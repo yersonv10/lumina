@@ -1,4 +1,4 @@
-import { Badge } from "@lumina/ui";
+import { Badge } from "@lumina-kit/ui";
 
 export default function BadgeColors() {
   return (

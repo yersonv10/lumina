@@ -10,9 +10,9 @@ import {
   CalendarHeading,
   NavButton,
   type DateValue
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 import { getLocalTimeZone, today } from "@internationalized/date";
-import { Check, InfoTriangle } from "@lumina/icons";
+import { Check, InfoTriangle } from "@lumina-kit/icons";
 import { useState } from "react";
 
 export default function CalendarValidationPreview() {

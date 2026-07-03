@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-/* Component source now lives in the @lumina-ui/ui workspace package, outside
+/* Component source now lives in the @lumina-kit/ui workspace package, outside
    this app's default Tailwind scan root -- without this, classes used only
    there (e.g. Backdrop's `bg-black/50`) silently never get generated. */
 @source "../../../../packages/ui/src/**/*.{ts,tsx}";
@@ -103,7 +103,7 @@
   );
 
   /* ============================================================
-     @lumina-ui/ui compatibility tokens.
+     @lumina-kit/ui compatibility tokens.
      The components were authored against the CLI's default palette
      (background-100, base-100, text-100, title-50, button-error-*,
      badge-*, alert-*, …). The site only mapped a handful, so every

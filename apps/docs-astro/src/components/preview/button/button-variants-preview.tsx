@@ -1,4 +1,4 @@
-import { Button } from "@lumina/ui";
+import { Button } from "@lumina-kit/ui";
 
 export default function ButtonVariantsPreview() {
   return (

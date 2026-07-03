@@ -9,7 +9,7 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 
 export default function SelectWithLabelPreview() {
   return (

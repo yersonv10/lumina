@@ -1,5 +1,5 @@
-import { List } from "@lumina/ui";
-import { CheckCircle1 } from "@lumina/icons";
+import { List } from "@lumina-kit/ui";
+import { CheckCircle1 } from "@lumina-kit/icons";
 
 export default function ListWithIconsPreview() {
   const features = [

@@ -10,7 +10,7 @@ import {
   SelectSeparator,
   SelectTrigger,
   SelectValue
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 
 export default function SelectWithSectionsPreview() {
   return (

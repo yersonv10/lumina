@@ -9,7 +9,7 @@ import {
   RangeCalendarHeader,
   RangeCalendarHeading,
   RangeNavButton
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 
 export default function RangeCalendarMultipleMonthsPreview() {
   return (

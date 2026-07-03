@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@lumina/ui";
+import { Button } from "@lumina-kit/ui";
 import {
   Sidebar,
   SidebarContent,
@@ -13,13 +13,13 @@ import {
   SidebarMenuItem,
   SidebarProvider,
   SidebarTrigger
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 import {
   AngleDoubleLeft,
   BarChart2,
   Layout5,
   Message1
-} from "@lumina/icons";
+} from "@lumina-kit/icons";
 import { useState } from "react";
 
 export default function SidebarCollapsiblePreview() {

@@ -1,7 +1,7 @@
 /* This file is meant to be imported additively, after your own
    `@import "tailwindcss";`, e.g.:
      @import "tailwindcss";
-     @import "@lumina/ui/theme-dark.css";
+     @import "@lumina-kit/ui/theme-dark.css";
    It does not import Tailwind itself to avoid registering the framework
    twice. */
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
@@ -9,7 +9,7 @@
 @plugin '@tailwindcss/forms';
 
 /* Scans this package's own compiled output for the utility classes used
-   inside @lumina/ui components, since Tailwind never scans node_modules
+   inside @lumina-kit/ui components, since Tailwind never scans node_modules
    by default and this file ships alongside dist/index.js. */
 @source "./";
 

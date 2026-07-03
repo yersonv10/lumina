@@ -7,7 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
   type CarouselApi
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 import * as React from "react";
 
 export default function CarouselApiPreview() {

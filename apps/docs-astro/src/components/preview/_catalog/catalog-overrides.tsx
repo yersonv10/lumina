@@ -5,7 +5,7 @@
  * swap in its image (avatar). These are catalog thumbnails only — the
  * component doc pages still use the real live previews.
  */
-import { ChevronDown, Search1 } from "@lumina/icons";
+import { ChevronDown, Search1 } from "@lumina-kit/icons";
 
 export function AvatarCatalogPreview() {
   return (

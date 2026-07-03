@@ -3,7 +3,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import SiteHeader from "@/components/SiteHeader.astro";
 import PackageManagerTabs from "@/components/PackageManagerTabs.astro";
 import CodeBlockCard from "@/components/CodeBlockCard.astro";
-import * as LuminaIcons from "@lumina/icons";
+import * as LuminaIcons from "@lumina-kit/icons";
 
 export const prerender = true;
 
@@ -11,7 +11,7 @@ const iconCount = (Object.values(LuminaIcons) as unknown[]).filter(
   (c) => typeof c === "function",
 ).length;
 
-const usageBasic = `import { Sparkle, StarIcon } from "@lumina/icons";
+const usageBasic = `import { Sparkle, StarIcon } from "@lumina-kit/icons";
 
 export function Example() {
   return (
@@ -50,7 +50,7 @@ const usageStyling = `// Icons paint with \`currentColor\`, so color is controll
     </header>
 
     <div class="mt-8 max-w-md">
-      <PackageManagerTabs command="npm install @lumina/icons" />
+      <PackageManagerTabs command="npm install @lumina-kit/icons" />
     </div>
 
     <!-- Usage -->

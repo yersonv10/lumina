@@ -5,8 +5,8 @@ import {
   AvatarBadge,
   AvatarFallback,
   AvatarImage
-} from "@lumina/ui";
-import { buttonStyles } from "@lumina/ui";
+} from "@lumina-kit/ui";
+import { buttonStyles } from "@lumina-kit/ui";
 import {
   Drawer,
   DrawerBody,
@@ -17,9 +17,9 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger
-} from "@lumina/ui";
-import { Separator } from "@lumina/ui";
-import { Envelope1, MapMarker5, Phone } from "@lumina/icons";
+} from "@lumina-kit/ui";
+import { Separator } from "@lumina-kit/ui";
+import { Envelope1, MapMarker5, Phone } from "@lumina-kit/icons";
 
 export default function DrawerProfilePreview() {
   return (

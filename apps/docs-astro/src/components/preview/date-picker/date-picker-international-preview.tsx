@@ -10,15 +10,15 @@ import {
   CalendarHeader,
   CalendarHeading,
   NavButton
-} from "@lumina/ui";
-import { DateInput, DateSegment } from "@lumina/ui";
+} from "@lumina-kit/ui";
+import { DateInput, DateSegment } from "@lumina-kit/ui";
 import {
   DatePicker,
   DatePickerGroup,
   DatePickerPopover,
   DatePickerTrigger
-} from "@lumina/ui";
-import { FieldLabel } from "@lumina/ui";
+} from "@lumina-kit/ui";
+import { FieldLabel } from "@lumina-kit/ui";
 import { I18nProvider } from "react-aria-components";
 
 export default function DatePickerInternationalPreview() {

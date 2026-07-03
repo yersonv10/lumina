@@ -1,5 +1,5 @@
-import { Link } from "@lumina/ui";
-import { Link1AngularRight } from "@lumina/icons";
+import { Link } from "@lumina-kit/ui";
+import { Link1AngularRight } from "@lumina-kit/icons";
 
 export default function LinkPreview() {
   return (

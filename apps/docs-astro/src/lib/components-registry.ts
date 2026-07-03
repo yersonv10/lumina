@@ -1,6 +1,6 @@
 /**
  * Flat list of Lumina components shown in the docs (name, description, example
- * count). This is docs-owned metadata, not an install manifest — @lumina/ui ships
+ * count). This is docs-owned metadata, not an install manifest — @lumina-kit/ui ships
  * as a single installable package, so there is no per-component registry to fetch
  * from anymore.
  */

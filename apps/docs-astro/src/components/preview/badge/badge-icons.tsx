@@ -1,5 +1,5 @@
-import { Badge } from "@lumina/ui";
-import { Check, CheckCircle1, InfoCircle, Xmark2x } from "@lumina/icons";
+import { Badge } from "@lumina-kit/ui";
+import { Check, CheckCircle1, InfoCircle, Xmark2x } from "@lumina-kit/icons";
 
 export default function BadgeIcons() {
   return (

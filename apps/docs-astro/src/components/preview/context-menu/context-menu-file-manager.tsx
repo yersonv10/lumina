@@ -7,7 +7,7 @@ import {
   ContextMenuSeparator,
   ContextMenuShortcut,
   ContextMenuTrigger
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 import {
   Copy4,
   Download1,
@@ -15,7 +15,7 @@ import {
   Pencil1,
   ShareNodes,
   Trash1
-} from "@lumina/icons";
+} from "@lumina-kit/icons";
 
 export function ContextMenuFileManager() {
   return (

@@ -1,5 +1,5 @@
 import { cn } from "../utils/cn";
-import { ChevronDown } from "@lumina/icons";
+import { ChevronDown } from "@lumina-kit/icons";
 import { cva, type VariantProps } from "class-variance-authority";
 import * as React from "react";
 

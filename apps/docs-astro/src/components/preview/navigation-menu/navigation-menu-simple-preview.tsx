@@ -6,7 +6,7 @@ import {
   NavigationMenuList,
   NavigationMenuPositioner,
   NavigationMenuTrigger
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 import {
   ArrowRight,
   Bolt1,
@@ -18,7 +18,7 @@ import {
   Globe2,
   OpenBook,
   Shield1Check
-} from "@lumina/icons";
+} from "@lumina-kit/icons";
 
 export default function NavigationMenuSimplePreview() {
   return (

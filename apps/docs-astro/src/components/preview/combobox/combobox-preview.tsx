@@ -9,7 +9,7 @@ import {
   ComboboxItem,
   ComboboxList,
   ComboboxTrigger
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 
 export default function ComboboxPreview() {
   return (

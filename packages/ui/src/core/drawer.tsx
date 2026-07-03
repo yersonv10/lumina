@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "../utils/cn";
-import { Close } from "@lumina/icons";
+import { Close } from "@lumina-kit/icons";
 import { cva, type VariantProps } from "class-variance-authority";
 import {
   animate,

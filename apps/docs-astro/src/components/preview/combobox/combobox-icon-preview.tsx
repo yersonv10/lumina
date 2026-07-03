@@ -10,14 +10,14 @@ import {
   ComboboxLabel,
   ComboboxList,
   ComboboxTrigger
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 import {
   Briefcase4,
   Buildings11,
   Camera1,
   Cart2,
   Sparkle
-} from "@lumina/icons";
+} from "@lumina-kit/icons";
 
 const categories = [
   { id: "featured", name: "Featured", icon: Sparkle },

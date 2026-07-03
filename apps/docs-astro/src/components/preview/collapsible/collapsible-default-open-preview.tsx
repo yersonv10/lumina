@@ -2,7 +2,7 @@ import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 
 export default function CollapsibleDefaultOpenPreview() {
   return (

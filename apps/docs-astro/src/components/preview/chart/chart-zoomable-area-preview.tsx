@@ -1,11 +1,11 @@
 "use client";
 
-import { buttonStyles } from "@lumina/ui";
+import { buttonStyles } from "@lumina-kit/ui";
 import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 import { useState } from "react";
 import {
   Area,

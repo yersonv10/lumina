@@ -1,4 +1,4 @@
-import { Breadcrumbs } from "@lumina/ui";
+import { Breadcrumbs } from "@lumina-kit/ui";
 
 export default function BreadcrumbsStylesPreview() {
   return (

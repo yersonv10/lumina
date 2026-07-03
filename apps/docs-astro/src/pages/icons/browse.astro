@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import SiteHeader from "@/components/SiteHeader.astro";
-import * as LuminaIcons from "@lumina/icons";
+import * as LuminaIcons from "@lumina-kit/icons";
 
 export const prerender = true;
 
@@ -432,7 +432,7 @@ const iconData = icons.map(([name, Icon]) => {
           <li data-icon data-name={keywords}>
             <button
               type="button"
-              data-copy={`import { ${name} } from "@lumina/icons";`}
+              data-copy={`import { ${name} } from "@lumina-kit/icons";`}
               title={name}
               class="group flex aspect-square w-full flex-col items-center justify-center gap-2 rounded-(--radius-control) border border-transparent p-2 text-text-secondary transition hover:border-border hover:bg-background-soft hover:text-text-primary"
             >

@@ -12,7 +12,7 @@ import {
   MenubarRadioItem,
   MenubarSeparator,
   MenubarTrigger
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 import * as React from "react";
 
 export default function MenubarWithCheckboxRadio() {

@@ -10,7 +10,7 @@
       "registryDependencies": [],
       "dependencies": [
         "class-variance-authority",
-        "@lumina/icons"
+        "@lumina-kit/icons"
       ],
       "files": [
         {
@@ -27,7 +27,7 @@
       "dependencies": [
         "class-variance-authority",
         "react-aria-components",
-        "@lumina/icons"
+        "@lumina-kit/icons"
       ],
       "files": [
         {
@@ -105,7 +105,7 @@
       "description": "Breadcrumbs component with multiple variants and support for icons.",
       "registryDependencies": [],
       "dependencies": [
-        "@lumina/icons"
+        "@lumina-kit/icons"
       ],
       "files": [
         {
@@ -154,7 +154,7 @@
       ],
       "dependencies": [
         "react-aria-components",
-        "@lumina/icons",
+        "@lumina-kit/icons",
         "class-variance-authority",
         "@internationalized/date"
       ],
@@ -187,7 +187,7 @@
       ],
       "dependencies": [
         "embla-carousel-react",
-        "@lumina/icons"
+        "@lumina-kit/icons"
       ],
       "files": [
         {
@@ -219,7 +219,7 @@
       "registryDependencies": [],
       "dependencies": [
         "class-variance-authority",
-        "@lumina/icons"
+        "@lumina-kit/icons"
       ],
       "files": [
         {
@@ -235,7 +235,7 @@
       "registryDependencies": [],
       "dependencies": [
         "@base-ui/react",
-        "@lumina/icons"
+        "@lumina-kit/icons"
       ],
       "files": [
         {
@@ -268,7 +268,7 @@
       ],
       "dependencies": [
         "react-aria-components",
-        "@lumina/icons"
+        "@lumina-kit/icons"
       ],
       "files": [
         {
@@ -292,7 +292,7 @@
       "registryDependencies": [],
       "dependencies": [
         "react-aria-components",
-        "@lumina/icons"
+        "@lumina-kit/icons"
       ],
       "files": [
         {
@@ -357,7 +357,7 @@
       ],
       "dependencies": [
         "react-aria-components",
-        "@lumina/icons"
+        "@lumina-kit/icons"
       ],
       "files": [
         {
@@ -373,7 +373,7 @@
       "registryDependencies": [],
       "dependencies": [
         "react-aria-components",
-        "@lumina/icons",
+        "@lumina-kit/icons",
         "class-variance-authority"
       ],
       "files": [
@@ -516,7 +516,7 @@
       "registryDependencies": [],
       "dependencies": [
         "@base-ui/react",
-        "@lumina/icons"
+        "@lumina-kit/icons"
       ],
       "files": [
         {
@@ -532,7 +532,7 @@
       "registryDependencies": [],
       "dependencies": [
         "class-variance-authority",
-        "@lumina/icons"
+        "@lumina-kit/icons"
       ],
       "files": [
         {
@@ -548,7 +548,7 @@
       "registryDependencies": [],
       "dependencies": [
         "@base-ui/react",
-        "@lumina/icons"
+        "@lumina-kit/icons"
       ],
       "files": [
         {
@@ -610,7 +610,7 @@
       ],
       "dependencies": [
         "class-variance-authority",
-        "@lumina/icons"
+        "@lumina-kit/icons"
       ],
       "files": [
         {
@@ -673,7 +673,7 @@
         "button"
       ],
       "dependencies": [
-        "@lumina/icons",
+        "@lumina-kit/icons",
         "class-variance-authority",
         "react-aria-components",
         "@internationalized/date"
@@ -725,7 +725,7 @@
       ],
       "dependencies": [
         "react-aria-components",
-        "@lumina/icons"
+        "@lumina-kit/icons"
       ],
       "files": [
         {
@@ -757,7 +757,7 @@
       "registryDependencies": [],
       "dependencies": [
         "react-aria-components",
-        "@lumina/icons",
+        "@lumina-kit/icons",
         "class-variance-authority"
       ],
       "files": [
@@ -959,7 +959,7 @@
       ],
       "dependencies": [
         "class-variance-authority",
-        "@lumina/icons"
+        "@lumina-kit/icons"
       ],
       "files": [
         {

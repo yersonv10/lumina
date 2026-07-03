@@ -1,8 +1,8 @@
 "use client";
 
-import { Button } from "@lumina/ui";
-import { Card } from "@lumina/ui";
-import { ChevronRight } from "@lumina/icons";
+import { Button } from "@lumina-kit/ui";
+import { Card } from "@lumina-kit/ui";
+import { ChevronRight } from "@lumina-kit/icons";
 import Image from "@/components/compat/image";
 
 export default function CardHorizontalPreview() {

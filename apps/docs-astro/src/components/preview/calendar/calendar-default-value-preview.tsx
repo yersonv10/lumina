@@ -9,7 +9,7 @@ import {
   CalendarHeader,
   CalendarHeading,
   NavButton
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 import { getLocalTimeZone, today } from "@internationalized/date";
 
 export default function CalendarDefaultValuePreview() {

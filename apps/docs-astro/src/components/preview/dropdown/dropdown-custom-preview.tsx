@@ -8,14 +8,14 @@ import {
   DropdownMenuSection,
   DropdownMenuSeparator,
   DropdownMenuTrigger
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 import {
   ChevronDown,
   CreditCard,
   Exit,
   Gear1,
   UserCircle1
-} from "@lumina/icons";
+} from "@lumina-kit/icons";
 
 export default function DropdownCustomPreview() {
   return (

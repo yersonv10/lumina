@@ -1,9 +1,9 @@
 "use client";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@lumina/ui";
-import { Badge } from "@lumina/ui";
-import { Checkbox } from "@lumina/ui";
-import { Pagination } from "@lumina/ui";
+import { Avatar, AvatarFallback, AvatarImage } from "@lumina-kit/ui";
+import { Badge } from "@lumina-kit/ui";
+import { Checkbox } from "@lumina-kit/ui";
+import { Pagination } from "@lumina-kit/ui";
 import {
   TableBody,
   TableCell,
@@ -11,7 +11,7 @@ import {
   TableHeader,
   TableRoot,
   TableRow
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 import { cn } from "@/utils/cn";
 import { useState } from "react";
 

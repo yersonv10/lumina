@@ -1,6 +1,6 @@
 "use client";
 
-import { Spinner } from "@lumina/ui";
+import { Spinner } from "@lumina-kit/ui";
 
 export default function SpinnerSizesPreview() {
   return (

@@ -10,7 +10,7 @@ import {
   MenubarSubContent,
   MenubarSubTrigger,
   MenubarTrigger
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 
 export default function MenubarWithSubmenus() {
   return (

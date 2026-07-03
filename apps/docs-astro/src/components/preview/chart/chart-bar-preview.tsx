@@ -6,7 +6,7 @@ import {
   ChartLegendContent,
   ChartTooltip,
   ChartTooltipContent
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
 
 export default function ChartBarPreview() {

@@ -13,7 +13,7 @@ import {
   SidebarMenuItem,
   SidebarProvider,
   SidebarTrigger
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 import {
   AngleDoubleLeft,
   Calendar,
@@ -22,7 +22,7 @@ import {
   Home,
   Search1,
   User2
-} from "@lumina/icons";
+} from "@lumina-kit/icons";
 import { forwardRef, type SVGProps } from "react";
 import { mergeProps } from "react-aria";
 

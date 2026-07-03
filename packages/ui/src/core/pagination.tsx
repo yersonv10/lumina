@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "../utils/cn";
-import { ArrowLeft, ArrowRight } from "@lumina/icons";
+import { ArrowLeft, ArrowRight } from "@lumina-kit/icons";
 import { cva } from "class-variance-authority";
 import { Button } from "./button";
 

@@ -1,5 +1,5 @@
 import { cn } from "../../utils/cn";
-import { Xmark2x } from "@lumina/icons";
+import { Xmark2x } from "@lumina-kit/icons";
 import React, { useContext, useState } from "react";
 import { type Key } from "react-aria-components";
 import { Badge } from "../badge";

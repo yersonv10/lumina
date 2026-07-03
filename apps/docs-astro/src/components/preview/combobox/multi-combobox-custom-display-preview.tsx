@@ -1,6 +1,6 @@
 "use client";
 
-import { Badge } from "@lumina/ui";
+import { Badge } from "@lumina-kit/ui";
 import {
   ComboboxContent,
   ComboboxEmpty,
@@ -13,8 +13,8 @@ import {
   MultiCombobox,
   MultiComboboxContext,
   MultiComboboxDisplay
-} from "@lumina/ui";
-import { XmarkCircle2x } from "@lumina/icons";
+} from "@lumina-kit/ui";
+import { XmarkCircle2x } from "@lumina-kit/icons";
 import React from "react";
 
 const frameworks = [

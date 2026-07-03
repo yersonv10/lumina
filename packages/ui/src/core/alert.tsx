@@ -6,7 +6,7 @@ import {
   InfoCircle,
   InfoTriangle,
   Xmark
-} from "@lumina/icons";
+} from "@lumina-kit/icons";
 import { cva, type VariantProps } from "class-variance-authority";
 import { createContext, use } from "react";
 import { Heading, type HeadingProps } from "react-aria-components";

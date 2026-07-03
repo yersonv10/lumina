@@ -10,7 +10,7 @@ import {
   NavigationMenuList,
   NavigationMenuPositioner,
   NavigationMenuTrigger
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 import Image from "@/components/compat/image";
 import { useRef } from "react";
 

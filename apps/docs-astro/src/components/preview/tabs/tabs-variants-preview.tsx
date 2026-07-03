@@ -1,4 +1,4 @@
-import { TabContent, TabList, TabRoot, TabTrigger } from "@lumina/ui";
+import { TabContent, TabList, TabRoot, TabTrigger } from "@lumina-kit/ui";
 
 export default function TabsVariantsPreview() {
   return (

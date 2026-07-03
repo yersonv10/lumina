@@ -5,12 +5,14 @@ node_modules
 .pnp
 .pnp.js
 
+# Other package managers (this repo uses bun)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
 # Local env files
 .env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env*.local
 
 # Testing
 coverage
@@ -32,14 +34,25 @@ coverage
 out/
 build
 dist
-
+*.tsbuildinfo
+*.tgz
 
 # Debug
-
+*.log
+npm-debug.log*
+.eslintcache
 
 # Misc
 .DS_Store
+Thumbs.db
 *.pem
+
+# Editors
+.vscode/*
+!.vscode/settings.json
+.idea/
+*.swp
+*.swo
 
 .agents
 .continue

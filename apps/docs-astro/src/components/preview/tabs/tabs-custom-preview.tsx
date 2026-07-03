@@ -1,14 +1,14 @@
 "use client";
 
-import { TabContent, TabList, TabRoot, TabTrigger } from "@lumina/ui";
-import { Toggle } from "@lumina/ui";
+import { TabContent, TabList, TabRoot, TabTrigger } from "@lumina-kit/ui";
+import { Toggle } from "@lumina-kit/ui";
 import { cn } from "@/utils/cn";
 import {
   BarChartSquare,
   Bell1,
   Shield1Check,
   UserMultiple1
-} from "@lumina/icons";
+} from "@lumina-kit/icons";
 
 export default function TabsCustomPreview() {
   return (

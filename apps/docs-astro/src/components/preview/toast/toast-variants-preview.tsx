@@ -1,5 +1,5 @@
 "use client";
-import { Toast } from "@lumina/ui";
+import { Toast } from "@lumina-kit/ui";
 
 export default function ToastVariantsPreview() {
   return (

@@ -1,5 +1,5 @@
 import { cn } from "../utils/cn";
-import { Close } from "@lumina/icons";
+import { Close } from "@lumina-kit/icons";
 import type { ComponentProps } from "react";
 import {
   Button as AriaButton,

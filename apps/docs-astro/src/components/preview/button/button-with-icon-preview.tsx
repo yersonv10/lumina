@@ -1,5 +1,5 @@
-import { Button } from "@lumina/ui";
-import { Download1, Plus } from "@lumina/icons";
+import { Button } from "@lumina-kit/ui";
+import { Download1, Plus } from "@lumina-kit/icons";
 
 export default function ButtonWithIconPreview() {
   return (

@@ -1,6 +1,6 @@
 import { cn } from "../utils/cn";
 import { NavigationMenu as NavigationMenuPrimitive } from "@base-ui/react/navigation-menu";
-import { ChevronDown } from "@lumina/icons";
+import { ChevronDown } from "@lumina-kit/icons";
 
 function NavigationMenu({
   className,

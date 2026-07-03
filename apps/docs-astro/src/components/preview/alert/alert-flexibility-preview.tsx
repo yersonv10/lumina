@@ -6,9 +6,9 @@ import {
   AlertDescription,
   AlertIndicator,
   AlertTitle
-} from "@lumina/ui";
-import { Button } from "@lumina/ui";
-import { RefreshCircle3Clockwise, Xmark2x } from "@lumina/icons";
+} from "@lumina-kit/ui";
+import { Button } from "@lumina-kit/ui";
+import { RefreshCircle3Clockwise, Xmark2x } from "@lumina-kit/icons";
 
 export default function AlertFlexibilityPreview() {
   return (

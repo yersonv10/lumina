@@ -1,5 +1,5 @@
 import { cn } from "../utils/cn";
-import { ChevronRight } from "@lumina/icons";
+import { ChevronRight } from "@lumina-kit/icons";
 
 type PropsType = {
   items: {

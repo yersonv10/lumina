@@ -4,7 +4,7 @@ import {
   Tooltip,
   TooltipContent,
   TooltipTrigger
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 
 export default function TooltipAsChildPreview() {
   return (

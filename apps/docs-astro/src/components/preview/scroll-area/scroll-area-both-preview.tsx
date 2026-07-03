@@ -2,7 +2,7 @@ import {
   ScrollArea,
   ScrollAreaViewport,
   ScrollBar
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 
 export function ScrollAreaBothPreview() {
   return (

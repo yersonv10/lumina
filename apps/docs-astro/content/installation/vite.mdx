@@ -53,14 +53,14 @@ export default defineConfig({
 ### Install Lumina
 
 ```npm
-npm install @lumina/ui @lumina/icons
+npm install @lumina-kit/ui @lumina-kit/icons
 ```
 
 Add the theme to `src/index.css`, after `@import "tailwindcss";`:
 
 ```css title="src/index.css"
 @import "tailwindcss";
-@import "@lumina/ui/theme.css";
+@import "@lumina-kit/ui/theme.css";
 ```
 
 See [Global CSS Variables](/get-started/global-variables) for the full list of tokens this brings in.
@@ -73,7 +73,7 @@ See [Global CSS Variables](/get-started/global-variables) for the full list of t
 Use the component in your app:
 
 ```tsx title="src/App.tsx"
-import { Button } from "@lumina/ui";
+import { Button } from "@lumina-kit/ui";
 
 function App() {
   return (

@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, buttonStyles } from "@lumina/ui";
+import { Button, buttonStyles } from "@lumina-kit/ui";
 import {
   Dialog,
   DialogBody,
@@ -9,9 +9,9 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle
-} from "@lumina/ui";
-import { OverlayWrapper } from "@lumina/ui";
-import { CheckCircle1 } from "@lumina/icons";
+} from "@lumina-kit/ui";
+import { OverlayWrapper } from "@lumina-kit/ui";
+import { CheckCircle1 } from "@lumina-kit/icons";
 
 export default function DialogWithoutOverlayPreview() {
   return (

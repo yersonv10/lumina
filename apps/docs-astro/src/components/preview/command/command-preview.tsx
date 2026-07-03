@@ -9,7 +9,7 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 import {
   Calendar,
   CreditCard,
@@ -17,7 +17,7 @@ import {
   Gear1,
   Rocket1,
   UserCircle1
-} from "@lumina/icons";
+} from "@lumina-kit/icons";
 
 export function CommandPreview() {
   return (

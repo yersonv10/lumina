@@ -1,14 +1,14 @@
 "use client";
 
 import { Button } from "@/components/ui/Button";
-import { FieldError, FieldLabel } from "@lumina/ui";
-import { Input } from "@lumina/ui";
+import { FieldError, FieldLabel } from "@lumina-kit/ui";
+import { Input } from "@lumina-kit/ui";
 import {
   NumberField,
   NumberFieldAction,
   NumberFieldGroup
-} from "@lumina/ui";
-import { Minus, Plus } from "@lumina/icons";
+} from "@lumina-kit/ui";
+import { Minus, Plus } from "@lumina-kit/icons";
 import { Form } from "react-aria-components";
 
 export default function NumberFieldWithFormValidation() {

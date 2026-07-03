@@ -4,7 +4,7 @@ import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 

@@ -2,7 +2,7 @@ import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 
 export default function ResizablePreview() {
   return (

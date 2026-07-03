@@ -1,5 +1,5 @@
-import { Badge } from "@lumina/ui";
-import { Card } from "@lumina/ui";
+import { Badge } from "@lumina-kit/ui";
+import { Card } from "@lumina-kit/ui";
 import Image from "@/components/compat/image";
 
 export default function CardArticlePreview() {

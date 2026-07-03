@@ -3,7 +3,7 @@
 import { cn } from "../utils/cn";
 import { Menu } from "@base-ui/react/menu";
 import { Menubar as MenubarRootPrimitive } from "@base-ui/react/menubar";
-import { ChevronRight } from "@lumina/icons";
+import { ChevronRight } from "@lumina-kit/icons";
 import type { ComponentProps } from "react";
 
 export function Menubar({

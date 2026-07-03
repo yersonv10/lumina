@@ -1,4 +1,4 @@
-# @lumina/icons
+# @lumina-kit/icons
 
 ## 2.0.0
 

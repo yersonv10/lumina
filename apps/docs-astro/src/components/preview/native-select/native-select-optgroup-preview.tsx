@@ -2,7 +2,7 @@ import {
   NativeSelect,
   NativeSelectOptGroup,
   NativeSelectOption
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 
 export default function NativeSelectOptGroupPreview() {
   return (

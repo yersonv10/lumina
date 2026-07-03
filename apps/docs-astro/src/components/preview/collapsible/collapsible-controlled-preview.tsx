@@ -1,12 +1,12 @@
 "use client";
 
-import { buttonStyles } from "@lumina/ui";
+import { buttonStyles } from "@lumina-kit/ui";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger
-} from "@lumina/ui";
-import { InfoCircle } from "@lumina/icons";
+} from "@lumina-kit/ui";
+import { InfoCircle } from "@lumina-kit/icons";
 import { useState } from "react";
 
 const stackTrace = `  at ProductList (components/ProductList.tsx:24:18)

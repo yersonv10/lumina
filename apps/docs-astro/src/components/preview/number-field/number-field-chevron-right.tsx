@@ -1,14 +1,14 @@
 "use client";
 
-import { FieldDescription, FieldLabel } from "@lumina/ui";
-import { Input } from "@lumina/ui";
+import { FieldDescription, FieldLabel } from "@lumina-kit/ui";
+import { Input } from "@lumina-kit/ui";
 import {
   NumberField,
   NumberFieldAction,
   NumberFieldGroup
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 import { cn } from "@/utils/cn";
-import { ChevronDown, ChevronUp } from "@lumina/icons";
+import { ChevronDown, ChevronUp } from "@lumina-kit/icons";
 
 export default function NumberFieldChevronRight() {
   return (

@@ -1,7 +1,7 @@
 import {
   NativeSelect,
   NativeSelectOption
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 
 export default function NativeSelectDisabledPreview() {
   return (

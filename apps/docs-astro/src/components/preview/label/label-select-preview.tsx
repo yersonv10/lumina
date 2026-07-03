@@ -1,10 +1,10 @@
 "use client";
 
-import { Label } from "@lumina/ui";
+import { Label } from "@lumina-kit/ui";
 import {
   NativeSelect,
   NativeSelectOption
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 
 export default function LabelSelectPreview() {
   return (

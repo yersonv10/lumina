@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@lumina/ui";
+import { Button } from "@lumina-kit/ui";
 import {
   Dialog,
   DialogBody,
@@ -9,8 +9,8 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle
-} from "@lumina/ui";
-import { Backdrop, OverlayWrapper } from "@lumina/ui";
+} from "@lumina-kit/ui";
+import { Backdrop, OverlayWrapper } from "@lumina-kit/ui";
 
 export default function DialogPreview() {
   return (

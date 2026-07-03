@@ -1,7 +1,7 @@
-import { Checkbox } from "@lumina/ui";
-import { Label } from "@lumina/ui";
-import { List } from "@lumina/ui";
-import { RadioInput } from "@lumina/ui";
+import { Checkbox } from "@lumina-kit/ui";
+import { Label } from "@lumina-kit/ui";
+import { List } from "@lumina-kit/ui";
+import { RadioInput } from "@lumina-kit/ui";
 
 export default function ListWithInputsPreview() {
   const features = [

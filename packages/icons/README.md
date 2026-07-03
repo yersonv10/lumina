@@ -1,4 +1,4 @@
-# @lumina/icons
+# @lumina-kit/icons
 
 Beautiful React icon components for Lumina - A comprehensive collection of 180+ high-quality SVG icons built with TypeScript and React.
 
@@ -9,19 +9,19 @@ Install the package using your preferred package manager:
 ### npm
 
 ```bash
-npm i @lumina/icons
+npm i @lumina-kit/icons
 ```
 
 ### yarn
 
 ```bash
-yarn add @lumina/icons
+yarn add @lumina-kit/icons
 ```
 
 ### pnpm
 
 ```bash
-pnpm add @lumina/icons
+pnpm add @lumina-kit/icons
 ```
 
 ## Usage
@@ -31,7 +31,7 @@ Import the icons you need and use them as React components:
 ### Basic Usage
 
 ```jsx
-import { ArrowLeftSquare, FourK } from "@lumina/icons";
+import { ArrowLeftSquare, FourK } from "@lumina-kit/icons";
 
 function App() {
   return (
@@ -46,7 +46,7 @@ function App() {
 ### With Custom Props
 
 ```jsx
-import { ArrowLeftSquare, FourK } from "@lumina/icons";
+import { ArrowLeftSquare, FourK } from "@lumina-kit/icons";
 
 function App() {
   return (

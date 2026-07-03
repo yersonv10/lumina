@@ -4,9 +4,9 @@ import {
   FieldDescription,
   FieldError,
   FieldLabel
-} from "@lumina/ui";
-import { Input } from "@lumina/ui";
-import { TextField } from "@lumina/ui";
+} from "@lumina-kit/ui";
+import { Input } from "@lumina-kit/ui";
+import { TextField } from "@lumina-kit/ui";
 
 export default function FieldWithInputPreview() {
   return (

@@ -8,8 +8,8 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator
-} from "@lumina/ui";
-import { FileText, Folder1, Search1 } from "@lumina/icons";
+} from "@lumina-kit/ui";
+import { FileText, Folder1, Search1 } from "@lumina-kit/icons";
 
 export function CommandSearchPreview() {
   return (

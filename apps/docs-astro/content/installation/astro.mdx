@@ -83,14 +83,14 @@ npx astro add react
 ### Install Lumina
 
 ```npm
-npm install @lumina/ui @lumina/icons
+npm install @lumina-kit/ui @lumina-kit/icons
 ```
 
 Add the theme to `src/styles/global.css`, after `@import "tailwindcss";`:
 
 ```css title="src/styles/global.css"
 @import "tailwindcss";
-@import "@lumina/ui/theme.css";
+@import "@lumina-kit/ui/theme.css";
 ```
 
 See [Global CSS Variables](/get-started/global-variables) for the full list of tokens this brings in.
@@ -104,7 +104,7 @@ Import and use the component in your Astro page:
 
 ```astro title="src/pages/index.astro"
 ---
-import { Button } from "@lumina/ui";
+import { Button } from "@lumina-kit/ui";
 ---
 
 <div class="flex min-h-svh items-center justify-center">
@@ -124,7 +124,7 @@ Purely presentational components with no state or event handlers (`Spinner`, `Ba
 
 ```astro title="src/pages/index.astro"
 ---
-import { Spinner } from "@lumina/ui";
+import { Spinner } from "@lumina-kit/ui";
 ---
 
 <Spinner />
@@ -140,7 +140,7 @@ Components that hold state or respond to interaction (`Button` with an `onClick`
 
 ```astro title="src/pages/index.astro"
 ---
-import { Button, Dialog } from "@lumina/ui";
+import { Button, Dialog } from "@lumina-kit/ui";
 ---
 
 <Button client:idle>Click me</Button>

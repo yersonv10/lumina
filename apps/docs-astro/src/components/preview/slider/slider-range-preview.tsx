@@ -1,4 +1,4 @@
-import { Slider } from "@lumina/ui";
+import { Slider } from "@lumina-kit/ui";
 
 export default function SliderRangePreview() {
   return (

@@ -1,4 +1,4 @@
-import { List } from "@lumina/ui";
+import { List } from "@lumina-kit/ui";
 
 export default function ListWithActiveStatePreview() {
   return (

@@ -6,8 +6,8 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger
-} from "@lumina/ui";
-import { Copy4, MenuMeatballs1, Pencil1, Trash1 } from "@lumina/icons";
+} from "@lumina-kit/ui";
+import { Copy4, MenuMeatballs1, Pencil1, Trash1 } from "@lumina-kit/icons";
 
 export default function DropdownWithIconsPreview() {
   return (

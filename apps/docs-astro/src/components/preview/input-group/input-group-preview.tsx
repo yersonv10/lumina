@@ -7,8 +7,8 @@ import {
   InputGroupAddon,
   InputGroupButton,
   InputGroupInput
-} from "@lumina/ui";
-import { Check, Copy4, Link1AngularRight } from "@lumina/icons";
+} from "@lumina-kit/ui";
+import { Check, Copy4, Link1AngularRight } from "@lumina-kit/icons";
 
 export default function InputGroupPreview() {
   const [copied, setCopied] = useState(false);

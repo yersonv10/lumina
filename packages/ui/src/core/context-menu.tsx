@@ -2,7 +2,7 @@
 
 import { cn } from "../utils/cn";
 import { ContextMenu as ContextMenuPrimitive } from "@base-ui/react/context-menu";
-import { Check, ChevronRight } from "@lumina/icons";
+import { Check, ChevronRight } from "@lumina-kit/icons";
 import * as React from "react";
 
 function ContextMenu({ ...props }: ContextMenuPrimitive.Root.Props) {

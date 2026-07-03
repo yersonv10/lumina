@@ -10,15 +10,15 @@ import {
   CalendarHeader,
   CalendarHeading,
   NavButton
-} from "@lumina/ui";
-import { DateInput, DateSegment } from "@lumina/ui";
+} from "@lumina-kit/ui";
+import { DateInput, DateSegment } from "@lumina-kit/ui";
 import {
   DatePicker,
   DatePickerGroup,
   DatePickerPopover,
   DatePickerTrigger
-} from "@lumina/ui";
-import { FieldDescription, FieldLabel } from "@lumina/ui";
+} from "@lumina-kit/ui";
+import { FieldDescription, FieldLabel } from "@lumina-kit/ui";
 import { CalendarDate } from "@internationalized/date";
 
 export default function DatePickerDisabledPreview() {

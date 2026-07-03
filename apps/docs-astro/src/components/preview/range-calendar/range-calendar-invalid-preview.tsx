@@ -8,7 +8,7 @@ import {
   RangeCalendarGridHeader,
   RangeCalendarHeader,
   RangeNavButton
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 
 export default function RangeCalendarInvalidPreview() {
   return (

@@ -1,9 +1,9 @@
 "use client";
 
 import luminaUiIcon from "@/assets/logo/lumina-ui-icon.svg";
-import { Breadcrumbs } from "@lumina/ui";
-import { buttonStyles } from "@lumina/ui";
-import { Collapsible, CollapsibleContent } from "@lumina/ui";
+import { Breadcrumbs } from "@lumina-kit/ui";
+import { buttonStyles } from "@lumina-kit/ui";
+import { Collapsible, CollapsibleContent } from "@lumina-kit/ui";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,7 +11,7 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 import {
   Sidebar,
   SidebarContent,
@@ -27,7 +27,7 @@ import {
   SidebarMenuSubItem,
   SidebarProvider,
   SidebarTrigger
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 import { cn } from "@/utils/cn";
 import {
   BotUser1,
@@ -39,7 +39,7 @@ import {
   OpenBook,
   Plus,
   User2
-} from "@lumina/icons";
+} from "@lumina-kit/icons";
 import Image from "@/components/compat/image";
 import * as React from "react";
 

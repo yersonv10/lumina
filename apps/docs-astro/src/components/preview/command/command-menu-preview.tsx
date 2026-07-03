@@ -9,7 +9,7 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 import {
   Code1,
   CreditCard,
@@ -19,7 +19,7 @@ import {
   Locked3,
   Plus,
   UserCircle1
-} from "@lumina/icons";
+} from "@lumina-kit/icons";
 
 export function CommandMenuPreview() {
   return (

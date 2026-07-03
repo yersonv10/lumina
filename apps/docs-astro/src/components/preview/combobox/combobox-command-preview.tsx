@@ -7,8 +7,8 @@ import {
   ComboboxInputWrapper,
   ComboboxItem,
   ComboboxList
-} from "@lumina/ui";
-import { FileText, Gear1, Message1, Search1, User2 } from "@lumina/icons";
+} from "@lumina-kit/ui";
+import { FileText, Gear1, Message1, Search1, User2 } from "@lumina-kit/icons";
 
 const commands = [
   {

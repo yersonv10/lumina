@@ -6,8 +6,8 @@ import {
   AlertDescription,
   AlertIndicator,
   AlertTitle
-} from "@lumina/ui";
-import { Sparkle } from "@lumina/icons";
+} from "@lumina-kit/ui";
+import { Sparkle } from "@lumina-kit/icons";
 
 export default function AlertCustomIconPreview() {
   return (

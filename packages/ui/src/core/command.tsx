@@ -1,5 +1,5 @@
 import { cn } from "../utils/cn";
-import { Close, Search1 } from "@lumina/icons";
+import { Close, Search1 } from "@lumina-kit/icons";
 import React, { type ReactNode, useEffect } from "react";
 import {
   Autocomplete,

@@ -1,9 +1,9 @@
 "use client";
 
-import { Button } from "@lumina/ui";
-import { OverlayWrapper } from "@lumina/ui";
-import { Popover, PopoverArrow } from "@lumina/ui";
-import { InfoCircle } from "@lumina/icons";
+import { Button } from "@lumina-kit/ui";
+import { OverlayWrapper } from "@lumina-kit/ui";
+import { Popover, PopoverArrow } from "@lumina-kit/ui";
+import { InfoCircle } from "@lumina-kit/icons";
 import { useRef } from "react";
 
 export default function PopoverCustomAnchorPreview() {

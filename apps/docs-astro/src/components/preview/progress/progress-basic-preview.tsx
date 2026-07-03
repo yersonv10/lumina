@@ -1,4 +1,4 @@
-import { Progress } from "@lumina/ui";
+import { Progress } from "@lumina-kit/ui";
 
 export default function ProgressBasicPreview() {
   return (

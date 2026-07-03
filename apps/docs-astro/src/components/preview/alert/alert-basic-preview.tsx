@@ -6,8 +6,8 @@ import {
   AlertDescription,
   AlertIndicator,
   AlertTitle
-} from "@lumina/ui";
-import { Xmark2x } from "@lumina/icons";
+} from "@lumina-kit/ui";
+import { Xmark2x } from "@lumina-kit/icons";
 
 export default function AlertBasicPreview() {
   return (

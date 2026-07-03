@@ -6,8 +6,8 @@ import {
   AlertDescription,
   AlertIndicator,
   AlertTitle
-} from "@lumina/ui";
-import { Button } from "@lumina/ui";
+} from "@lumina-kit/ui";
+import { Button } from "@lumina-kit/ui";
 export default function AlertActionsPreview() {
   return (
     <div className="flex flex-col gap-6 w-full">

@@ -10,7 +10,7 @@ import InputPreview from "@/components/preview/input/input-preview";
 import InputStatesPreview from "@/components/preview/input/input-states-preview";
 import InputDisabledPreview from "@/components/preview/input/input-disabled-preview";
 import InputWithLabelPreview from "@/components/preview/input/input-with-label-preview";
-import { Input } from "@lumina/ui";
+import { Input } from "@lumina-kit/ui";
 import { getFileContent } from "@/utils/get-file-content";
 
 # Input
@@ -34,7 +34,7 @@ Built with React Aria Components and styled using Tailwind CSS. It is designed t
 Install the package.
 
 ```npm
-npm install @lumina/ui
+npm install @lumina-kit/ui
 ```
 
 ## Usage
@@ -42,8 +42,8 @@ npm install @lumina/ui
 Import the component and pair it with a label for accessibility. The input accepts the standard HTML input props, along with the Lumina `state` variant and `className`.
 
 ```tsx
-import { Input } from "@lumina/ui";
-import { Label } from "@lumina/ui";
+import { Input } from "@lumina-kit/ui";
+import { Label } from "@lumina-kit/ui";
 import { useId } from "react";
 
 export default function InputPreview() {

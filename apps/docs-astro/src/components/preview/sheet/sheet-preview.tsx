@@ -1,6 +1,6 @@
 "use client";
 
-import { buttonStyles } from "@lumina/ui";
+import { buttonStyles } from "@lumina-kit/ui";
 import {
   Sheet,
   SheetBody,
@@ -11,7 +11,7 @@ import {
   SheetOverlay,
   SheetTitle,
   SheetTrigger
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 
 export default function SheetPreview() {
   return (

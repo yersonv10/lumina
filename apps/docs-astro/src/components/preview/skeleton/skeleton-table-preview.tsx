@@ -1,4 +1,4 @@
-import { Skeleton } from "@lumina/ui";
+import { Skeleton } from "@lumina-kit/ui";
 
 export default function SkeletonTablePreview() {
   return (

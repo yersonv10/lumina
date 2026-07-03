@@ -5,8 +5,8 @@ import {
   InputGroupAddon,
   InputGroupButton,
   InputGroupTextarea
-} from "@lumina/ui";
-import { Microphone1, Paperclip2, Send4 } from "@lumina/icons";
+} from "@lumina-kit/ui";
+import { Microphone1, Paperclip2, Send4 } from "@lumina-kit/icons";
 import { useState } from "react";
 
 export default function InputGroupTextareaPreview() {

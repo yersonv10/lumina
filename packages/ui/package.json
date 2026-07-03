@@ -9,6 +9,16 @@
   "publishConfig": {
     "access": "public"
   },
+  "author": {
+    "name": "Lumina",
+    "url": "https://lumina.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yersonv10/lumina.git",
+    "directory": "/packages/ui"
+  },
+  "homepage": "https://lumina.com",
   "exports": {
     ".": "./dist/index.js",
     "./theme.css": "./dist/theme.css",

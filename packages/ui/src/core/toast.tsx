@@ -5,7 +5,7 @@ import {
   Envelope1,
   InfoCircle,
   XmarkCircle
-} from "@lumina/icons";
+} from "@lumina-kit/icons";
 import { cva, type VariantProps } from "class-variance-authority";
 import {
   Avatar,

@@ -1,13 +1,13 @@
 "use client";
 
-import { FieldDescription, FieldLabel } from "@lumina/ui";
-import { Input } from "@lumina/ui";
+import { FieldDescription, FieldLabel } from "@lumina-kit/ui";
+import { Input } from "@lumina-kit/ui";
 import {
   NumberField,
   NumberFieldAction,
   NumberFieldGroup
-} from "@lumina/ui";
-import { Minus, Plus } from "@lumina/icons";
+} from "@lumina-kit/ui";
+import { Minus, Plus } from "@lumina-kit/icons";
 
 export default function NumberFieldWithStep() {
   return (

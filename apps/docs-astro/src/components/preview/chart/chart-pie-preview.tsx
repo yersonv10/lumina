@@ -4,7 +4,7 @@ import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 import { Cell, Pie, PieChart } from "recharts";
 
 export default function ChartPiePreview() {

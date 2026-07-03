@@ -5,8 +5,8 @@ import {
   TableHeader,
   TableRoot,
   TableRow
-} from "@lumina/ui";
-import { MenuKebab1 } from "@lumina/icons";
+} from "@lumina-kit/ui";
+import { MenuKebab1 } from "@lumina-kit/icons";
 import Image from "@/components/compat/image";
 
 const DATA = [

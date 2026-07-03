@@ -9,7 +9,7 @@ import {
   RangeCalendarHeader,
   RangeCalendarHeading,
   RangeNavButton
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 import { CalendarDate } from "@internationalized/date";
 
 export default function RangeCalendarDefaultValuePreview() {

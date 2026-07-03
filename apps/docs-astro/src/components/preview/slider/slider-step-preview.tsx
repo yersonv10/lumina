@@ -1,6 +1,6 @@
 "use client";
 
-import { Slider } from "@lumina/ui";
+import { Slider } from "@lumina-kit/ui";
 import { cn } from "@/utils/cn";
 import { useState } from "react";
 

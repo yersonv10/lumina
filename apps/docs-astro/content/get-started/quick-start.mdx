@@ -17,10 +17,10 @@ Lumina is a regular npm package — install it and import components like any ot
 ### Install the packages
 
 ```npm
-npm install @lumina/ui @lumina/icons
+npm install @lumina-kit/ui @lumina-kit/icons
 ```
 
-`@lumina/ui` ships every component; `@lumina/icons` is a separate package with 700+ icon components — install it only if you use icons.
+`@lumina-kit/ui` ships every component; `@lumina-kit/icons` is a separate package with 700+ icon components — install it only if you use icons.
 
 </Step>
 
@@ -31,10 +31,10 @@ Add this line to your global CSS, after your existing `@import "tailwindcss";`:
 
 ```css title="src/app.css"
 @import "tailwindcss";
-@import "@lumina/ui/theme.css";
+@import "@lumina-kit/ui/theme.css";
 ```
 
-This brings in the design tokens every component relies on (colors, radius, shadows) and tells Tailwind to scan `@lumina/ui`'s compiled output for utility classes, since Tailwind never scans `node_modules` by default. See [Global CSS Variables](/get-started/global-variables) for the full list of tokens. Prefer dark mode? Import `@lumina/ui/theme-dark.css` instead.
+This brings in the design tokens every component relies on (colors, radius, shadows) and tells Tailwind to scan `@lumina-kit/ui`'s compiled output for utility classes, since Tailwind never scans `node_modules` by default. See [Global CSS Variables](/get-started/global-variables) for the full list of tokens. Prefer dark mode? Import `@lumina-kit/ui/theme-dark.css` instead.
 
 </Step>
 
@@ -42,7 +42,7 @@ This brings in the design tokens every component relies on (colors, radius, shad
 ### Import and use components
 
 ```tsx filename="src/app/page.tsx"
-import { Button } from "@lumina/ui";
+import { Button } from "@lumina-kit/ui";
 
 export default function Home() {
   return (

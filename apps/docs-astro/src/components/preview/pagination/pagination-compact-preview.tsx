@@ -1,6 +1,6 @@
 "use client";
 
-import { Pagination } from "@lumina/ui";
+import { Pagination } from "@lumina-kit/ui";
 import { useState } from "react";
 
 export default function PaginationCompactPreview() {

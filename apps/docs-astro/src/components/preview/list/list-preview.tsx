@@ -1,5 +1,5 @@
-import { List } from "@lumina/ui";
-import { Exit, Gear1, Home, User2 } from "@lumina/icons";
+import { List } from "@lumina-kit/ui";
+import { Exit, Gear1, Home, User2 } from "@lumina-kit/icons";
 
 export default function ListPreview() {
   return (

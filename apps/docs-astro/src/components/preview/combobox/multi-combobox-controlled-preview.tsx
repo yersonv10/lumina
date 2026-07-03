@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@lumina/ui";
+import { Button } from "@lumina-kit/ui";
 import {
   ComboboxContent,
   ComboboxEmpty,
@@ -11,7 +11,7 @@ import {
   ComboboxTrigger,
   MultiCombobox,
   MultiComboboxDisplay
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 import { useState } from "react";
 import type { Key } from "react-aria-components";
 

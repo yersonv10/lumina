@@ -1,4 +1,4 @@
-import { Badge } from "@lumina/ui";
+import { Badge } from "@lumina-kit/ui";
 import {
   TableBody,
   TableCell,
@@ -6,7 +6,7 @@ import {
   TableHeader,
   TableRoot,
   TableRow
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 
 const DATA = [
   {

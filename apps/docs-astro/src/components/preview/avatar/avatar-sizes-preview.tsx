@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@lumina/ui";
+import { Avatar, AvatarFallback, AvatarImage } from "@lumina-kit/ui";
 import { teamMembersWithSize } from "./data";
 
 export default function AvatarSizesPreview() {

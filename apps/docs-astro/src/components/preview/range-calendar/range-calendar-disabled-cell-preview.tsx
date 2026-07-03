@@ -9,7 +9,7 @@ import {
   RangeCalendarHeader,
   RangeCalendarHeading,
   RangeNavButton
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 import { getLocalTimeZone, today } from "@internationalized/date";
 
 export default function RangeCalendarDisabledCellPreview() {

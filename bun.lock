@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "lumina-ui",
+      "name": "lumina",
       "devDependencies": {
         "@changesets/cli": "^2.29.7",
         "prettier": "^3.6.2",
@@ -25,8 +25,8 @@
         "@fontsource-variable/inter": "^5.2.8",
         "@fontsource/geist-mono": "^5.2.8",
         "@internationalized/date": "^3.12.1",
-        "@lumina/icons": "*",
-        "@lumina/ui": "*",
+        "@lumina-kit/icons": "*",
+        "@lumina-kit/ui": "*",
         "@shikijs/engine-javascript": "^4.3.0",
         "@shikijs/langs": "^4.3.0",
         "@shikijs/themes": "^4.3.0",
@@ -79,8 +79,8 @@
       },
     },
     "packages/icons": {
-      "name": "@lumina/icons",
-      "version": "2.0.0",
+      "name": "@lumina-kit/icons",
+      "version": "1.0.0",
       "dependencies": {
         "@babel/core": "^7.28.5",
         "@babel/plugin-transform-react-jsx": "^7.27.1",
@@ -104,13 +104,13 @@
       "version": "0.0.0",
     },
     "packages/ui": {
-      "name": "@lumina/ui",
-      "version": "0.1.0",
+      "name": "@lumina-kit/ui",
+      "version": "1.0.0",
       "dependencies": {
         "@base-ui/react": "^1.2.0",
         "@floating-ui/react": "^0.27.16",
         "@internationalized/date": "^3.12.1",
-        "@lumina/icons": "*",
+        "@lumina-kit/icons": "*",
         "@tailwindcss/forms": "^0.5.10",
         "class-variance-authority": "^0.7.1",
         "clsx": "^2.1.1",
@@ -479,9 +479,9 @@
 
     "@jridgewell/trace-mapping": ["@jridgewell/trace-mapping@0.3.31", "", { "dependencies": { "@jridgewell/resolve-uri": "^3.1.0", "@jridgewell/sourcemap-codec": "^1.4.14" } }, "sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw=="],
 
-    "@lumina/icons": ["@lumina/icons@workspace:packages/icons"],
+    "@lumina-kit/icons": ["@lumina-kit/icons@workspace:packages/icons"],
 
-    "@lumina/ui": ["@lumina/ui@workspace:packages/ui"],
+    "@lumina-kit/ui": ["@lumina-kit/ui@workspace:packages/ui"],
 
     "@manypkg/find-root": ["@manypkg/find-root@1.1.0", "", { "dependencies": { "@babel/runtime": "^7.5.5", "@types/node": "^12.7.1", "find-up": "^4.1.0", "fs-extra": "^8.1.0" } }, "sha512-mki5uBvhHzO8kYYix/WRy2WX8S3B5wdVSc9D6KcU5lQNglP2yt58/VfLuAK49glRXChosY8ap2oJ1qgma3GUVA=="],
 

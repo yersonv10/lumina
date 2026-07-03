@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "../utils/cn";
-import { ChevronLeft, ChevronRight } from "@lumina/icons";
+import { ChevronLeft, ChevronRight } from "@lumina-kit/icons";
 import useEmblaCarousel, {
   type UseEmblaCarouselType
 } from "embla-carousel-react";

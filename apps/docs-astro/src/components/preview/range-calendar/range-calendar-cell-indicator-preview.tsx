@@ -8,7 +8,7 @@ import {
   RangeCalendarGridHeader,
   RangeCalendarHeader,
   RangeNavButton
-} from "@lumina/ui";
+} from "@lumina-kit/ui";
 import { CalendarDate } from "@internationalized/date";
 
 function IndicatorCell({ date }: { date: CalendarDate }) {

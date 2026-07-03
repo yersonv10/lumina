@@ -1,7 +1,7 @@
 "use client";
 
 import { CalendarIcon } from "@/components/ui/icons";
-import { Button } from "@lumina/ui";
+import { Button } from "@lumina-kit/ui";
 import {
   Calendar,
   CalendarCell,
@@ -11,15 +11,15 @@ import {
   CalendarHeader,
   CalendarHeading,
   NavButton
-} from "@lumina/ui";
-import { DateInput, DateSegment } from "@lumina/ui";
+} from "@lumina-kit/ui";
+import { DateInput, DateSegment } from "@lumina-kit/ui";
 import {
   DatePicker,
   DatePickerGroup,
   DatePickerPopover,
   DatePickerTrigger
-} from "@lumina/ui";
-import { FieldError, FieldLabel } from "@lumina/ui";
+} from "@lumina-kit/ui";
+import { FieldError, FieldLabel } from "@lumina-kit/ui";
 import {
   CalendarDate,
   getLocalTimeZone,

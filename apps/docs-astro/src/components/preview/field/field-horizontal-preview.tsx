@@ -1,8 +1,8 @@
 "use client";
 
-import { FieldLabel } from "@lumina/ui";
-import { Input } from "@lumina/ui";
-import { TextField } from "@lumina/ui";
+import { FieldLabel } from "@lumina-kit/ui";
+import { Input } from "@lumina-kit/ui";
+import { TextField } from "@lumina-kit/ui";
 
 export default function FieldHorizontalPreview() {
   return (

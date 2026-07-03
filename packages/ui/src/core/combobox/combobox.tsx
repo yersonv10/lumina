@@ -1,5 +1,5 @@
 import { cn } from "../../utils/cn";
-import { Check, ChevronDown } from "@lumina/icons";
+import { Check, ChevronDown } from "@lumina-kit/icons";
 import type { ComponentProps } from "react";
 import React, { createContext, useContext } from "react";
 import {
