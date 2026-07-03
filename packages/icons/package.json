@@ -1,5 +1,5 @@
 {
-  "name": "@lumina/icons",
+  "name": "@lumina-kit/icons",
   "version": "1.0.0",
   "license": "MIT",
   "description": "Beautiful React icon components for Lumina",
